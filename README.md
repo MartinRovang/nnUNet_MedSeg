@@ -26,6 +26,11 @@ The prediction directory mirrors the training one. Users should place a **copy**
 
 This directory contains a Docker image designed to consolidate the necessary software tools for this script. Once loaded onto the user's system, it streamlines the entire process.
 
+# Interactions
+
+The `Output_nnUNet_train`, which houses the trained model, easily connects with the predict folder, allowing it to be applied to new images. 
+Within the training folder, the output is streamlined to retain only the most pertinent result files, ensuring that users have easy access to the most relevant information.
+
 
 <img src="pictures/folders_train_predictV2.drawio%20(1).png" width="500"  />
 
