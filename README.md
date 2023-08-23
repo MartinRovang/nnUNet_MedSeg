@@ -24,7 +24,8 @@ It is very important that the user has to COPY his dataset in the Input_nnUNet_t
 
 # predict folder
 
-The predict folder looks like the train folder. The 
+The predict folder looks like the train folder. The Input_nnUNet_predict will be filled by the user with a COPY of a test dataset and the Output_nnUNet_predict will be filled by the script with predict images which means labels once the exe_predict.py is executed. 
+
 
 
 
