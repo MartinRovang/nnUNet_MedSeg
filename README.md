@@ -24,13 +24,14 @@ It is very important that the user has to COPY his dataset in the Input_nnUNet_t
 
 # predict folder
 
-
+The predict folder looks like the train folder. The 
 
 
 
 # docker image folder
 
-
+A docker image have been made the correctly regroupe different software that the script needs. There is Pytorch version 2.0.0, CUDA version 11.8 and the nnUNet model.
+The docker image will be loaded on the user hardware and will be used to do all the process.
 
 
 
@@ -40,4 +41,8 @@ It is very important that the user has to COPY his dataset in the Input_nnUNet_t
 
 <img src="pictures/folders_train_predictV2.drawio%20(1).png" width="500"  />
 
+Please cite the [following paper](https://www.google.com/url?q=https://www.nature.com/articles/s41592-020-01008-z&sa=D&source=docs&ust=1677235958581755&usg=AOvVaw3dWL0SrITLhCJUBiNIHCQO) when using nnU-Net:
+
+    Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2021). nnU-Net: a self-configuring 
+    method for deep learning-based biomedical image segmentation. Nature methods, 18(2), 203-211.
 
