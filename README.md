@@ -1,6 +1,8 @@
 # Welcome to the nnUNet_MedSeg 
 
-This code will help people to use the [nnUNetv2](https://github.com/MIC-DKFZ/nnUNet) model more easily. 
+This script will help people to use the [nnUNetv2](https://github.com/MIC-DKFZ/nnUNet) model more easily. 
+
+# What is this script made for?
 
 
 
