@@ -37,4 +37,4 @@ YOUR_DATASET/
     │   ├── test.nii.gz
 ```
 
-Ensure you follow this format for optimal performance of the script and nnUNet.
+Ensure you follow this format to be able to run the script and nnUNet correctly.
