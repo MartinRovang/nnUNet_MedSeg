@@ -1,29 +1,40 @@
+# Formatting Your Dataset
 
-# How the have dataset right format
+To ensure the script and nnUNet run correctly, format your dataset as described below.
 
+## 1. Training Dataset Structure:
 
-The dataset that user will send into input have to be in a right format oderwise the script will not correctly sort the data and the nnUNet will not correctly run.
+Your dataset for training should follow this structure:
 
-First of all, the data set has to be sorted like
-
-```bash
- YOU_DATASET/
+\```bash
+YOUR_DATASET/
     ├── PATIENT_NUMBER
-    │   ├── img.nii.gz
-    │   ├── train.nii.gz
-```
+    │   ├── img.nii.gz
+    │   ├── train.nii.gz
+\```
 
-```bash
- YOU_DATASET/
+Or alternatively:
+
+\```bash
+YOUR_DATASET/
     ├── PATIENT_NUMBER
-    │   ├── img.nii.gz
-    │   ├── validate.nii.gz
-```
+    │   ├── img.nii.gz
+    │   ├── validate.nii.gz
+\```
 
+Where:
+- `PATIENT_NUMBER` is a 4-digit identifier.
+- `img.nii.gz` is the naming convention for training images.
+- Labels can be named either `train` or `validate`.
 
-```bash
- YOU_DATASET/
+## 2. Prediction Dataset Structure:
+
+For prediction, structure your dataset like:
+
+\```bash
+YOUR_DATASET/
     ├── PATIENT_NUMBER
-    │   ├── img.nii.gz
-    │   ├── test.nii.gz
-```
+    │   ├── test.nii.gz
+\```
+
+Ensure you follow this format for optimal performance of the script and nnUNet.
