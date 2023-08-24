@@ -23,7 +23,7 @@ To begin, simply execute the `exe_train.py` script. When executed, the script un
 
 - **Preprocessing Stage**: The nnUNet model takes the reins here. The data first undergoes a `2d`  preprocessing. Only after this phase is completed does it move on to the more intensive `3d_fullres` preprocessing.
 
-- **Training Stage**: At this juncture, the script scouts for available GPUs. Once it identifies an available unit, it immediately commences the training on that GPU. 
+- **Training Stage**: At this point, the script scouts for available GPUs. Once it identifies an available unit, it immediately begin the training on that GPU. 
   - **Important Note**: In cases where no GPUs are available, the script halts the training process. As a result, data gets deleted, and users will need to restart the process once a GPU becomes available.
 
 A word of caution: Timing is pivotal. If the script runs out of the designated time before completing either the preprocessing or training, it stops abruptly. In such cases, all data is purged. Therefore, users must ensure that they allocate sufficient time for the process to run its course.
