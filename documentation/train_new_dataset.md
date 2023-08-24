@@ -21,7 +21,7 @@ To begin, simply execute the `exe_train.py` script. When executed, the script un
   
   Additionally, a JSON file is generated. This file captures specific information that users specify during the command-line execution. All of these elements (folders and files) are neatly placed within the `raw_nnUnet` directory.
 
-- **Preprocessing Stage**: The nnUNet model takes the reins here. The data first undergoes a 2D preprocessing. Only after this phase is completed does it move on to the more intensive `3d_fullres` preprocessing.
+- **Preprocessing Stage**: The nnUNet model takes the reins here. The data first undergoes a `2d`  preprocessing. Only after this phase is completed does it move on to the more intensive `3d_fullres` preprocessing.
 
 - **Training Stage**: At this juncture, the script scouts for available GPUs. Once it identifies an available unit, it immediately commences the training on that GPU. 
   - **Important Note**: In cases where no GPUs are available, the script halts the training process. As a result, data gets deleted, and users will need to restart the process once a GPU becomes available.
