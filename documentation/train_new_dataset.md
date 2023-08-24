@@ -6,7 +6,7 @@ Training a model on a custom dataset is essential, especially for tasks that req
 
 Before starting, users should:
 
-1. Make sure the dataset aligns with the [stipulated format](dataset_format.md).
+1. Make sure the dataset aligns with the stipulated [format](dataset_format.md).
 2. Then, copy this well-formatted dataset into the `input_nnUNet_train` folder.
 
 ## Initiating the Training Process
