@@ -10,7 +10,7 @@ To ensure the optimal utilization of the `nnUNet_medseg` program and prevent dat
 
 Three primary use-cases can be achieved with this program:
 
-1. [New Dataset Trainin](train_new_dataset.md): Train from scratch using an entirely new dataset. (Most common use-case)
+1. [New Dataset Training](train_new_dataset.md): Train from scratch using an entirely new dataset. (Most common use-case)
 2. **Parameter Variation**: Re-train on the same dataset but with varied parameters.
 3. [Leveraging Pre-trained Models](pretrained.md): Make use of an existing pre-trained model.
 
