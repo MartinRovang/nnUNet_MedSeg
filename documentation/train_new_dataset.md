@@ -26,9 +26,9 @@ To begin, simply execute the `exe_train.py` script. When executed, the script un
 - **Training Stage**: At this point, the script scouts for available GPUs. Once it identifies an available unit, it immediately begin the training on that GPU. 
   - **Important Note**: In cases where no GPUs are available, the script halts the training process. As a result, data gets deleted, and users will need to restart the process once a GPU becomes available.
 
-A word of caution: Timing is pivotal. If the script runs out of the designated time before completing either the preprocessing or training, it stops abruptly. In such cases, all data is purged. Therefore, users must ensure that they allocate sufficient time for the process to run its course.
+A word of caution: Timing is pivotal. If the script runs out of the designated time before completing the preprocessing, it stops abruptly. In such cases, all data is purged. Therefore, users must ensure that they allocate sufficient time for the process to run its course.
 
-Upon the successful completion of training—whether it reaches the predetermined epoch number or hits the time cap—the results are diligently saved in the `output_nnUNet_train` folder. Inside this folder, users will discover:
+Upon the successful completion of training—whether it reaches the predetermined epoch number or hits the time cap—the results are saved in the `output_nnUNet_train` folder. Inside this folder, users will discover:
 
 - `final_checkpoint`: This file contains the last saved state of the trained model.
 - `best_checkpoint`: This represents the model's best performance point during training.
