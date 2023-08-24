@@ -6,6 +6,7 @@ The dataset that user will send into input have to be in a right format oderwise
 
 First of all, the data set has to be sorted like
 
+```bash
 nnUNet_raw/
 ├── Dataset001_BrainTumour
 ├── Dataset002_Heart
@@ -13,5 +14,5 @@ nnUNet_raw/
 ├── Dataset004_Hippocampus
 ├── Dataset005_Prostate
 └── ...
-
+```
 
