@@ -22,7 +22,9 @@ Users will primarily engage with the `Input_nnUNet_train`, `exe_train.py`, and i
 
 To correctly deploy `exe_train.py`, utilize the following command:
 
-
+```bash
+python3 exe_train.py -d DATASET_NAME -l LABEL -i IMAGE_TYPE -t TIME -f FOLD -e IMAGE_EXTENSION
+```
 
 
 
