@@ -30,7 +30,7 @@ A word of caution: Timing is pivotal. If the script runs out of the designated t
 
 Upon the successful completion of training—whether it reaches the predetermined epoch number or hits the time cap—the results are saved in the `output_nnUNet_train` folder. Inside this folder, users will discover:
 
-- `final_checkpoint`: This file contains the last saved state of the trained model.
-- `best_checkpoint`: This represents the model's best performance point during training.
+- `final_checkpoint`: This file contains the last saved state of the trained model and the associated weights .
+- `best_checkpoint`: This represents the model's best performance point during training with its weights.
 - A JPEG image: This visual aid provides a snapshot of various significant training metrics.
 
