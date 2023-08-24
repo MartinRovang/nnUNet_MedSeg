@@ -1,23 +1,36 @@
 # Training
 
-The training is a very important part to create a model. 
-Using an existing datatset the nnUNet will be trained and the outcome will be a strong medele of 3D segmentation.
+Training is pivotal as it lays the foundation for building an efficient 3D segmentation model using nnUNet.
 
-To correctly use the nnUNet_medseg programe the user has to follow the direction line to correctly use the program and dont loose any data.
+## Using nnUNet_medseg
 
-Mainy case are available with this programme
-1: train on a completly new data set and generate a new model from scratch (most common)
-2: rerun on the same dataset but with other parameters
-3: Using a pretrain model
+To ensure the optimal utilization of the `nnUNet_medseg` program and prevent data loss, users should adhere to the provided guidelines.
+
+### Training Scenarios
+
+Three primary use-cases can be achieved with this program:
+
+1. **New Dataset Training**: Train from scratch using an entirely new dataset. (Most common use-case)
+2. **Parameter Variation**: Re-train on the same dataset but with varied parameters.
+3. **Leveraging Pre-trained Models**: Make use of an existing pre-trained model.
+
+### User Interaction
+
+Users will primarily engage with the `Input_nnUNet_train`, `exe_train.py`, and its output counterpart. It's imperative to **copy** your dataset into `Input_nnUNet_train`. The program will sort the dataset for the nnUNet model and then delete it post-operation. Post-training, users will receive an output containing the trained model. All other data will be **deleted**.
+
+### Command Execution
+
+To correctly deploy `exe_train.py`, utilize the following command:
 
 
-The user will only have interactions with the Input_nnUNet_train, the Input_nnUNet_train and the exe_train.py. 
-It is very important that the user has to COPY his dataset in the Input_nnUNet_train because the dataset will be correcly sorted for the nnUNet model and deleted after the operation.
-All that the user will have a the end of the training is an output with the trained model. ALL the rest will be DELETED!
 
-To correctly use the exe_train.py here is the command to execute the code: python exe_train.py -d DATASET_NAME -l LABEL -i IMAGE_TYPE -t TIME -f FOLD -e IMAGE_EXTENSION
 
-where DATASET_NAME is the name of the dataset, LABEL is the type of label that the user want to segmente (i.e. TUMOR,...), IMAGE_TYPE is the type of the biomedical images (i.e CT, RMI,...) TIME is the time tha the user wants to train, FOLD is which fold the user want to train, there is maximum 5 fold trainable is the user wants to train all the fold the value has to be "all" this option is highly recommended to have a stong model. Finally the IMAGES_EXTENSION by default is .nii.gz but if the user is using an other extension image he has to write it.
 
-All those parameters have default value and those value will be used if the user forget to fill the parameters lines. 
-The epochs number are fixed at 10 000 and the training will stop if it arrives to this number of epochs. Hopefully we added the time to the nnUNet model and the training will be done after the time the user want. The default value of the time is 1 hour of training. Obviously is the time is over in a running epoch, the training will finish the epoch and stop the training just after.
+- `DATASET_NAME`: Name of your dataset.
+- `LABEL`: Desired segmentation label (e.g., TUMOR).
+- `IMAGE_TYPE`: Biomedical image variety (e.g., CT, MRI).
+- `TIME`: Desired training duration.
+- `FOLD`: Specifies the training fold (maximum of 5 folds). Use "all" to train on every fold for a robust model.
+- `IMAGE_EXTENSION`: Default is `.nii.gz`. Modify if using a different image extension.
+
+**Note**: Default values are in place for all parameters and will be employed if a user omits specific arguments. Training caps at 10,000 epochs. However, to ensure efficiency, a time parameter is introduced. Default training duration is set at one hour. If time elapses during an ongoing epoch, the epoch will finalize before terminating the training process.
