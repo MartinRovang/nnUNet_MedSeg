@@ -16,7 +16,7 @@ Three primary use-cases can be achieved with this program:
 
 ### User Interaction
 
-Users will primarily engage with the `Input_nnUNet_train`, `exe_train.py`, and its output counterpart. It's imperative to > ⚠️ **COPY** the dataset into `Input_nnUNet_train`. The program will sort the dataset for the nnUNet model and then delete it post-operation. Post-training, users will receive an output containing the trained model. All other data will be **deleted**.
+Users will primarily engage with the `Input_nnUNet_train`, `exe_train.py`, and its output counterpart. It's imperative to ⚠️**COPY**⚠️ the dataset into `Input_nnUNet_train`. The program will sort the dataset for the nnUNet model and then delete it post-operation. Post-training, users will receive an output containing the trained model. All other data will be ⚠️**DELETED**⚠️.
 
 ### Command Execution
 
