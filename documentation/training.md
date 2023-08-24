@@ -20,14 +20,13 @@ Users will primarily engage with the `Input_nnUNet_train`, `exe_train.py`, and i
 
 ### Command Execution
 
-To correctly deploy `exe_train.py`, utilize the following command:
+To correctly deploy `exe_train.py`, use the following command:
 
 ```bash
-python3 exe_train.py -d DATASET_NAME -l LABEL -i IMAGE_TYPE -t TIME -f FOLD -e IMAGE_EXTENSION
+python3 FULL_PATH/exe_train.py -d DATASET_NAME -l LABEL -i IMAGE_TYPE -t TIME -f FOLD -e IMAGE_EXTENSION
 ```
 
-
-
+- `FULL_PATH`: Don't forget to use the full path to the exe_train.py
 - `DATASET_NAME`: Name of your dataset. (**default value**: No_Name)
 - `LABEL`: Desired segmentation label (e.g., TUMOR). (**default value**: NONE)
 - `IMAGE_TYPE`: Biomedical image variety (e.g., CT, MRI). (**default value**:NONE)
