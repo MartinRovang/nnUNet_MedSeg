@@ -7,12 +7,23 @@ The dataset that user will send into input have to be in a right format oderwise
 First of all, the data set has to be sorted like
 
 ```bash
-nnUNet_raw/
-├── Dataset001_BrainTumour
-├── Dataset002_Heart
-├── Dataset003_Liver
-├── Dataset004_Hippocampus
-├── Dataset005_Prostate
-└── ...
+ YOU_DATASET/
+    ├── PATIENT_NUMBER
+    │   ├── img.nii.gz
+    │   ├── train.nii.gz
 ```
 
+```bash
+ YOU_DATASET/
+    ├── PATIENT_NUMBER
+    │   ├── img.nii.gz
+    │   ├── validate.nii.gz
+```
+
+
+```bash
+ YOU_DATASET/
+    ├── PATIENT_NUMBER
+    │   ├── img.nii.gz
+    │   ├── test.nii.gz
+```
