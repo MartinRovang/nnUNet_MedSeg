@@ -1,14 +1,36 @@
-# How to run the python script with new dataset
+# Running the Python Script with a New Dataset
 
-This scenario will be the most used. Having a trained model on his own dataset is very important fro specific tasks.
+Training a model on a custom dataset is essential, especially for tasks that require specialized data. In this section, users are guided step-by-step on how to set up and train a new model using their dataset.
 
-# What the user have to do
+## Dataset Preparation
 
-The user only have to copy its dataset with a specific [format](dataset_format) into the input_nnUNet_train folder and run the exe_train.py.
+Before starting, users should:
 
-The script will sort all the data with the right name. all the data using the name 'validate' or 'train' will be included in the training set. 
-The code will sorted the data into to 2 folders 'imagesTr' for the images and 'labelsTr' for the filters also a json file will be created with some information that the user has given in the run command line. Those 3 folders are located in the 'raw_nnUnet' folder.
-Once the sorted is finished the preprocessing will be made by the nnUNet model. A 2d preprocessing is needed to do the 3d_fullres preprocessing.
-The training will be done juste after, using a free gpu. The script will check which GPUs are available and select the first one he find. If no GPU's are available the training is stopped, the data are deleted and the user has try later when one gpu is available. 
+1. Make sure the dataset aligns with the stipulated [format](dataset_format).
+2. Then, copy this well-formatted dataset into the `input_nnUNet_train` folder.
 
-When the user run the 'exe_train.py' the time will begin. 
+## Initiating the Training Process
+
+To begin, simply execute the `exe_train.py` script. When executed, the script undergoes several stages:
+
+- **Data Sorting Stage**: At this point, data labeled as 'validate' or 'train' gets selected for the training process.
+  
+  - The script sorts and classifies the data into two distinct folders: 
+    - `imagesTr`: This is where all the images are stored.
+    - `labelsTr`: This section is reserved for labels or filters.
+  
+  Additionally, a JSON file is generated. This file captures specific information that users specify during the command-line execution. All of these elements (folders and files) are neatly placed within the `raw_nnUnet` directory.
+
+- **Preprocessing Stage**: The nnUNet model takes the reins here. The data first undergoes a 2D preprocessing. Only after this phase is completed does it move on to the more intensive `3d_fullres` preprocessing.
+
+- **Training Stage**: At this juncture, the script scouts for available GPUs. Once it identifies an available unit, it immediately commences the training on that GPU. 
+  - **Important Note**: In cases where no GPUs are available, the script halts the training process. As a result, data gets deleted, and users will need to restart the process once a GPU becomes available.
+
+A word of caution: Timing is pivotal. If the script runs out of the designated time before completing either the preprocessing or training, it stops abruptly. In such cases, all data is purged. Therefore, users must ensure that they allocate sufficient time for the process to run its course.
+
+Upon the successful completion of training—whether it reaches the predetermined epoch number or hits the time cap—the results are diligently saved in the `output_nnUNet_train` folder. Inside this folder, users will discover:
+
+- `final_checkpoint`: This file contains the last saved state of the trained model.
+- `best_checkpoint`: This represents the model's best performance point during training.
+- A JPEG image: This visual aid provides a snapshot of various significant training metrics.
+
