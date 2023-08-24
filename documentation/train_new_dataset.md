@@ -32,5 +32,5 @@ Upon the successful completion of training—whether it reaches the predetermine
 
 - `final_checkpoint`: This file contains the last saved state of the trained model and the associated weights .
 - `best_checkpoint`: This represents the model's best performance point during training with its weights.
-- A JPEG image: This visual aid provides a snapshot of various significant training metrics.
+- A PNG image: This visual aid provides a snapshot of various significant training metrics.
 
