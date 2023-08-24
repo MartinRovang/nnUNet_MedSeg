@@ -33,5 +33,6 @@ Upon the successful completion of training—whether it reaches the predetermine
 - `final_checkpoint`: This file contains the last saved state of the trained model and the associated weights .
 - `best_checkpoint`: This represents the model's best performance point during training with its weights.
 - A PNG image: This visual aid provides a snapshot of various significant training metrics.
+
 During the process, any residual data will be removed to release space. It's important to note that the nnUNet folders are locked against modifications to guarantee smooth progression through all steps. Rest assured, everything users require will be neatly packaged in the `output_nnUNet_folder`.
 
