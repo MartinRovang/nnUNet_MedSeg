@@ -8,9 +8,13 @@ Your dataset for training should follow this structure:
 
 ```bash
 YOUR_DATASET/
-    ├── PATIENT_NUMBER
+    ├── PATIENT1_NUMBER
     │   ├── img.nii.gz
     │   ├── train.nii.gz
+    ├── PATIENT2_NUMBER
+    │   ├── img.nii.gz
+    │   ├── ...
+    ... 
 ```
 
 Or alternatively:
