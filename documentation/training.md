@@ -28,11 +28,11 @@ python3 exe_train.py -d DATASET_NAME -l LABEL -i IMAGE_TYPE -t TIME -f FOLD -e I
 
 
 
-- `DATASET_NAME`: Name of your dataset.
-- `LABEL`: Desired segmentation label (e.g., TUMOR).
-- `IMAGE_TYPE`: Biomedical image variety (e.g., CT, MRI).
-- `TIME`: Desired training duration.
-- `FOLD`: Specifies the training fold (maximum of 5 folds). Use "all" to train on every fold for a robust model.
-- `IMAGE_EXTENSION`: Default is `.nii.gz`. Modify if using a different image extension.
+- `DATASET_NAME`: Name of your dataset. (default value: No_Name)
+- `LABEL`: Desired segmentation label (e.g., TUMOR). (default value: NONE)
+- `IMAGE_TYPE`: Biomedical image variety (e.g., CT, MRI). (default value:NONE)
+- `TIME`: Desired training duration in MINUTE. (default value: 60)
+- `FOLD`: Specifies the training fold (maximum of 5 folds). Use "all" to train on every fold for a robust model. (default value: all)
+- `IMAGE_EXTENSION`: Default is `.nii.gz`. Modify if using a different image extension. 
 
 **Note**: Default values are in place for all parameters and will be employed if a user omits specific arguments. Training caps at 10,000 epochs. However, to ensure efficiency, a time parameter is introduced. Default training duration is set at one hour. If time elapses during an ongoing epoch, the epoch will finalize before terminating the training process.
