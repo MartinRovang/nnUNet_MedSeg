@@ -34,4 +34,4 @@ python3 FULL_PATH/exe_train.py -d DATASET_NAME -l LABEL -i IMAGE_TYPE -t TIME -f
 - `FOLD`: Specifies the training fold (maximum of 5 folds). Use "all" to train on every fold for a robust model. (**default value**: all)
 - `IMAGE_EXTENSION`: Default is `.nii.gz`. Modify if using a different image extension. 
 
-**Note**: Default values are in place for all parameters and will be employed if a user omits specific arguments. Training caps at 10,000 epochs. However, to ensure efficiency, a time parameter is introduced. Default training duration is set at one hour. If time elapses during an ongoing epoch, the epoch will finalize before terminating the training process.
+**Note**: Default values are in place for all parameters and will be employed if a user omits specific arguments. Training caps at 10,000 epochs. However, to ensure efficiency, a time parameter is introduced. If time elapses during an ongoing epoch, the epoch will finalize before terminating the training process.
