@@ -28,8 +28,9 @@ This directory contains a Docker image designed to consolidate the necessary sof
 
 # Interactions
 
-The `Output_nnUNet_train`, which houses the trained model, easily connects with the predict folder, allowing it to be applied to new images. 
-Within the training folder, the output is streamlined to retain only the most pertinent result files, ensuring that users have easy access to the most relevant information.
+After training, the `results_nnUNet` content is transferred to the `Output_nnUNet_train` folder. This step grants users the ability to conveniently copy the results to their local desktop.
+The `Output_nnUNet_train`, containing the trained model, integrates seamlessly with the predict folder, enabling its application on new images. Essential files from `Output_nnUNet_train` are copied to the 'model' directory within the predict repository.
+
 
 
 <img src="pictures/folders_train_predictV3.drawio.png" width="500"  />
