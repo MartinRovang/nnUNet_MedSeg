@@ -9,7 +9,7 @@ Ensure you have a dataset formatted correctly, as per the [dataset guide](datase
 ### Command for Pretraining
 
 ```bash
-python3 PATH/exe_train.py PRETRAINING -t TIME 
+python3 FULL_PATH/exe_train.py PRETRAINING -t TIME 
 ```
 
 Executing the above will prompt a list of models eligible for pretraining. Simply select your desired model, and the pretraining will initiate with your new data and your specified duration.
