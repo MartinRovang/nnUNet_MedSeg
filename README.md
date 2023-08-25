@@ -44,7 +44,7 @@ Within the training folder, the output is streamlined to retain only the most pe
 
 ## Go the Extra Mile! 🚀
 - [Leverage Pretrained Powerhouses](documentation/pretrained_model.md)
-- [Elevate Your Model's Performance](documentation/.md)
+- [Elevate Your Model's Performance](documentation/retrain_dataset.md)
 
 
 
