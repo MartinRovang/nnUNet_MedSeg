@@ -1,6 +1,6 @@
 # Formatting Your Dataset
 
-To ensure the script and nnUNet run correctly, ** format your dataset as described below **.
+To ensure the script and nnUNet run correctly, **format your dataset as described below**.
 
 ## 1. Training Dataset Structure:
 
