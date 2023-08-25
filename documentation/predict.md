@@ -16,9 +16,9 @@ For users, the workflow involves placing the images they wish to get predictions
 To get an overview of all models available for predictions, execute the following command:
 
 ```bash
-python3 PATH/exe_predict.py -l
+python3 FULL_PATH/exe_predict.py -l
 ```
-
+Don't forget to use the full path to the exe_train.py.
 This will display a list of all available models, providing their names for easy reference.
 
 ### 2. Running Predictions
@@ -26,7 +26,7 @@ This will display a list of all available models, providing their names for easy
 To start the prediction process with a specific model, use:
 
 ```bash
-python3 PATH/exe_predict.py -m MODEL_NAME
+python3 FULL_PATH/exe_predict.py -m MODEL_NAME
 ```
 
 Replace `MODEL_NAME` with the desired model's name from the list obtained in the previous step.
