@@ -1,14 +1,14 @@
 # nnUNet_MedSeg Overview
 
-Welcome to the `nnUNet_MedSeg` repository. This script facilitates the user-friendly deployment of the [nnUNetv2](https://github.com/MIC-DKFZ/nnUNet) model.
+Welcome to the `nnUNet_MedSeg` repository. This Toolkit facilitates the user-friendly deployment of the [nnUNetv2](https://github.com/MIC-DKFZ/nnUNet) model.
 
-## Purpose of the Script
+## Purpose of the Toolkit
 
 This script simplifies the implementation of the nnUNetv2 model designed for biomedical image segmentation. Its primary goal is to assist users in utilizing the model without diving into its underlying implementation details. To get started, users need to organize their dataset according to specified folder naming conventions and place it into the designated input folders of the script.
 
-## Script Workflow
+## Toolkit Workflow
 
-The script comprises three main components:
+The Toolkit comprises three main components:
 
 1. **<u><b>Training Files</b></u>**: Set up your dataset by copying it into `Input_nnUNet_train` and then execute `exe_train.py` to obtain the output file.
 2. **<u><b>Prediction Files</b></u>**: After training, users can perform predictions. Copy a test dataset into `Input_nnUNet_predict` to generate prediction images.
