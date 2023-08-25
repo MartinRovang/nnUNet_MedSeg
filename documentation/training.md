@@ -26,6 +26,12 @@ To correctly deploy `exe_train.py`, use the following command:
 python3 FULL_PATH/exe_train.py -d DATASET_NAME -l LABEL -i IMAGE_TYPE -t TIME -f FOLD -e IMAGE_EXTENSION
 ```
 
+OR the full name
+
+```bash
+python3 FULL_PATH/exe_train.py --dataset_name DATASET_NAME --label LABEL --image_type IMAGE_TYPE --time TIME --fold FOLD --image_extension IMAGE_EXTENSION
+```
+
 - `FULL_PATH`: Don't forget to use the full path to the exe_train.py
 - `DATASET_NAME`: Name of your dataset. (**default value**: No_Name)
 - `LABEL`: Desired segmentation label (e.g., TUMOR). (**default value**: NONE)
