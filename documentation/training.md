@@ -1,4 +1,4 @@
-# Training
+# Training with nnUNet
 
 Training is pivotal as it lays the foundation for building an efficient 3D segmentation model using nnUNet.
 
