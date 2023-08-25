@@ -36,6 +36,19 @@ Within the training folder, the output is streamlined to retain only the most pe
 
 ---
 
+
+## How to get started?
+Read these:
+- [How does the training works?](documentation/training.md)
+- [Train a new dataset](documentation/train_new_dataset.md)
+- [Prediction with the different models](documentation/predisctive_segmentation.md)
+
+Additionnal informations
+- [Use pretrained model](documentation/pretrained_model.md)
+- [How to retrain an existing model](documentation/.md)
+
+
+
 If you employ nnU-Net in your work, kindly reference the [associated paper](https://www.google.com/url?q=https://www.nature.com/articles/s41592-020-01008-z&sa=D&source=docs&ust=1677235958581755&usg=AOvVaw3dWL0SrITLhCJUBiNIHCQO):
 
 
