@@ -16,7 +16,7 @@ For users, the workflow involves placing a ⚠️**COPY**⚠️ of the images th
 To get an overview of all models available for predictions, execute the following command:
 
 ```bash
-python3 FULL_PATH/exe_predict.py -l
+python3 FULL_PATH/exe_predict.py -l list_model
 ```
 Don't forget to use the full path to the exe_train.py.
 This will display a list of all available models, providing their names for easy reference.
