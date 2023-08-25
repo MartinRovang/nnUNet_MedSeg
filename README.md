@@ -37,15 +37,15 @@ Within the training folder, the output is streamlined to retain only the most pe
 ---
 
 
-## How to get started?
-Read these:
-- [How does the training works?](documentation/training.md)
-- [Train a new dataset](documentation/train_new_dataset.md)
-- [Prediction with the different models](documentation/predisctive_segmentation.md)
+## Let's Get Started! 🌟
+- [Training 101: The Basics](documentation/training.md)
+- [Begin with Your Own Dataset](documentation/train_new_dataset.md)
+- [Unraveling Model Predictions](documentation/predictive_segmentation.md)
 
-Additionnal informations
-- [Use pretrained model](documentation/pretrained_model.md)
-- [How to retrain an existing model](documentation/.md)
+## Go the Extra Mile! 🚀
+- [Leverage Pretrained Powerhouses](documentation/pretrained_model.md)
+- [Elevate Your Model's Performance](documentation/.md)
+
 
 
 
