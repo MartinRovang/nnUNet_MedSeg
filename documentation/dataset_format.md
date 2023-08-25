@@ -24,7 +24,12 @@ YOUR_DATASET/
     ├── PATIENT_NUMBER
     │   ├── img.nii.gz
     │   ├── validate.nii.gz
+    ├── PATIENT2_NUMBER
+    │   ├── img.nii.gz
+    │   ├── ...
+    ... 
 ```
+
 
 Where:
 - `PATIENT_NUMBER` is a 4-digit identifier.
@@ -39,6 +44,9 @@ For prediction, structure your dataset like:
 YOUR_DATASET/
     ├── PATIENT_NUMBER
     │   ├── test.nii.gz
+    ├── PATIENT2_NUMBER
+    │   ├── test.nii.gz
+    ... 
 ```
 
 Ensure you follow this format to be able to run the script and nnUNet correctly.
