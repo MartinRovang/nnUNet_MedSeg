@@ -1,16 +1,19 @@
-# Use an existing model for pretraining
+# Pretraining Using an Existing Model
 
-The pretraining is very usefull if the user wants to fine tune an existing model.
+Leverage the strength of an existing model by fine-tuning it through pretraining. 
 
-# How to pretrain a model?
+## Initiating Pretraining 
 
-If the user put a well  [formated](dataset_format.md) dataset file in the 'input_nnUNet_train' folder and execute a special command, the script will automatically detect that the user wants ton pretrain a model. 
-Command to execute the pretraining:
+Ensure you have a dataset formatted correctly, as per the [dataset guide](dataset_format.md). Place this dataset in the 'input_nnUNet_train' folder. When you execute a specific command, the framework will recognize your intention to pretrain a model.
 
-'''bash
+### Command for Pretraining
+
+```bash
 python3 PATH/exe_train.py PRETRAINING -t TIME 
-'''
-With this command, the script will send to the user a list of all the different models that are able to be used for the pretraining.
-The user will juste choose the one that he wants and the pretraining will begin with the new data and the time choosed by the user. 
+```
 
-Obviously, the different parameters like the 'image_type', 'image_extension', 'labels' (cf [see on the ](train_new_dataset) have to be the same as the trained model that the user will use.
+Executing the above will prompt a list of models eligible for pretraining. Simply select your desired model, and the pretraining will initiate with your new data and your specified duration.
+
+**Note**: It's essential that parameters like 'image_type', 'image_extension', and 'labels' align with those of the model you intend to use. This have to be done before the pretraining.
+
+Upon completion, the pretrained model's results will be stored in the 'output_nnUNet_train' directory, replacing any prior models with the newly optimized version.
