@@ -7,7 +7,7 @@ Using a trained model, it's now possible to make predictions on new images and o
 
 Once a model is successfully trained, only the essential components of that model are transferred to a dedicated `model` directory within the prediction set. 
 
-For users, the workflow involves placing a COPY of the images they wish to get predictions for into the `input_nnUNet_predict` folder. After the prediction process concludes, the corresponding segmentation masks will be available in the `output_nnUNet_folder` and the input file will be DELETED.
+For users, the workflow involves placing a ⚠️**COPY**⚠️ of the images they wish to get predictions for into the `input_nnUNet_predict` folder. After the prediction process concludes, the corresponding segmentation masks will be available in the `output_nnUNet_folder` and the input file will be ⚠️**DELETED**⚠️.
 
 ## Running the Prediction Script
 
