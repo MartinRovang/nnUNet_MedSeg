@@ -44,10 +44,9 @@ Within the training folder, the output is streamlined to retain only the most pe
 
 ## Go the Extra Mile! 🚀
 - [Leverage Pretrained Powerhouses](documentation/pretrained_model.md)
-- [Elevate Your Model's Performance](documentation/retrain_dataset.md)
 
 
-
+---
 
 If you employ nnU-Net in your work, kindly reference the [associated paper](https://www.google.com/url?q=https://www.nature.com/articles/s41592-020-01008-z&sa=D&source=docs&ust=1677235958581755&usg=AOvVaw3dWL0SrITLhCJUBiNIHCQO):
 
