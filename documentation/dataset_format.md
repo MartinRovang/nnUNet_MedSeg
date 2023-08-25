@@ -13,7 +13,7 @@ YOUR_DATASET/
     │   ├── train.nii.gz
     ├── PATIENT2_NUMBER
     │   ├── img.nii.gz
-    │   ├── ...
+    │   ├── train.nii.gz
     ... 
 ```
 
@@ -26,10 +26,9 @@ YOUR_DATASET/
     │   ├── validate.nii.gz
     ├── PATIENT2_NUMBER
     │   ├── img.nii.gz
-    │   ├── ...
+    │   ├── train.nii.gz
     ... 
 ```
-
 
 Where:
 - `PATIENT_NUMBER` is a 4-digit identifier.
