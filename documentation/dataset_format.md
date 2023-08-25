@@ -8,10 +8,10 @@ Your dataset for training should follow this structure:
 
 ```bash
 YOUR_DATASET/
-    ├── PATIENT1_NUMBER
+    ├── PATIENT1_NUMBER/
     │   ├── img.nii.gz
     │   ├── train.nii.gz
-    ├── PATIENT2_NUMBER
+    ├── PATIENT2_NUMBER/
     │   ├── img.nii.gz
     │   ├── train.nii.gz
     ... 
@@ -21,10 +21,10 @@ Or alternatively:
 
 ```bash
 YOUR_DATASET/
-    ├── PATIENT_NUMBER
+    ├── PATIENT_NUMBER/
     │   ├── img.nii.gz
     │   ├── validate.nii.gz
-    ├── PATIENT2_NUMBER
+    ├── PATIENT2_NUMBER/
     │   ├── img.nii.gz
     │   ├── train.nii.gz
     ... 
