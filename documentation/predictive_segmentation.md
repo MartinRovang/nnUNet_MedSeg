@@ -31,7 +31,7 @@ python3 FULL_PATH/exe_predict.py -m MODEL_NAME
 
 Replace `MODEL_NAME` with the desired model's name from the list obtained in the previous step.
 
-Once this command is run, the script will process the images in `input_nnUNet_folder` using the selected model. After some time, the `output_nnUNet_predict` directory will have the predicted masks. These masks will retain the original image's name but will append `_predict` to the filename.
+Once this command is run, the script will process the images in `input_nnUNet_folder` using the selected model. After some time, the `output_nnUNet_predict` directory will have the predicted masks. These masks will retain exaclty the original image's name.
 
 ### Visualizing Results
 
