@@ -18,7 +18,7 @@ To get an overview of all models available for predictions, execute the followin
 ```bash
 python3 FULL_PATH/exe_predict.py -l list_model
 ```
-OR the full name command  
+OR the full named command  
 ```bash
 python3 FULL_PATH/exe_predict.py --list list_model
 ```
@@ -32,7 +32,7 @@ To start the prediction process with a specific model, use:
 ```bash
 python3 FULL_PATH/exe_predict.py -m MODEL_NAME
 ```
-OR the full name command  
+OR the full named command  
 ```bash
 python3 FULL_PATH/exe_predict.py --model_name MODEL_NAME
 ```
