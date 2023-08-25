@@ -8,7 +8,7 @@ This script simplifies the implementation of the nnUNetv2 model designed for bio
 
 ## Toolkit Workflow
 
-The Toolkit comprises three main components:
+The Toolkit comprises 3 main components:
 
 1. **<u><b>Training Files</b></u>**: Set up your dataset by copying it into `Input_nnUNet_train` and then execute `exe_train.py` to obtain the output file.
 2. **<u><b>Prediction Files</b></u>**: After training, users can perform predictions. Copy a test dataset into `Input_nnUNet_predict` to generate prediction images.
