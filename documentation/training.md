@@ -43,3 +43,4 @@ python3 FULL_PATH/exe_train.py --dataset_name DATASET_NAME --label LABEL --image
 - `IMAGE_EXTENSION`: Default is `.nii.gz`. Modify if using a different image extension. 
 
 **Note**: Default values are in place for all parameters and will be employed if a user omits specific arguments. Training caps at 10,000 epochs. However, to ensure efficiency, a time parameter is introduced. If time elapses during an ongoing epoch, the epoch will finalize before terminating the training process.
+
