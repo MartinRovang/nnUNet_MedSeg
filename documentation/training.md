@@ -27,7 +27,7 @@ python3 FULL_PATH/exe_train.py -d DATASET_NAME -l LABEL -i IMAGE_TYPE -t TIME -f
 ```
 
 <details>
-  <summary>Click here to have the full name </summary>
+  <summary>Click here to have the full named command </summary>
 
 ```bash
 python3 FULL_PATH/exe_train.py --dataset_name DATASET_NAME --label LABEL --image_type IMAGE_TYPE --time TIME --fold FOLD --image_extension IMAGE_EXTENSION
