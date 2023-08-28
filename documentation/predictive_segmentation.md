@@ -43,7 +43,6 @@ python3 FULL_PATH/exe_predict.py -m MODEL_NAME
 ```bash
 python3 FULL_PATH/exe_predict.py --model_name MODEL_NAME
 ```
-
 </details>
 
 Replace `MODEL_NAME` with the desired model's name from the list obtained in the previous step.
