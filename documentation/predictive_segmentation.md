@@ -38,7 +38,7 @@ To start the prediction process with a specific model, use:
 python3 FULL_PATH/exe_predict.py -m MODEL_NAME
 ```
 <details>
-  <summary>Click here to have the full named command </summary
+  <summary>Click here to have the full named command </summary>
                                                        
 ```bash
 python3 FULL_PATH/exe_predict.py --model_name MODEL_NAME
