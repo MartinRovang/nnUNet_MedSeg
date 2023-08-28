@@ -16,14 +16,14 @@ For users, the workflow involves placing a ⚠️**COPY**⚠️ of the images th
 To get an overview of all models available for predictions, execute the following command:
 
 ```bash
-python3 FULL_PATH/exe_predict.py -l list_model
+python3 FULL_PATH/exe_predict.py -l models
 ```
 
 <details>
   <summary>Click here to have the full named command </summary>
                                                        
 ```bash
-python3 FULL_PATH/exe_predict.py --list list_model
+python3 FULL_PATH/exe_predict.py --list models
 ```
 </details>
   
