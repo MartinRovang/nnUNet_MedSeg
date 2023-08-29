@@ -23,14 +23,14 @@ Users will primarily engage with the `Input_nnUNet_train`, `exe_train.py`, and i
 To correctly deploy `exe_train.py`, use the following command:
 
 ```bash
-python3 FULL_PATH/exe_train.py -d DATASET_NAME -l LABEL -i IMAGE_TYPE -t TIME -f FOLD -e IMAGE_EXTENSION
+python3 FULL_PATH/exe_train.py -d DATASET_NAME -l LABEL -i IMAGE_TYPE -t TIME -f FOLD 
 ```
 
 <details>
   <summary>Click here to have the full named command </summary>
 
 ```bash
-python3 FULL_PATH/exe_train.py --dataset_name DATASET_NAME --label LABEL --image_type IMAGE_TYPE --time TIME --fold FOLD --image_extension IMAGE_EXTENSION
+python3 FULL_PATH/exe_train.py --dataset_name DATASET_NAME --label LABEL --image_type IMAGE_TYPE --time TIME --fold FOLD 
 ```
 </details>
 
@@ -40,7 +40,7 @@ python3 FULL_PATH/exe_train.py --dataset_name DATASET_NAME --label LABEL --image
 - `IMAGE_TYPE`: Biomedical image variety (e.g., CT, MRI). (**default value**:NONE)
 - `TIME`: Desired duration of all the process in MINUTE. (**default value**: 60)
 - `FOLD`: Specifies the training fold (maximum of 5 folds). Use "all" to train on every fold for a robust model. (**default value**: all)
-- `IMAGE_EXTENSION`: Default is `.nii.gz`. Modify if using a different image extension. 
+
 
 **Note**: Default values are in place for all parameters and will be employed if a user omits specific arguments. Training caps at 10,000 epochs. However, to ensure efficiency, a time parameter is introduced. If time elapses during an ongoing epoch, the epoch will finalize before terminating the training process.
 
