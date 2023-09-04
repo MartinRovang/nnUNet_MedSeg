@@ -5,47 +5,28 @@ Using a trained model, it's now possible to make predictions on new images and o
 
 ## Understanding the Prediction Process
 
-Once a model is successfully trained, only the essential components of that model are transferred to a dedicated `model` directory within the prediction set. 
+After successfully training a model, users should copy the folder named after the dataset from `output_nnUNet_train` to the `model` directory within the prediction set.
 
-For users, the workflow involves placing a ⚠️**COPY**⚠️ of the images they wish to get predictions for into the `input_nnUNet_predict` folder. After the prediction process concludes, the corresponding segmentation masks will be available in the `output_nnUNet_folder` and the input file will be ⚠️**DELETED**⚠️.
+
+The workflow involves placing a ⚠️**COPY**⚠️ of the image they wish to get predictions for into the `input_nnUNet_predict` folder. After the prediction process concludes, the corresponding segmentation masks will be available in the `output_nnUNet_folder` and the input image will be ⚠️**DELETED**⚠️.
 
 ## Running the Prediction Script
 
-### 1. Listing Available Models
-
-To get an overview of all models available for predictions, execute the following command:
-
-```bash
-python3 FULL_PATH/exe_predict.py -l models
-```
-
-<details>
-  <summary>Click here to have the full named command </summary>
-                                                       
-```bash
-python3 FULL_PATH/exe_predict.py --list models
-```
-</details>
-  
-Don't forget to use the full path to the exe_train.py.
-This will display a list of all available models, providing their names for easy reference.
-
-### 2. Running Predictions
 
 To start the prediction process with a specific model, use:
 
 ```bash
-python3 FULL_PATH/exe_predict.py -m MODEL_NAME
+python3 FULL_PATH/exe_predict.py 
 ```
 <details>
   <summary>Click here to have the full named command </summary>
                                                        
 ```bash
-python3 FULL_PATH/exe_predict.py --model_name MODEL_NAME
+python3 FULL_PATH/exe_predict.py 
 ```
 </details>
 
-Replace `MODEL_NAME` with the desired model's name from the list obtained in the previous step.
+The script will automatically use the model in the 'model' folder. 
 
 Once this command is run, the script will process the images in `input_nnUNet_folder` using the selected model. After some time, the `output_nnUNet_predict` directory will have the predicted masks. These masks will retain exaclty the original image's name.
 
