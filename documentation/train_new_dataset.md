@@ -21,19 +21,14 @@ To begin, simply execute the `exe_train.py` script. When executed, the script un
   
   Additionally, a JSON file is generated. This file captures specific information that users specify during the command-line execution. All of these elements (folders and files) are neatly placed within the `raw_nnUnet` directory.
 
-- **Preprocessing Stage**: The nnUNet model takes the lead here. The data first undergoes a `2d`  preprocessing. Only after this phase is completed does it move on to the more intensive `3d_fullres` preprocessing and `3d_lowres`.
-
+- **Preprocessing Stage**: The nnUNet model takes the lead here. The data undergoes a `3d_fullres`
+  
 - **Training Stage**: At this point, the script scouts for available GPUs. Once it identifies an available unit, it immediately begin the training on that GPU. 
   - **Important Note**: In cases where no GPUs are available, the script halts the training process. As a result, data gets deleted, and users will need to restart the process once a GPU becomes available.
 
 A word of caution: Timing is pivotal. If the script runs out of the designated time before completing the preprocessing, it stops abruptly. In such cases, all data is purged. Therefore, users must ensure that they allocate sufficient time for the process to run its course.
 
-Upon the successful completion of training—whether it reaches the predetermined epoch number or hits the time cap—the results are saved in the `output_nnUNet_train` folder. Inside this folder, users will discover:
+Upon the successful completion of training—whether it reaches the predetermined epoch number or hits the time cap—the results are saved in the `output_nnUNet_train` folder. Within this directory, users will find a file named after the dataset. This file contains only the essential files required to use the model for predictions.
 
-- `final_checkpoint`: This file contains the last saved state of the trained model and the associated weights .
-- `best_checkpoint`: This represents the model's best performance point during training with its weights.
-- A PNG image: This visual aid provides a snapshot of various significant training metrics.
-
-During the process, any residual data will be removed to release space. Rest assured, everything users require will be neatly packaged in the `output_nnUNet_folder` at the end of the process.
-Also, it's important to note that the nnUNet folders are locked against modifications to guarantee smooth progression through all steps.
+It's important to note that the nnUNet folders are locked against modifications to guarantee smooth progression through all steps.
 
