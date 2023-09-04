@@ -37,17 +37,7 @@ Where:
 
 ## 2. Prediction Dataset Structure:
 
-For prediction, the image can be copied directly in the `input_nnUNet_predict`
+For predictions, simply copy the image directly into the `input_nnUNet_predict` directory.
 
-or structure your dataset like:
-
-```bash
-YOUR_DATASET/
-    ├── PATIENT_NUMBER
-    │   ├── test.nii.gz
-    ├── PATIENT2_NUMBER
-    │   ├── test.nii.gz
-    ... 
-```
 
 Ensure you follow this format to be able to run the script and nnUNet correctly.
