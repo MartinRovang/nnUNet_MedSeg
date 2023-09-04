@@ -26,9 +26,7 @@ python3 FULL_PATH/exe_predict.py
 ```
 </details>
 
-The script will automatically use the model in the 'model' folder. 
-
-Once this command is run, the script will process the images in `input_nnUNet_folder` using the selected model. After some time, the `output_nnUNet_predict` directory will have the predicted masks. These masks will retain exaclty the original image's name.
+The script will automatically use the model located in the `model` directory. nnUNet will then compute an average from various predictions, having previously chosen the best models from the folds. Users can find the resulting image mask they wanted in the `output_nnUNet_prediction` folder.
 
 ### Visualizing Results
 
