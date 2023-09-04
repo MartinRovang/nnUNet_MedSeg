@@ -1,19 +1,23 @@
-# Pretraining Using an Existing Model
+# Pretraining with an Existing Model
 
-Leverage the strength of an existing model by fine-tuning it through pretraining. 
+Optimize your results by fine-tuning an existing model through pretraining.
 
-## Initiating Pretraining 
+## Starting the Pretraining 
 
-Ensure you have a dataset formatted correctly, as per the [dataset guide](dataset_format.md). Place this dataset in the 'input_nnUNet_train' folder. When you execute a specific command, the framework will recognize your intention to pretrain a model.
+Before initiating, ensure your dataset aligns with the format outlined in the [dataset guide](dataset_format.md).
 
-### Command for Pretraining
+1. **Setup**: Place your dataset into the `input_nnUNet_pretrain` directory.
+2. **Execution**: Run the command below to begin the pretraining process:
 
 ```bash
-python3 FULL_PATH/exe_train.py PRETRAINING -t TIME 
+python3 FULL_PATH/exe_pretrain.py -t TIME 
 ```
 
-Executing the above will prompt a list of models eligible for pretraining. Simply select your desired model, and the pretraining will initiate with your new data and your specified duration.
+## Working with a Pretrained Model
+When leveraging a pretrained model:
 
-**Note**: It's essential that parameters like 'image_type', 'image_extension', and 'labels' align with those of the model you intend to use. This have to be done before the pretraining.
-
-Upon completion, the pretrained model's results will be stored in the 'output_nnUNet_train' directory, replacing any prior models with the newly optimized version.
+Use a dataset merging both the original data (from the existing model) and your new contributions.
+On command execution, the script:
+Places data in appropriate folders and initiates preprocessing.
+Modifies the splits_final JSON file, defining different folds (balances of training to validation). This ensures data consistency and quality, with new data being added and sorted appropriately.
+Training proceeds using the adjusted split and the weights from the model being fine-tuned. Like initial training, each fold trains individually, leading to 5 distinct models—one per fold.
