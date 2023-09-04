@@ -37,7 +37,9 @@ Where:
 
 ## 2. Prediction Dataset Structure:
 
-For prediction, structure your dataset like:
+For prediction, the image can be copied directly in the `input_nnUNet_predict`
+
+or structure your dataset like:
 
 ```bash
 YOUR_DATASET/
