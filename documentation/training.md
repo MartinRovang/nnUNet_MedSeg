@@ -40,6 +40,8 @@ python3 FULL_PATH/exe_train.py --dataset_name DATASET_NAME --label LABEL --image
 - `TIME`: Desired duration of all the process in MINUTE. (**default value**: 60)
 
 **Note 1**: Default values are in place for all parameters and will be employed if a user omits specific arguments. Training caps at 10,000 epochs. However, to ensure efficiency, a time parameter is introduced. If time elapses during an ongoing epoch, the epoch will finalize before terminating the training process.
+
+
 **Note 2**: The specifics regarding the FOLDS that nnUNet will train on haven't been explicitly mentioned. This is intentional. The data will be divided into 5 separate folds, and each fold will be trained individually, resulting in 5 distinct models. nnUNet will determine which models are the most relevant and employ them to achieve optimal prediction accuracy.
 
 
