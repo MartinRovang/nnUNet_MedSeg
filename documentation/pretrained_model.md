@@ -21,5 +21,6 @@ When leveraging a pretrained model:
 On command execution, the script:
 
 - Places data in appropriate folders and initiates preprocessing.
-- Modifies the splits_final JSON file, defining different folds (balances of training to validation). This ensures data consistency and quality, with new data being added and sorted appropriately.
-- Training proceeds using the adjusted split and the weights from the model being fine-tuned. Like initial training, each fold trains individually, leading to 5 distinct models—one per fold.
+- Modifies the `splits_final.json`, defining different folds (balances of training to validation). This ensures data consistency and quality, with new data being added and sorted appropriately.
+- Shares the same training plan from the previous dataset for the new one.
+- Training proceeds using the weights from the model being fine-tuned. Like initial training, each fold trains individually, leading to 5 distinct models—one per fold.
