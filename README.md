@@ -29,10 +29,15 @@ The pretrain directory mirrors other directories. Users should place their new d
 
 **Note 1**: The new dataset must include the same images as the original model, supplemented with completely new data.
 
+⚠️ ##Important Note
+Please be aware that in every mentioned directory, all data will be completly deleted. Only the files in the output sections of each directory will be retained.
+
 
 ## Docker Image Directory
 
 This directory contains a Docker image designed to consolidate the necessary software tools for this script. Once loaded onto the user's system, it streamlines the entire process.
+
+
 
 
 <img src="pictures/folders_train_predictV3.drawio.png" width="500"  />
