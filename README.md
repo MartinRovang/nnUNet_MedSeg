@@ -24,8 +24,8 @@ The training directory houses various subfolders essential for the seamless exec
 The prediction directory mirrors the training one. Users should place a **copy** of his test picture in `Input_nnUNet_predict`. Once `exe_predict.py` is run, the resultant predicted image will be in `Output_nnUNet_predict`. The `model` folder is where the users have to copy the model located in the output of the training folder. 
 
 ## Pretrain Directory
-The pretrain directory mirrors other directories. Users should place their new dataset in `input_pretrain` to fine-tune an existing model. Like in the prediction directory, the `model` folder is where the users have to copy the model located in the output of the training folder. 
-
+The pretrain directory mirrors other directories. Users should place their new dataset* in `input_pretrain` to fine-tune an existing model. Like in the prediction directory, the `model` folder is where the users have to copy the model located in the output of the training folder. 
+**Note 1**: The new dataset must include the same images as the original model, supplemented with completely new data.
 
 
 ## Docker Image Directory
