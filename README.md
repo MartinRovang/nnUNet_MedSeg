@@ -15,6 +15,10 @@ The Toolkit comprises 3 main components:
 3. **<u><b>Pretraining Files</b></u>**: For a more robust model, users should fine-tune an existing model by adding more data."
 4. **<u><b>Docker Image</b></u>**: Contains essential software that the script relies upon, including Pytorch version 2.0.0, CUDA version 11.8, and the nnUNet model.
 
+## Docker Image Directory
+
+This directory contains a Docker image designed to consolidate the necessary software tools for this script. Once loaded onto the user's system, it streamlines the entire process.
+
 ## Training Directory
 
 The training directory houses various subfolders essential for the seamless execution of the nnUNet. The structure is visualized in the provided image. Users should mainly interact with `Input_nnUNet_train`, `exe_train.py`, and its output counterpart. It's pivotal to **copy** datasets into `Input_nnUNet_train`, as the script will format the data for the nnUNet.
@@ -33,9 +37,6 @@ The pretrain directory mirrors other directories. Users should place their new d
 Please be aware that in every mentioned directory, all data will be completly deleted. Only the files in the output sections of each directory will be retained.
 
 
-## Docker Image Directory
-
-This directory contains a Docker image designed to consolidate the necessary software tools for this script. Once loaded onto the user's system, it streamlines the entire process.
 
 
 
