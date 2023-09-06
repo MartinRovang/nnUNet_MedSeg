@@ -39,7 +39,7 @@ python3 FULL_PATH/exe_train.py --dataset_name DATASET_NAME --label LABEL --image
 - `IMAGE_TYPE`: Biomedical image variety (e.g., CT, MRI). (**default value**:CT)
 - `TIME`: Desired duration of all the process in MINUTE. (**default value**: 60)
 - `FOLD`: Specifies the number of folds desired for training. **Note**: The input time set by the user is applicable for just ONE fold!
- (**default value**: 1)
+ (**default value**: 0) 
 
 **Note 1**: Default values are in place for all parameters and will be employed if a user omits specific arguments. Training caps at 10,000 epochs. However, to ensure efficiency, a time parameter is introduced. If time elapses during an ongoing epoch, the epoch will finalize before terminating the training process.
 
