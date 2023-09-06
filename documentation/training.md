@@ -52,9 +52,7 @@ Users can dictate how their dataset is split, determining which images are used 
   - Images labeled as "validation" will be reserved for validation.
   - This gives you full autonomy over your dataset's division.
 
-- **Note1**: Only the first fold will be precisely separated into training and validation sets. If you opt to train with multiple folds, subsequent splits between training and validation will be randomized.
-
-- **Note2**: If no images are designated for validation, the script will use all available data for both training and validation purposes.
+- **Note**: If no images are designated for validation, the script will use all available data for both training and validation purposes.
 
 
 
