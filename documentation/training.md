@@ -42,6 +42,19 @@ python3 FULL_PATH/exe_train.py --dataset_name DATASET_NAME --label LABEL --image
 **Note 1**: Default values are in place for all parameters and will be employed if a user omits specific arguments. Training caps at 10,000 epochs. However, to ensure efficiency, a time parameter is introduced. If time elapses during an ongoing epoch, the epoch will finalize before terminating the training process.
 
 
-**Note 2**: The specifics regarding the FOLDS that nnUNet will train on haven't been explicitly mentioned. This is intentional. The data will be divided into 5 separate folds, and each fold will be trained individually, resulting in 5 distinct models. nnUNet will determine which models are the most relevant and employ them to achieve optimal prediction accuracy.
+## FOLDS
+
+Users can dictate how their dataset is split, determining which images are used for training versus validation. 
+
+- If you've structured your dataset as outlined in [dataset_format](dataset_format.md):
+  - Images labeled as "train" will be allocated to the training set.
+  - Images labeled as "validation" will be reserved for validation.
+  - This gives you full autonomy over your dataset's division.
+
+- **Note1**: Only the first fold will be precisely separated into training and validation sets. If you opt to train with multiple folds, subsequent splits between training and validation will be randomized.
+
+- **Note2**If no images are designated for validation, the script will use all available data for both training and validation purposes.
+
+
 
 
