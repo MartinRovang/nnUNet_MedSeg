@@ -22,14 +22,14 @@ Users will primarily engage with the `Input_nnUNet_train`, `exe_train.py`, and i
 To correctly deploy `exe_train.py`, use the following command:
 
 ```bash
-python3 FULL_PATH/exe_train.py -d DATASET_NAME -l LABEL -i IMAGE_TYPE -t TIME -f FOLD
+python3 FULL_PATH/exe_train.py -d DATASET_NAME -l LABEL -i IMAGE_TYPE -t TIME 
 ```
 
 <details>
   <summary>Click here to have the full named command </summary>
 
 ```bash
-python3 FULL_PATH/exe_train.py --dataset_name DATASET_NAME --label LABEL --image_type IMAGE_TYPE --time TIME --fold FOLD
+python3 FULL_PATH/exe_train.py --dataset_name DATASET_NAME --label LABEL --image_type IMAGE_TYPE --time TIME 
 ```
 </details>
 
@@ -38,8 +38,7 @@ python3 FULL_PATH/exe_train.py --dataset_name DATASET_NAME --label LABEL --image
 - `LABEL`: Desired segmentation label (e.g., TUMOR). (**default value**: TUMOR)
 - `IMAGE_TYPE`: Biomedical image variety (e.g., CT, MRI). (**default value**:CT)
 - `TIME`: Desired duration of all the process in MINUTE. (**default value**: 60)
-- `FOLD`: Specifies the number of folds desired for training. **Note**: The input time set by the user is applicable for just ONE fold!
- (**default value**: 0) 
+
 
 **Note 1**: Default values are in place for all parameters and will be employed if a user omits specific arguments. Training caps at 10,000 epochs. However, to ensure efficiency, a time parameter is introduced. If time elapses during an ongoing epoch, the epoch will finalize before terminating the training process.
 
@@ -56,7 +55,8 @@ Users can dictate how their dataset is split, determining which images are used 
 - **Note1**: Only the first fold will be precisely separated into training and validation sets. If you opt to train with multiple folds, subsequent splits between training and validation will be randomized.
 
 - **Note2**: If no images are designated for validation, the script will use all available data for both training and validation purposes.
-- **Note3**: Training with all five folds is distinct from using "fold all". Opting for five folds results in five distinct models, each arising from a unique training-validation split (similar logic applies to other fold numbers). On the other hand, "fold all" means using all data for both training and validation within a single model.
+
+
 
 
 
