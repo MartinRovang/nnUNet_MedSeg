@@ -23,13 +23,19 @@ This directory contains a Docker image designed to consolidate the necessary sof
 
 The training directory houses various subfolders essential for the seamless execution of the nnUNet. The structure is visualized in the provided image. Users should mainly interact with `Input_nnUNet_train`, `exe_train.py`, and its output counterpart. It's pivotal to **copy** datasets into `Input_nnUNet_train`, as the script will format the data for the nnUNet.
 
+
+<img src="pictures/" width="500"  />
+
 ## Prediction Directory
 
 The prediction directory mirrors the training one. Users should place a **copy** of his test picture in `Input_nnUNet_predict`. Once `exe_predict.py` is run, the resultant predicted image will be in `Output_nnUNet_predict`. The `model` folder is where the users have to copy the model located in the output of the training folder. 
 
+<img src="pictures/" width="500"  />
+
+
 ## Pretrain Directory
 The pretrain directory mirrors other directories. Users should place their new dataset* in `input_pretrain` to fine-tune an existing model. Like in the prediction directory, the `model` folder is where the users have to copy the model located in the output of the training folder. 
-
+<img src="pictures/" width="500"  />
 
 **Note 1**: The new dataset must include the same images as the original model, supplemented with completely new data.
 
@@ -41,7 +47,7 @@ Please be aware that in every mentioned directory, all data will be completly de
 
 
 
-<img src="pictures/folders_train_predictV3.drawio.png" width="500"  />
+
 
 ---
 
