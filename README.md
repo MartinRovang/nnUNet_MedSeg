@@ -61,7 +61,7 @@ Please be aware that in every mentioned directory, all data will be completly de
 - [Unraveling Model Predictions](documentation/predictive_segmentation.md)
 
 ## Go the Extra Mile! 🚀
-- [Leverage Pretrained Powerhouses](documentation/pretrained_model.md)
+- [Leverage transfer learning Powerhouses](documentation/transfer_learning.md)
 
 
 ---
