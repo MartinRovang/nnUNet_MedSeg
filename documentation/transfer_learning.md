@@ -6,7 +6,7 @@ Harness the capabilities of an existing model by employing transfer learning.
 
 Firstly, ensure your dataset is formatted as described in the [dataset guide](dataset_format.md).
 
-1. **Setup**: Deposit your dataset in the `input_nnUNet_transfer` directory.
+1. **Setup**: Deposit your dataset in the `input_nnUNet_pretrain` directory.
 2. **Execution**: Use the following command to kickstart the transfer learning process:
 
 ```bash
