@@ -21,6 +21,6 @@ When leveraging a pretrained model:
 On command execution, the script:
 
 - Places data in appropriate folders and initiates preprocessing.
-- Add the new images into the right sets: training or validation like in the [training part](training.md#FOLD)
+- Add the new images into the right sets: training or validation like in the [training part](training.md#FOLDS)
 - Shares the same training plan from the previous dataset for the new one.
   
