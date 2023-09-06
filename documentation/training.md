@@ -11,7 +11,7 @@ To ensure the optimal utilization of the `nnUNet_medseg` program and prevent dat
 3 primary use-cases can be achieved with this program:
 
 1. [New Dataset Training](train_new_dataset.md): Train from scratch using an entirely new dataset. (Most common use-case)
-2. [Leveraging Pre-trained Models](pretrained_model.md): Make use of an existing pre-trained model.
+2. [Use transfer learning](transfer_learning.md): Make use of an existing model and fine tune it.
 
 ### User Interaction
 
