@@ -55,7 +55,9 @@ Users can dictate how their dataset is split, determining which images are used 
 
 - **Note1**: Only the first fold will be precisely separated into training and validation sets. If you opt to train with multiple folds, subsequent splits between training and validation will be randomized.
 
-- **Note2**If no images are designated for validation, the script will use all available data for both training and validation purposes.
+- **Note2**: If no images are designated for validation, the script will use all available data for both training and validation purposes.
+- **Note3**: Training with all five folds is distinct from using "fold all". Opting for five folds results in five distinct models, each arising from a unique training-validation split (similar logic applies to other fold numbers). On the other hand, "fold all" means using all data for both training and validation within a single model.
+
 
 
 
