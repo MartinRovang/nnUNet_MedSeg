@@ -1,26 +1,27 @@
-# Transfer Learning
+# Transfer Learning with nnUNet
 
-Optimize your results by fine-tuning an existing model through pretraining.
+Harness the capabilities of an existing model by employing transfer learning.
 
-## Starting the Pretraining 
+## Initiating Transfer Learning 
 
-Before initiating, ensure your dataset aligns with the format outlined in the [dataset guide](dataset_format.md).
+Firstly, ensure your dataset is formatted as described in the [dataset guide](dataset_format.md).
 
-1. **Setup**: Place your dataset into the `input_nnUNet_pretrain` directory.
-2. **Execution**: Run the command below to begin the pretraining process:
+1. **Setup**: Deposit your dataset in the `input_nnUNet_transfer` directory.
+2. **Execution**: Use the following command to kickstart the transfer learning process:
 
 ```bash
-python3 FULL_PATH/exe_pretrain.py -t TIME -f FOLD
+python3 FULL_PATH/exe_transfer.py -t TIME -f FOLD
 ```
 
-## Working with a Pretrained Model
-When leveraging a pretrained model:
+## Engaging with a Transfer-Learned Model
 
-- Use a dataset merging both the original data (from the existing model) and your new contributions.
+When tapping into a model refined via transfer learning:
 
-On command execution, the script:
+- Merge your new data with the original dataset from the extant model.
 
-- Places data in appropriate folders and initiates preprocessing.
-- Sorts the new images in their respective categories: either training or validation. Ensure they align with the format in the [training section](training.md#FOLDS).
-- Shares the same training plan from the previous dataset for the new one.
-- Begin the training based on the desired number of folds. 
+Upon running the command, the script:
+
+- Properly locates the data and sets off the preprocessing.
+- Segregates the fresh images into their rightful categories, be it training or validation. Cross-check with the specifications in the [training section](training.md#FOLDS).
+- Inherits the training blueprint from the antecedent dataset for the current one.
+- Initiates the training procedure in line with the specified fold count.
