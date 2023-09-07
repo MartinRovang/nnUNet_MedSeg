@@ -41,7 +41,6 @@ Please be aware that in every mentioned directory, all data will be completly de
 <p align="center">
 <img src="pictures/folders_train_predictVfinal2.drawio.png" width="500"  >
 </p>
----
 
 
 ## Let's Get Started! 🌟
