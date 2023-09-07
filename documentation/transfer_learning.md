@@ -17,7 +17,7 @@ python3 FULL_PATH/exe_pretrain.py -t TIME
 
 When tapping into a model refined via transfer learning:
 
-- Merge your new data with the original dataset from the extant model.
+- Merge your new data with the original dataset from the existing model.
 
 Upon running the command, the script:
 
