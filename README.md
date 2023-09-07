@@ -47,9 +47,9 @@ Please be aware that in every mentioned directory, all data will be completly de
 
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img src="pictures/diagrammetrain.png" alt="Train folder" width="200px" style="margin: 0 10px;">
-  <img src="pictures/Diagrammepredict.png" alt="Predict folder" width="200px" style="margin: 0 10px;">
-  <img src="pictures/Diagrammepretrain.png" alt="Transfer Learning folder" width="200px" style="margin: 0 10px;">
+  <div style="margin: 0 10px;"><img src="pictures/diagrammetrain.png" alt="Train folder" width="200px"></div>
+  <div style="margin: 0 10px;"><img src="pictures/Diagrammepredict.png" alt="Predict folder" width="200px"></div>
+  <div style="margin: 0 10px;"><img src="pictures/Diagrammepretrain.png" alt="Transfer Learning folder" width="200px"></div>
 </p>
 
 
