@@ -46,6 +46,11 @@ The Transfer Leaerning directory mirrors other directories. Users should place t
 Please be aware that in every mentioned directory, all data will be completly deleted. Only the files in the output sections of each directory will be retained.
 
 
+<p align="center">
+  <img src="pictures/diagrammetrain.png" alt="Train folder" width="auto" height="auto">
+  <img src="pictures/Diagrammepredict.png" alt="Predict folder" width="auto" height="auto">
+  <img src="pictures/Diagrammepretrain.png" alt="Transfer Learning folder" width="auto" height="auto">
+</p>
 
 
 
