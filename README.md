@@ -35,12 +35,12 @@ The prediction directory mirrors the training one. Users should place a **copy**
 
 
 ## Transfer Leaerning Directory 
-The Transfer Leaerning directory mirrors other directories. Users should place their new dataset* in `input_pretrain` to fine-tune an existing model. Like in the prediction directory, the `model` folder is where the users have to copy the model located in the output of the training folder. 
+The Transfer Leaerning directory mirrors other directories. Users should place their new dataset[^1] in `input_pretrain` to fine-tune an existing model. Like in the prediction directory, the `model` folder is where the users have to copy the model located in the output of the training folder. 
 
 
 <img src="pictures/Diagrammepretrain.png" width="200"  />
 
-**Note 1**: The new dataset must include the same images as the original model, supplemented with completely new data.
+[^1]: The new dataset must include the same images as the original model, supplemented with completely new data.
 
 # Important Note ⚠️ 
 Please be aware that in every mentioned directory, all data will be completly deleted. Only the files in the output sections of each directory will be retained.
