@@ -46,11 +46,12 @@ The Transfer Leaerning directory mirrors other directories. Users should place t
 Please be aware that in every mentioned directory, all data will be completly deleted. Only the files in the output sections of each directory will be retained.
 
 
-<p align="center">
-  <img src="pictures/diagrammetrain.png" alt="Train folder" width="200" height="300" style="display: inline; margin: 0 10px;">
-  <img src="pictures/Diagrammepredict.png" alt="Predict folder" width="200" height="400" style="display: inline; margin: 0 10px;">
-  <img src="pictures/Diagrammepretrain.png" alt="Transfer Learning folder" width="300" height="200" style="display: inline; margin: 0 10px;">
+<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
+  <img src="pictures/diagrammetrain.png" alt="Train folder" width="auto" height="auto" style="margin: 0 10px;">
+  <img src="pictures/Diagrammepredict.png" alt="Predict folder" width="auto" height="auto" style="margin: 0 10px;">
+  <img src="pictures/Diagrammepretrain.png" alt="Transfer Learning folder" width="auto" height="auto" style="margin: 0 10px;">
 </p>
+
 
 
 
