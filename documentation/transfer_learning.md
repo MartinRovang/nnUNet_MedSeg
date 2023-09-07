@@ -22,6 +22,6 @@ When tapping into a model refined via transfer learning:
 Upon running the command, the script:
 
 - Properly locates the data and sets off the preprocessing.
-- Segregates the fresh images into their rightful categories, be it training or validation. Cross-check with the specifications in the [training section](training.md#FOLDS).
-- Inherits the training blueprint from the antecedent dataset for the current one.
-- Initiates the training procedure in line with the specified fold count.
+- Splits the new images into their rightful categories, be it training or validation. Cross-check with the specifications in the [training section](training.md#FOLDS).
+- Uses the same plans as the previous dataset to have the same topology.
+  
