@@ -35,7 +35,7 @@ The prediction directory mirrors the training one. Users should place a **copy**
 
 
 ## Transfer Leaerning Directory 
-The Transfer Leaerning directory mirrors other directories. Users should place their new dataset* in `input_TF` to fine-tune an existing model. Like in the prediction directory, the `model` folder is where the users have to copy the model located in the output of the training folder. 
+The Transfer Leaerning directory mirrors other directories. Users should place their new dataset* in `input_pretrain` to fine-tune an existing model. Like in the prediction directory, the `model` folder is where the users have to copy the model located in the output of the training folder. 
 
 
 <img src="pictures/Diagrammepretrain.png" width="200"  />
@@ -44,20 +44,6 @@ The Transfer Leaerning directory mirrors other directories. Users should place t
 
 # Important Note ⚠️ 
 Please be aware that in every mentioned directory, all data will be completly deleted. Only the files in the output sections of each directory will be retained.
-
-
-<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img src="pictures/diagrammetrain.png" alt="Train folder" width="200px" style="margin: 0 10px;">
-  <img src="pictures/Diagrammepredict.png" alt="Predict folder" width="200px" style="margin: 0 10px;">
-  <img src="pictures/Diagrammepretrain.png" alt="Transfer Learning folder" width="200px" style="margin: 0 10px;">
-</p>
-
-
-
-
-
-
-
 
 
 ---
@@ -70,7 +56,6 @@ Please be aware that in every mentioned directory, all data will be completly de
 
 ## Go the Extra Mile! 🚀
 - [Leverage transfer learning Powerhouses](documentation/transfer_learning.md)
-
 
 ---
 
