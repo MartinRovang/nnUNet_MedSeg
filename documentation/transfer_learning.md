@@ -10,7 +10,7 @@ Firstly, ensure your dataset is formatted as described in the [dataset guide](da
 2. **Execution**: Use the following command to kickstart the transfer learning process:
 
 ```bash
-python3 FULL_PATH/exe_transfer.py -t TIME -f FOLD
+python3 FULL_PATH/exe_pretrain.py -t TIME 
 ```
 
 ## Engaging with a Transfer-Learned Model
