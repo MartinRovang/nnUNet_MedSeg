@@ -12,7 +12,7 @@ The Toolkit comprises 3 main components:
 
 1. **<u><b>Training Files</b></u>**: Set up your dataset by copying it into `Input_nnUNet_train` and then execute `exe_train.py` to obtain the output file.
 2. **<u><b>Prediction Files</b></u>**: After training, users can perform predictions. Copy a test dataset into `Input_nnUNet_predict` to generate prediction images.
-3. **<u><b>Pretraining Files</b></u>**: For a more robust model, users should fine-tune an existing model by adding more data."
+3. **<u><b>Transfer Learning Files</b></u>**: For a more robust model, users should fine-tune an existing model by adding more data."
 4. **<u><b>Docker Image</b></u>**: Contains essential software that the script relies upon, including Pytorch version 2.0.0, CUDA version 11.8, and the nnUNet model.
 
 ## Docker Image Directory
@@ -26,7 +26,7 @@ The training directory houses various subfolders essential for the seamless exec
 
 <img src="pictures/diagrammetrain.png" width="200"  />
 
-## Prediction Directory (TRANSFER LERNING)
+## Prediction Directory 
 
 The prediction directory mirrors the training one. Users should place a **copy** of his test picture in `Input_nnUNet_predict`. Once `exe_predict.py` is run, the resultant predicted image will be in `Output_nnUNet_predict`. The `model` folder is where the users have to copy the model located in the output of the training folder. 
 
@@ -34,8 +34,8 @@ The prediction directory mirrors the training one. Users should place a **copy**
 <img src="pictures/Diagrammepredict.png" width="200"  />
 
 
-## Pretrain Directory
-The pretrain directory mirrors other directories. Users should place their new dataset* in `input_pretrain` to fine-tune an existing model. Like in the prediction directory, the `model` folder is where the users have to copy the model located in the output of the training folder. 
+## Transfer Leaerning Directory 
+The Transfer Leaerning directory mirrors other directories. Users should place their new dataset* in `input_TF` to fine-tune an existing model. Like in the prediction directory, the `model` folder is where the users have to copy the model located in the output of the training folder. 
 
 
 <img src="pictures/Diagrammepretrain.png" width="200"  />
