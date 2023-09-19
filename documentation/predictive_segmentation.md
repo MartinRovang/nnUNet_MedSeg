@@ -18,13 +18,7 @@ To start the prediction process with a specific model, use:
 ```bash
 python3 FULL_PATH/exe_predict.py 
 ```
-<details>
-  <summary>Click here to have the full named command </summary>
-                                                       
-```bash
-python3 FULL_PATH/exe_predict.py 
-```
-</details>
+
 
 The script will automatically use the model located in the `model` directory. Users can find the resulting image mask they wanted in the `output_nnUNet_prediction` folder.
 
