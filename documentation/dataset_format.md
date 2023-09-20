@@ -37,7 +37,7 @@ Where:
 
 ## 2. Prediction Dataset Structure:
 
-For predictions, simply copy the image directly into the `input_nnUNet_predict` directory.
+For predictions, simply copy the image with this name `001_0000.nii.gz` directly into the `input_nnUNet_predict` directory.
 
 
 Ensure you follow this format to be able to run the script and nnUNet correctly.
