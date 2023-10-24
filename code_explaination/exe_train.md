@@ -73,7 +73,7 @@ Ensure you have the following libraries installed:
 - **Parameters**: None.
 - **Returns**: 
   - A dictionary with channel names.
-  - 
+
 <details>
   <summary>Click to view the code for the function `get_channel_names`</summary>
 
