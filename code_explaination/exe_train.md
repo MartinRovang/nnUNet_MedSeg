@@ -33,9 +33,8 @@ Ensure you have the following libraries installed:
 
 ### Functions
 
-----
-#### Main Execution 
-----
+**#### Main Execution**
+
 
 
 
