@@ -1,7 +1,7 @@
 
 ## Documentation for `exe_train.py`
 
------
+----------
 
 ### Overview
 
@@ -14,7 +14,7 @@ The `exe_train.py` script is designed for processing and preparing NIfTI (.nii) 
 - [Main Execution](#main-execution)
 - [Usage](#usage)
 
------
+----------
 
 ### Prerequisites
 
@@ -29,7 +29,7 @@ Ensure you have the following libraries installed:
 - SimpleITK
 - delete_all (other python script in the same project)
 
------
+----------
 
 ### Functions
 
@@ -114,7 +114,7 @@ else:
 
 
 
--
+--
 
 
 
