@@ -380,8 +380,12 @@ Ensure you have the following libraries installed:
 To execute the `exe_pretrain.py` script, use the following command:
 
 ```
-python exe_pretrain.py [arguments]
+python exe_pretrain.py [-l LABEL] [-i IMAGE_TYPE] [-t TIME]
 ```
 
-Replace `[arguments]` with any required or optional arguments for the script.
+Arguments:
+- `-l` or `--label`: Label to be used (default: "TUMOR").
+- `-i` or `--image_type`: Type of image (default: "CT").
+- `-t` or `--time`: Time parameter (default: 60).
+
 
