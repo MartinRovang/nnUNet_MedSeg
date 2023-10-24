@@ -47,11 +47,12 @@ Ensure you have the following libraries installed:
 
 #### check_for_train_or_validate
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Checks if there's a file named 'train.*' or 'validate.*' in the directory.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Checks if there's a file named 'train' or 'validate' in the directory.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
-  - `directory`: Path or directory
-  - `directory`: Description to be added.
-- ![Returns](https://img.shields.io/badge/-Returns-red) Returns a value.
+  - `directory`(str): Path to the directory to check.
+- ![Returns](https://img.shields.io/badge/-Returns-red)
+   - `True` if training or validation images are found.
+  - `False` otherwise.
 
 <details>
   <summary>Click to view the code for the function `check_for_train_or_validate`</summary>
