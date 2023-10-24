@@ -33,7 +33,10 @@ Ensure you have the following libraries installed:
 
 ### Functions
 
-### Main Execution
+<font color="blue">Texte en bleu</font>
+
+
+#### Main Execution
 
 1. Definition of all the different needed path for the process and the global variables
 2. Checks if the input folder exists
