@@ -149,13 +149,14 @@ On executing the script:
 To run the script, use:
 
 ```bash
-python exe_train.py -d [DATASET_NAME] -l [LABEL] -i [IMAGE_TYPE] -t [TIME]
+python exe_train.py -d [DATASET_NAME] -l [LABEL] -i [IMAGE_TYPE] -t [TIME] -c [CONFIGURATION]
 ```
 
 - `-d, --dataset_name`: Name of the dataset (default: "No_Name").
 - `-l, --label`: Label number to retain in the image.
 - `-i, --image_type`: Type of the image (default: "CT").
 - `-t, --time`: Time parameter (default: 60).
+- `-c, --configuration`: Configuration (default: 3d_fullres).
 
 ---
 
