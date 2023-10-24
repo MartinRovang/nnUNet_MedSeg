@@ -240,6 +240,9 @@ def create_structure():
 </details>
 
 
+##  
+
+
 :point_right: Check_for_train_or_validate(directory) :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green): Determines if the provided directory contains images designated for training or validation.
@@ -264,6 +267,9 @@ def check_for_train_or_validate(directory):
 </details>
 
 
+##  
+
+
 :point_right: Process_image(input_filename_path, output_filename_path) :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green): Processes a NIfTI image to retain only a specified label.
@@ -284,6 +290,9 @@ def process_image(input_filename_path, output_filename_path):
 ```
 
 </details>
+
+
+##  
 
 
 :point_right: Create_split_json(train_list, val_list) :point_left:
@@ -311,6 +320,9 @@ def create_split_json(train_list, val_list): #Note that here, as we use only fol
 </details>
 
 
+##  
+
+
 :point_right: Get_channel_names( ) :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green): Fetches channel names required for the nnUNet JSON structure.
@@ -334,6 +346,8 @@ def get_channel_names():
 
 </details>
 
+
+##  
 
 
 #### get_labels
@@ -363,6 +377,7 @@ def get_labels():
 </details>
 
 
+##  
 
 
 #### delete_all_folders
