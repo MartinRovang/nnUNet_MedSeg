@@ -47,8 +47,9 @@ Ensure you have the following libraries installed:
 ```python
 def function_name():
     # code here
-</details>
+
 ```
+</details>
 
 #### process_image
 
