@@ -32,7 +32,8 @@ Ensure you have the following libraries installed:
 ---
 
 ### Functions
-+ Texte en vert
+
+![Parameters](https://img.shields.io/badge/Parameters-%20-blue)
 
 #### Main Execution
 
