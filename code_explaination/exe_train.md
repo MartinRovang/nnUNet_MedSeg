@@ -305,7 +305,7 @@ def process_image(input_filename_path, output_filename_path):
 
 
 <details>
-  <summary><strong>Click to view the code for the function `create_split_json`</strong><</summary>
+  <summary><strong>Click to view the code for the function `create_split_json`</strong></summary>
 
 ```python
 # Code for the function create_split_json
@@ -331,7 +331,7 @@ def create_split_json(train_list, val_list): #Note that here, as we use only fol
   - A dictionary with channel names.
 
 <details>
-  <summary>Click to view the code for the function `get_channel_names`</summary>
+  <summary><strong>Click to view the code for the function `get_channel_names`</strong></summary>
 
 ```python
 # Code for the function get_channel_names
@@ -349,8 +349,7 @@ def get_channel_names():
 
 ##  
 
-
-#### get_labels
+:point_right: Get_labels( ) :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green): Retrieves labels for the nnUNet JSON structure.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
@@ -358,7 +357,7 @@ def get_channel_names():
   - A dictionary with label names and their corresponding indices.
 
 <details>
-  <summary>Click to view the code for the function `get_labels`</summary>
+  <summary><strong>Click to view the code for the function `get_labels`</strong></summary>
 
 ```python
 # Code for the function get_labels
@@ -378,6 +377,70 @@ def get_labels():
 
 
 ##  
+
+
+:point_right: Launch_docker( ) :point_left:
+
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Handles the process of launching the Docker image.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
+- ![Returns](https://img.shields.io/badge/-Returns-red): None.
+
+<details>
+  <summary><strong>Click to view the code for the function `launch_docker`</strong></summary>
+
+```python
+# Code for the function launch_docker
+#Function for the terminal to do 
+def launch_docker(dataset_full_name):
+    global container_id
+    dataset_id = dataset_full_name.split("_")[0].replace("Dataset", "")
+    
+    load_image() #Loading the docker image 
+    
+    # Execute the Docker command
+    docker_command = f"docker run -d -it --gpus all --shm-size 8g -v {dataset_train_path}:/app/nnUNet {image_docker} bash"
+    container_id = subprocess.check_output(docker_command, shell=True).decode().strip()
+
+    # Execute other commands
+    #gpu_number = gpu_available()[0] #Take the first available gpu on the list, Uncomment if you want to use this function 
+    gpu_number = 0 #In this case, we use the GPU 0 for the training and the GPU for the inference
+    
+    global_commands = f"CUDA_VISIBLE_DEVICES={gpu_number} nnUNetv2_plan_and_preprocess -d {dataset_id} -c {configuration_model} --verify_dataset_integrity"
+    exec_in_docker(global_commands) #Execute the command inside the docker container
+
+    #Calcul the remaining time to see if there is still enough time to actually starts the training
+    timer_training_end = tm.time()
+    elapsed_time_training = (timer_training_end - timer_training_start) / 60 
+    total_training_time = time_input - elapsed_time_training
+    print(f"Time left for the training: {total_training_time}")
+
+    if total_training_time <= 0: #In the case we don't have enough time, we stop the process
+        print("Not enough time was given to train the model, try with a higher time")
+        delete_all.launch_docker(delete_input_folder=True) #Clean all the folder to make sure we don't have any problems for the next training
+        sys.exit()
+
+    else: #If enough time, start the actual training of the nnUNet
+        print("Starting training...")
+        if not fold_all_value:
+            global_commands = f"echo {int(total_training_time)} | CUDA_VISIBLE_DEVICES={gpu_number} nnUNetv2_train {dataset_id} {configuration_model} 0 --npz" #See nnUNet document to have a better understanding but we need the GPU, dataset_id, configuration of the model and the value for the fold 
+            exec_in_docker(global_commands) 
+
+        elif fold_all_value:
+            global_commands = f"echo {int(total_training_time)} | CUDA_VISIBLE_DEVICES={gpu_number} nnUNetv2_train {dataset_id} {configuration_model} all --npz"  
+            exec_in_docker(global_commands) 
+
+        """ ---------------UNCOMMENT IF MANY FOLDS AND SEE THE BEST CONFIGURATION-------------------------
+        global_commands = f"nnUNetv2_find_best_configuration {dataset_id} -c {configuration_model}"    
+        exec_in_docker(global_commands) 
+        """
+
+    #Once the training is done we can close the docker container and move all the results inside the right folder
+    remove_docker_container(container_id)
+    move_result()
+    delete_all.launch_docker(delete_input_folder=True) #Everything is deleted at the end to clean up
+```
+
+</details>
 
 
 #### delete_all_folders
@@ -474,20 +537,7 @@ def get_labels():
 
 </details>
 
-#### launch_docker
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): Handles the process of launching the Docker image.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
-- ![Returns](https://img.shields.io/badge/-Returns-red): None.
-
-<details>
-  <summary>Click to view the code for the function `launch_docker`</summary>
-
-```python
-# Code for the function launch_docker
-```
-
-</details>
 
 ---
 
