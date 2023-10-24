@@ -33,7 +33,10 @@ Ensure you have the following libraries installed:
 
 ### Functions
 
-:point_right: #### Main Execution :point_left:
+----
+#### Main Execution 
+----
+
 
 
 1. Definition of all the different needed path for the process and the global variables
