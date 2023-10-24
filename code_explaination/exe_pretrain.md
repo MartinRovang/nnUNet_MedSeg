@@ -5,13 +5,13 @@
 
 ### Overview
 
-The `exe_train.py` script is designed for processing and preparing NIfTI (.nii) images for the nnUNet framework, a renowned deep learning framework for biomedical image segmentation.
+The `exe_pretrain.py` script is designed for finetune an existing model to make it more accurate.
 
 ### Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Functions](#functions)
 - [Main Execution](#main-execution)
+- [Functions](#functions)
 - [Usage](#usage)
 
 ---
@@ -30,6 +30,16 @@ Ensure you have the following libraries installed:
 - time
 - datetime
 - random
+
+---
+
+### Main execution
+
+
+
+
+
+
 
 ---
 
