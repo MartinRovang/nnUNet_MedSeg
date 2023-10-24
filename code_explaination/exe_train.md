@@ -76,20 +76,6 @@ Ensure you have the following libraries installed:
   - `val_list` (list): List of validation images.
 - **Returns**: None. The JSON structure is saved in the appropriate directory.
 
----
-
-### Main Execution
-
-On executing the script:
-
-1. It checks if the input folder exists.
-2. If found, it processes the command-line arguments and initiates the image preparation procedure.
-3. If not, it exits, indicating the missing folder.
-
----
-
-
-
 
 #### get_labels
 
@@ -150,6 +136,18 @@ On executing the script:
 - **Purpose**: Handles the process of launching the Docker image.
 - **Parameters**: None.
 - **Returns**: None.
+
+---
+
+### Main Execution
+
+On executing the script:
+
+1. It checks if the input folder exists.
+2. If found, it processes the command-line arguments and initiates the image preparation procedure.
+3. If not, it exits, indicating the missing folder.
+
+---
 
 ### Usage
 
