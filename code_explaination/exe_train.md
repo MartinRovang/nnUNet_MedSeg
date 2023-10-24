@@ -34,10 +34,10 @@ Ensure you have the following libraries installed:
 
 #### check_for_train_or_validate
 
-- **Purpose**: Determines if the provided directory contains images designated for training or validation.
-- **Parameters**: 
+- <span style="color:green">**Purpose**</span>: Determines if the provided directory contains images designated for training or validation.
+- <span style="color:blue">**Parameters**</span>: 
   - `directory` (str): Path to the directory to check.
-- **Returns**: 
+- <span style="color:red">**Returns**</span>: 
   - `True` if training or validation images are found.
   - `False` otherwise.
 
@@ -52,11 +52,11 @@ Ensure you have the following libraries installed:
 
 #### process_image
 
-- **Purpose**: Processes a NIfTI image to retain only a specified label.
-- **Parameters**: 
+- <span style="color:green">**Purpose**</span>: Processes a NIfTI image to retain only a specified label.
+- <span style="color:blue">**Parameters**</span>: 
   - `input_filename_path` (str): Path to the input image.
   - `output_filename_path` (str): Path to save the processed image.
-- **Returns**: None. The processed image is saved to the specified path.
+- <span style="color:red">**Returns**</span>: None. The processed image is saved to the specified path.
 
 <details>
   <summary>Click to view the code for the function `process_image`</summary>
@@ -69,9 +69,9 @@ Ensure you have the following libraries installed:
 
 #### get_channel_names
 
-- **Purpose**: Fetches channel names required for the nnUNet JSON structure.
-- **Parameters**: None.
-- **Returns**: 
+- <span style="color:green">**Purpose**</span>: Fetches channel names required for the nnUNet JSON structure.
+- <span style="color:blue">**Parameters**</span>: None.
+- <span style="color:red">**Returns**</span>: 
   - A dictionary with channel names.
 
 <details>
@@ -85,9 +85,9 @@ Ensure you have the following libraries installed:
 
 #### get_labels
 
-- **Purpose**: Retrieves labels for the nnUNet JSON structure.
-- **Parameters**: None.
-- **Returns**: 
+- <span style="color:green">**Purpose**</span>: Retrieves labels for the nnUNet JSON structure.
+- <span style="color:blue">**Parameters**</span>: None.
+- <span style="color:red">**Returns**</span>: 
   - A dictionary with label names and their corresponding indices.
 
 <details>
@@ -101,11 +101,11 @@ Ensure you have the following libraries installed:
 
 #### create_split_json
 
-- **Purpose**: Constructs a JSON structure denoting training and validation splits.
-- **Parameters**: 
+- <span style="color:green">**Purpose**</span>: Constructs a JSON structure denoting training and validation splits.
+- <span style="color:blue">**Parameters**</span>: 
   - `train_list` (list): List of training images.
   - `val_list` (list): List of validation images.
-- **Returns**: None. The JSON structure is saved in the appropriate directory.
+- <span style="color:red">**Returns**</span>: None. The JSON structure is saved in the appropriate directory.
 
 
 <details>
@@ -119,9 +119,9 @@ Ensure you have the following libraries installed:
 
 #### get_labels
 
-- **Purpose**: This function appears to be designed to retrieve labels for the nnUNet JSON structure. Based on the provided label number, it generates a dictionary of labels.
-- **Parameters**: None.
-- **Returns**: A dictionary with label names and their corresponding indices.
+- <span style="color:green">**Purpose**</span>: This function appears to be designed to retrieve labels for the nnUNet JSON structure. Based on the provided label number, it generates a dictionary of labels.
+- <span style="color:blue">**Parameters**</span>: None.
+- <span style="color:red">**Returns**</span>: A dictionary with label names and their corresponding indices.
 
 <details>
   <summary>Click to view the code for the function `get_labels`</summary>
@@ -134,9 +134,9 @@ Ensure you have the following libraries installed:
 
 #### delete_all_folders
 
-- **Purpose**: Based on the function name, it is likely used to delete all folders in a specified path or perform some cleanup.
-- **Parameters**: None.
-- **Returns**: None.
+- <span style="color:green">**Purpose**</span>: Based on the function name, it is likely used to delete all folders in a specified path or perform some cleanup.
+- <span style="color:blue">**Parameters**</span>: None.
+- <span style="color:red">**Returns**</span>: None.
 
 <details>
   <summary>Click to view the code for the function `delete_all_folders`</summary>
@@ -149,9 +149,9 @@ Ensure you have the following libraries installed:
 
 #### remove_docker_container
 
-- **Purpose**: This function is intended to remove a Docker container based on a specified name or ID.
-- **Parameters**: None.
-- **Returns**: None.
+- <span style="color:green">**Purpose**</span>: This function is intended to remove a Docker container based on a specified name or ID.
+- <span style="color:blue">**Parameters**</span>: None.
+- <span style="color:red">**Returns**</span>: None.
 
 <details>
   <summary>Click to view the code for the function `remove_docker_container`</summary>
@@ -164,9 +164,9 @@ Ensure you have the following libraries installed:
 
 #### create_structure
 
-- **Purpose**: Creating the main folder directory (with the right name).
-- **Parameters**: None.
-- **Returns**: None.
+- <span style="color:green">**Purpose**</span>: Creating the main folder directory (with the right name).
+- <span style="color:blue">**Parameters**</span>: None.
+- <span style="color:red">**Returns**</span>: None.
 
 <details>
   <summary>Click to view the code for the function `create_structure`</summary>
@@ -179,9 +179,9 @@ Ensure you have the following libraries installed:
 
 #### move_result
 
-- **Purpose**: Handles the process of moving results.
-- **Parameters**: None.
-- **Returns**: None.
+- <span style="color:green">**Purpose**</span>: Handles the process of moving results.
+- <span style="color:blue">**Parameters**</span>: None.
+- <span style="color:red">**Returns**</span>: None.
 
 <details>
   <summary>Click to view the code for the function `move_result`</summary>
@@ -194,9 +194,9 @@ Ensure you have the following libraries installed:
 
 #### clean_all
 
-- **Purpose**: Load the docker image.
-- **Parameters**: None.
-- **Returns**: None.
+- <span style="color:green">**Purpose**</span>: Load the docker image.
+- <span style="color:blue">**Parameters**</span>: None.
+- <span style="color:red">**Returns**</span>: None.
 
 <details>
   <summary>Click to view the code for the function `clean_all`</summary>
@@ -209,9 +209,9 @@ Ensure you have the following libraries installed:
 
 #### gpu_available
 
-- **Purpose**: Decodes the output and splits it into lines to determine GPU availability.
-- **Parameters**: None.
-- **Returns**: Boolean indicating if GPU is available.
+- <span style="color:green">**Purpose**</span>: Decodes the output and splits it into lines to determine GPU availability.
+- <span style="color:blue">**Parameters**</span>: None.
+- <span style="color:red">**Returns**</span>: Boolean indicating if GPU is available.
 
 <details>
   <summary>Click to view the code for the function `gpu_available`</summary>
@@ -224,9 +224,9 @@ Ensure you have the following libraries installed:
 
 #### exec_in_docker
 
-- **Purpose**: Executes commands within the Docker container.
-- **Parameters**: None.
-- **Returns**: None.
+- <span style="color:green">**Purpose**</span>: Executes commands within the Docker container.
+- <span style="color:blue">**Parameters**</span>: None.
+- <span style="color:red">**Returns**</span>: None.
 
 <details>
   <summary>Click to view the code for the function `exec_in_docker`</summary>
@@ -239,9 +239,9 @@ Ensure you have the following libraries installed:
 
 #### load_image
 
-- **Purpose**: Function for the terminal to do image loading.
-- **Parameters**: None.
-- **Returns**: None.
+- <span style="color:green">**Purpose**</span>: Function for the terminal to do image loading.
+- <span style="color:blue">**Parameters**</span>: None.
+- <span style="color:red">**Returns**</span>: None.
 
 <details>
   <summary>Click to view the code for the function `load_image`</summary>
@@ -254,9 +254,9 @@ Ensure you have the following libraries installed:
 
 #### launch_docker
 
-- **Purpose**: Handles the process of launching the Docker image.
-- **Parameters**: None.
-- **Returns**: None.
+- <span style="color:green">**Purpose**</span>: Handles the process of launching the Docker image.
+- <span style="color:blue">**Parameters**</span>: None.
+- <span style="color:red">**Returns**</span>: None.
 
 <details>
   <summary>Click to view the code for the function `launch_docker`</summary>
