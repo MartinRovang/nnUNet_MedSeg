@@ -42,10 +42,10 @@ Ensure you have the following libraries installed:
   - `False` otherwise.
  
 <details>
-  <summary>Cliquez pour afficher le code de la fonction `function_name`</summary>
+  <summary>Click to view the code for the function `check_for_train_or_validate`</summary>
 
 ```python
-def function_name():
+def check_for_train_or_validate():
     # code here
 
 ```
