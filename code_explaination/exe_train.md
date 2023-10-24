@@ -11,11 +11,6 @@ The `exe_train.py` script is designed for processing and preparing NIfTI (.nii) 
 
 - [Prerequisites](#prerequisites)
 - [Functions](#functions)
-  - [check_for_train_or_validate](#check_for_train_or_validate)
-  - [process_image](#process_image)
-  - [get_channel_names](#get_channel_names)
-  - [get_labels](#get_labels)
-  - [create_split_json](#create_split_json)
 - [Main Execution](#main-execution)
 - [Usage](#usage)
 
