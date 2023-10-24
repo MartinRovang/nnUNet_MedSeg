@@ -88,6 +88,69 @@ On executing the script:
 
 ---
 
+
+
+
+#### get_labels
+
+- **Purpose**: This function appears to be designed to retrieve labels for the nnUNet JSON structure. Based on the provided label number, it generates a dictionary of labels.
+- **Parameters**: None.
+- **Returns**: A dictionary with label names and their corresponding indices.
+
+#### delete_all_folders
+
+- **Purpose**: Based on the function name, it is likely used to delete all folders in a specified path or perform some cleanup.
+- **Parameters**: None.
+- **Returns**: None.
+
+#### remove_docker_container
+
+- **Purpose**: This function is intended to remove a Docker container based on a specified name or ID.
+- **Parameters**: None.
+- **Returns**: None.
+
+#### create_structure
+
+- **Purpose**: Creating the main folder directory (with the right name).
+- **Parameters**: None.
+- **Returns**: None.
+
+#### move_result
+
+- **Purpose**: Handles the process of moving results.
+- **Parameters**: None.
+- **Returns**: None.
+
+#### clean_all
+
+- **Purpose**: Load the docker image.
+- **Parameters**: None.
+- **Returns**: None.
+
+#### gpu_available
+
+- **Purpose**: Decodes the output and splits it into lines to determine GPU availability.
+- **Parameters**: None.
+- **Returns**: Boolean indicating if GPU is available.
+
+#### exec_in_docker
+
+- **Purpose**: Executes commands within the Docker container.
+- **Parameters**: None.
+- **Returns**: None.
+
+#### load_image
+
+- **Purpose**: Function for the terminal to do image loading.
+- **Parameters**: None.
+- **Returns**: None.
+
+#### launch_docker
+
+- **Purpose**: Handles the process of launching the Docker image.
+- **Parameters**: None.
+- **Returns**: None.
+
 ### Usage
 
 To run the script, use:
@@ -106,4 +169,3 @@ python exe_train.py -d [DATASET_NAME] -l [LABEL] -i [IMAGE_TYPE] -t [TIME]
 **Note**: This documentation serves as a starting point. Depending on additional functionalities or changes in the code, the documentation might require updates.
 
 ---
-
