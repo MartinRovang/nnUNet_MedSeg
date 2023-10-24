@@ -40,7 +40,7 @@ Ensure you have the following libraries installed:
 3. If found, 3 different cases might happen:
   - 0 folder inside the input folder. This means that the data is not placed correctly, the code stops.
   - More than 1 folder is found. This means that there are too many folder. launch_docker function from delete_all.py is called to clean up and then stops the code.
-  - Only 1 folder is found. The code continues correctly, all the global variables are definied in respect with the values of the flags of the command line.
+  - Only 1 folder is found. The code continues correctly, all the global variables are definied in respect with the values of the flags of the command line. Finally, the function "create_structure" is called to start the process.
 4. If not found, it exits, indicating the missing folder
 
 <details>
