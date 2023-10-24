@@ -44,7 +44,7 @@ Ensure you have the following libraries installed:
 4. If not found, it exits, indicating the missing folder
 
 <details>
-  <summary> **Click to view the code for the main execution** </summary>
+  **<summary> Click to view the code for the main execution</summary>**
 
 ```python
 #MAIN PATHS 
