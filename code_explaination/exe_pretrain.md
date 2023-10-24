@@ -33,7 +33,7 @@ Ensure you have the following libraries installed:
 
 ---
 
-### Main execution
+:point_right: Main Execution :point_left:
 
 
 
@@ -45,7 +45,7 @@ Ensure you have the following libraries installed:
 
 ### Functions
 
-#### check_for_train_or_validate
+:point_right:check_for_train_or_validate:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Checks if there's a file named 'train' or 'validate' in the directory.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
@@ -63,7 +63,7 @@ Ensure you have the following libraries installed:
 
 </details>
 
-#### process_image
+:point_right:process_image:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Processes a NIfTI image to retain only a specified label.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
@@ -80,7 +80,7 @@ Ensure you have the following libraries installed:
 
 </details>
 
-#### get_model_name
+:point_right:get_model_name:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Get model name which has to be finetuned.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
@@ -96,7 +96,7 @@ Ensure you have the following libraries installed:
 
 </details>
 
-#### get_fold_value
+:point_right:get_fold_value:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Check the fold value.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
@@ -112,7 +112,7 @@ Ensure you have the following libraries installed:
 
 </details>
 
-#### remove_folder_model
+:point_right:remove_folder_model:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Delete the content of `model` folder 
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
@@ -128,7 +128,7 @@ Ensure you have the following libraries installed:
 
 </details>
 
-#### list_new_data
+:point_right:list_new_data:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Sort the data into 'val' and 'train', keep previous data in the original split
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
@@ -144,7 +144,7 @@ Ensure you have the following libraries installed:
 
 </details>
 
-#### new_json
+:point_right:new_json:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Write a new JSON file with the right split
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
@@ -160,7 +160,7 @@ Ensure you have the following libraries installed:
 
 </details>
 
-#### copy_json_file
+:point_right:copy_json_file:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Copy the JSON file in the right folder
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
@@ -176,7 +176,7 @@ Ensure you have the following libraries installed:
 
 </details>
 
-#### create_split_json
+:point_right:create_split_json:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates and sets up necessary components for the create_split_json.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
@@ -191,7 +191,7 @@ Ensure you have the following libraries installed:
 
 </details>
 
-#### get_channel_names
+:point_right:get_channel_names:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green): Fetches channel names required for the nnUNet JSON structure.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
@@ -207,7 +207,7 @@ Ensure you have the following libraries installed:
 
 </details>
 
-#### get_labels
+:point_right:get_labels:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green): Retrieves labels for the nnUNet JSON structure.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
@@ -223,7 +223,7 @@ Ensure you have the following libraries installed:
 
 </details>
 
-#### create_structure
+:point_right:create_structure:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green): Creating the main folder directory (with the right name).
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
@@ -245,7 +245,7 @@ Ensure you have the following libraries installed:
 
 </details>
 
-#### move_result
+:point_right:move_result:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
@@ -261,7 +261,7 @@ Ensure you have the following libraries installed:
 
 </details>
 
-#### delete_all_folders
+:point_right:delete_all_folders:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
@@ -280,7 +280,7 @@ Ensure you have the following libraries installed:
 
 </details>
 
-#### remove_docker_container
+remove_docker_container:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
