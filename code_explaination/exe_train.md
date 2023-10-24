@@ -1,0 +1,109 @@
+
+## Documentation for `exe_train.py`
+
+---
+
+### Overview
+
+The `exe_train.py` script is designed for processing and preparing NIfTI (.nii) images for the nnUNet framework, a renowned deep learning framework for biomedical image segmentation.
+
+### Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Functions](#functions)
+  - [check_for_train_or_validate](#check_for_train_or_validate)
+  - [process_image](#process_image)
+  - [get_channel_names](#get_channel_names)
+  - [get_labels](#get_labels)
+  - [create_split_json](#create_split_json)
+- [Main Execution](#main-execution)
+- [Usage](#usage)
+
+---
+
+### Prerequisites
+
+Ensure you have the following libraries installed:
+
+- os
+- json
+- shutil
+- sys
+- subprocess
+- argparse
+- SimpleITK
+
+---
+
+### Functions
+
+#### check_for_train_or_validate
+
+- **Purpose**: Determines if the provided directory contains images designated for training or validation.
+- **Parameters**: 
+  - `directory` (str): Path to the directory to check.
+- **Returns**: 
+  - `True` if training or validation images are found.
+  - `False` otherwise.
+
+#### process_image
+
+- **Purpose**: Processes a NIfTI image to retain only a specified label.
+- **Parameters**: 
+  - `input_filename_path` (str): Path to the input image.
+  - `output_filename_path` (str): Path to save the processed image.
+- **Returns**: None. The processed image is saved to the specified path.
+
+#### get_channel_names
+
+- **Purpose**: Fetches channel names required for the nnUNet JSON structure.
+- **Parameters**: None.
+- **Returns**: 
+  - A dictionary with channel names.
+
+#### get_labels
+
+- **Purpose**: Retrieves labels for the nnUNet JSON structure.
+- **Parameters**: None.
+- **Returns**: 
+  - A dictionary with label names and their corresponding indices.
+
+#### create_split_json
+
+- **Purpose**: Constructs a JSON structure denoting training and validation splits.
+- **Parameters**: 
+  - `train_list` (list): List of training images.
+  - `val_list` (list): List of validation images.
+- **Returns**: None. The JSON structure is saved in the appropriate directory.
+
+---
+
+### Main Execution
+
+On executing the script:
+
+1. It checks if the input folder exists.
+2. If found, it processes the command-line arguments and initiates the image preparation procedure.
+3. If not, it exits, indicating the missing folder.
+
+---
+
+### Usage
+
+To run the script, use:
+
+```bash
+python exe_train.py -d [DATASET_NAME] -l [LABEL] -i [IMAGE_TYPE] -t [TIME]
+```
+
+- `-d, --dataset_name`: Name of the dataset (default: "No_Name").
+- `-l, --label`: Label number to retain in the image.
+- `-i, --image_type`: Type of the image (default: "CT").
+- `-t, --time`: Time parameter (default: 60).
+
+---
+
+**Note**: This documentation serves as a starting point. Depending on additional functionalities or changes in the code, the documentation might require updates.
+
+---
+
