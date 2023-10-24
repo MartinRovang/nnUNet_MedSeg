@@ -37,11 +37,11 @@ Ensure you have the following libraries installed:
 
 #### check_for_train_or_validate
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Checks if there's a file named 'train.*' or 'validate.*' in the directory.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+  - `directory`: Path or directory
+  - `directory`: Description to be added.
+- ![Returns](https://img.shields.io/badge/-Returns-red): Returns a value.
 
 <details>
   <summary>Click to view the code for the function `check_for_train_or_validate`</summary>
@@ -54,11 +54,13 @@ Ensure you have the following libraries installed:
 
 #### process_image
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Description to be added.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+  - `input_filename_path`: Path or directory
+  - `output_filename_path`: Path or directory
+  - `input_filename_path`: Description to be added.
+  - `output_filename_path`: Description to be added.
+- ![Returns](https://img.shields.io/badge/-Returns-red): Doesn't return a value.
 
 <details>
   <summary>Click to view the code for the function `process_image`</summary>
@@ -71,11 +73,9 @@ Ensure you have the following libraries installed:
 
 #### get_model_name
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Retrieves necessary components related to get_model_name.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+- ![Returns](https://img.shields.io/badge/-Returns-red): Doesn't return a value.
 
 <details>
   <summary>Click to view the code for the function `get_model_name`</summary>
@@ -88,11 +88,9 @@ Ensure you have the following libraries installed:
 
 #### get_fold_value
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Retrieves necessary components related to get_fold_value.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+- ![Returns](https://img.shields.io/badge/-Returns-red): Returns a value.
 
 <details>
   <summary>Click to view the code for the function `get_fold_value`</summary>
@@ -105,11 +103,10 @@ Ensure you have the following libraries installed:
 
 #### remove_folder_model
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Description to be added.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+  - None
+- ![Returns](https://img.shields.io/badge/-Returns-red): Doesn't return a value.
 
 <details>
   <summary>Click to view the code for the function `remove_folder_model`</summary>
@@ -122,11 +119,11 @@ Ensure you have the following libraries installed:
 
 #### list_new_data
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Description to be added.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+  - `data_tot_path`: Path or directory
+  - `data_tot_path`: Description to be added.
+- ![Returns](https://img.shields.io/badge/-Returns-red): Doesn't return a value.
 
 <details>
   <summary>Click to view the code for the function `list_new_data`</summary>
@@ -139,11 +136,10 @@ Ensure you have the following libraries installed:
 
 #### new_json
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Description to be added.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+  - None
+- ![Returns](https://img.shields.io/badge/-Returns-red): Doesn't return a value.
 
 <details>
   <summary>Click to view the code for the function `new_json`</summary>
@@ -156,11 +152,10 @@ Ensure you have the following libraries installed:
 
 #### copy_json_file
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Description to be added.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+  - None
+- ![Returns](https://img.shields.io/badge/-Returns-red): Doesn't return a value.
 
 <details>
   <summary>Click to view the code for the function `copy_json_file`</summary>
@@ -173,11 +168,9 @@ Ensure you have the following libraries installed:
 
 #### create_split_json
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Creates and sets up necessary components for the create_split_json.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+- ![Returns](https://img.shields.io/badge/-Returns-red): Doesn't return a value.
 
 <details>
   <summary>Click to view the code for the function `create_split_json`</summary>
@@ -190,11 +183,9 @@ Ensure you have the following libraries installed:
 
 #### get_channel_names
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Retrieves necessary components related to get_channel_names.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+- ![Returns](https://img.shields.io/badge/-Returns-red): Returns a value.
 
 <details>
   <summary>Click to view the code for the function `get_channel_names`</summary>
@@ -207,11 +198,9 @@ Ensure you have the following libraries installed:
 
 #### get_labels
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Retrieves necessary components related to get_labels.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+- ![Returns](https://img.shields.io/badge/-Returns-red): Returns a value.
 
 <details>
   <summary>Click to view the code for the function `get_labels`</summary>
@@ -224,11 +213,9 @@ Ensure you have the following libraries installed:
 
 #### create_structure
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Creates and sets up necessary components for the create_structure.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+- ![Returns](https://img.shields.io/badge/-Returns-red): Returns a value.
 
 <details>
   <summary>Click to view the code for the function `create_structure`</summary>
@@ -241,11 +228,10 @@ Ensure you have the following libraries installed:
 
 #### move_result
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Description to be added.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+  - None
+- ![Returns](https://img.shields.io/badge/-Returns-red): Doesn't return a value.
 
 <details>
   <summary>Click to view the code for the function `move_result`</summary>
@@ -258,11 +244,13 @@ Ensure you have the following libraries installed:
 
 #### delete_all_folders
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Description to be added.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+  - `path_folder`: Path or directory
+  - `docker_path`: Path or directory
+  - `path_folder`: Description to be added.
+  - `docker_path`: Description to be added.
+- ![Returns](https://img.shields.io/badge/-Returns-red): Doesn't return a value.
 
 <details>
   <summary>Click to view the code for the function `delete_all_folders`</summary>
@@ -275,11 +263,11 @@ Ensure you have the following libraries installed:
 
 #### remove_docker_container
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Description to be added.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+  - `id`: Variable
+  - `id`: Description to be added.
+- ![Returns](https://img.shields.io/badge/-Returns-red): Doesn't return a value.
 
 <details>
   <summary>Click to view the code for the function `remove_docker_container`</summary>
@@ -292,11 +280,10 @@ Ensure you have the following libraries installed:
 
 #### clean_all
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Description to be added.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+  - None
+- ![Returns](https://img.shields.io/badge/-Returns-red): Doesn't return a value.
 
 <details>
   <summary>Click to view the code for the function `clean_all`</summary>
@@ -309,11 +296,10 @@ Ensure you have the following libraries installed:
 
 #### gpu_available
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Description to be added.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+  - None
+- ![Returns](https://img.shields.io/badge/-Returns-red): Returns a value.
 
 <details>
   <summary>Click to view the code for the function `gpu_available`</summary>
@@ -326,11 +312,11 @@ Ensure you have the following libraries installed:
 
 #### exec_in_docker
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Description to be added.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+  - `cmd`: Variable
+  - `cmd`: Description to be added.
+- ![Returns](https://img.shields.io/badge/-Returns-red): Returns a value.
 
 <details>
   <summary>Click to view the code for the function `exec_in_docker`</summary>
@@ -343,11 +329,10 @@ Ensure you have the following libraries installed:
 
 #### creation_checkpoint_folder
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Description to be added.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+  - None
+- ![Returns](https://img.shields.io/badge/-Returns-red): Doesn't return a value.
 
 <details>
   <summary>Click to view the code for the function `creation_checkpoint_folder`</summary>
@@ -360,11 +345,10 @@ Ensure you have the following libraries installed:
 
 #### load_image
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Description to be added.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+  - None
+- ![Returns](https://img.shields.io/badge/-Returns-red): Doesn't return a value.
 
 <details>
   <summary>Click to view the code for the function `load_image`</summary>
@@ -377,11 +361,10 @@ Ensure you have the following libraries installed:
 
 #### launch_docker
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): No description provided.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Description to be added.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - To be determined based on the function.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - To be determined based on the function.
+  - None
+- ![Returns](https://img.shields.io/badge/-Returns-red): Doesn't return a value.
 
 <details>
   <summary>Click to view the code for the function `launch_docker`</summary>
@@ -391,3 +374,14 @@ Ensure you have the following libraries installed:
 ```
 
 </details>
+
+### Usage
+
+To execute the `exe_pretrain.py` script, use the following command:
+
+```
+python exe_pretrain.py [arguments]
+```
+
+Replace `[arguments]` with any required or optional arguments for the script.
+
