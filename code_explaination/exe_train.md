@@ -112,8 +112,9 @@ else:
 ```
 </details>
 
----
----
+<hr style="border-top: 1px dashed #8c8b8b;">
+
+
 
 :point_right: Create_structure( ) :point_left:
 
