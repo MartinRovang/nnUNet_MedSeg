@@ -33,7 +33,8 @@ Ensure you have the following libraries installed:
 
 ### Functions
 
-<font color="blue">Texte en bleu</font>
+<span style="color: red;">Texte en rouge</span>
+
 
 
 #### Main Execution
