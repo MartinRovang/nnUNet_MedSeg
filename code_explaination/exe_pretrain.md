@@ -114,10 +114,10 @@ Ensure you have the following libraries installed:
 
 #### remove_folder_model
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Delete the content of `model` folder 
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-  - None
-- ![Returns](https://img.shields.io/badge/-Returns-red) Doesn't return a value.
+  -  `model_folder_path` (str): path to the `model` folder.
+- ![Returns](https://img.shields.io/badge/-Returns-red) None.
 
 <details>
   <summary>Click to view the code for the function `remove_folder_model`</summary>
@@ -130,11 +130,10 @@ Ensure you have the following libraries installed:
 
 #### list_new_data
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Sort the data into 'val' and 'train', keep previous data in the original split
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
   - `data_tot_path`: Path or directory
-  - `data_tot_path`: Description to be added.
-- ![Returns](https://img.shields.io/badge/-Returns-red) Doesn't return a value.
+- ![Returns](https://img.shields.io/badge/-Returns-red) ?????????????????
 
 <details>
   <summary>Click to view the code for the function `list_new_data`</summary>
@@ -147,10 +146,10 @@ Ensure you have the following libraries installed:
 
 #### new_json
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Write a new JSON file with the right split
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
   - None
-- ![Returns](https://img.shields.io/badge/-Returns-red) Doesn't return a value.
+- ![Returns](https://img.shields.io/badge/-Returns-red) new JSON file.
 
 <details>
   <summary>Click to view the code for the function `new_json`</summary>
@@ -163,10 +162,10 @@ Ensure you have the following libraries installed:
 
 #### copy_json_file
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Copy the JSON file in the right folder
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
   - None
-- ![Returns](https://img.shields.io/badge/-Returns-red) Doesn't return a value.
+- ![Returns](https://img.shields.io/badge/-Returns-red) Copied the JSON file onto splits_final.json
 
 <details>
   <summary>Click to view the code for the function `copy_json_file`</summary>
@@ -194,9 +193,10 @@ Ensure you have the following libraries installed:
 
 #### get_channel_names
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Retrieves necessary components related to get_channel_names.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-- ![Returns](https://img.shields.io/badge/-Returns-red) Returns a value.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Fetches channel names required for the nnUNet JSON structure.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
+- ![Returns](https://img.shields.io/badge/-Returns-red): 
+  - A dictionary with channel names.
 
 <details>
   <summary>Click to view the code for the function `get_channel_names`</summary>
@@ -209,9 +209,10 @@ Ensure you have the following libraries installed:
 
 #### get_labels
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Retrieves necessary components related to get_labels.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-- ![Returns](https://img.shields.io/badge/-Returns-red) Returns a value.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Retrieves labels for the nnUNet JSON structure.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
+- ![Returns](https://img.shields.io/badge/-Returns-red): 
+  - A dictionary with label names and their corresponding indices.
 
 <details>
   <summary>Click to view the code for the function `get_labels`</summary>
@@ -224,9 +225,16 @@ Ensure you have the following libraries installed:
 
 #### create_structure
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates and sets up necessary components for the create_structure.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-- ![Returns](https://img.shields.io/badge/-Returns-red) Returns a value.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Creating the main folder directory (with the right name).
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
+- ![Returns](https://img.shields.io/badge/-Returns-red):
+
+- `@@ pretrain`
+  - `Dataset_Pretrain`
+  - `nUNet raw`
+  - `nnUNet_preprocessed`
+  - `nnUNet results`
+
 
 <details>
   <summary>Click to view the code for the function `create_structure`</summary>
