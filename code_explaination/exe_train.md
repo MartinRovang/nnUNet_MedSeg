@@ -39,10 +39,13 @@ On executing the script:
 1. Definition of all the different needed path for the process and the global variables
 2. Checks if the input folder exists
 3. If found, 3 different cases might happen:
-  - TEST
-  - TEST
-  - TEST
-5. If not, it exits, indicating the missing folder.
+  - 0 folder inside the input folder. This means that the data is not placed correctly, the code stops.
+  - More than 1 folder is found. This means that there are too many folder. Delete_all function (from delete_all.py) is called to clean up and then stops the code.
+  - Only 1 folder is found. The code continues correctly, all the global variables are definied in respect with the values of the flags of the command line.
+4. If not found, it exits, indicating the missing folder
+
+<details>
+  <summary>Click to view the code for the main execution</summary>
 
 ```python
 # Main code
@@ -121,6 +124,9 @@ else:
     print(f"{input_folder_name} not found.")
     sys.exit()
 ```
+</details>
+
+
 
 #### check_for_train_or_validate
 
