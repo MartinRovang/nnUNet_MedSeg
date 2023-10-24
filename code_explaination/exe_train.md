@@ -33,7 +33,8 @@ Ensure you have the following libraries installed:
 
 ### Functions
 
-#### Main Execution
+:point_right: #### Main Execution :point_left:
+
 
 1. Definition of all the different needed path for the process and the global variables
 2. Checks if the input folder exists
