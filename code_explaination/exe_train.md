@@ -296,8 +296,14 @@ def process_image(input_filename_path, output_filename_path):
 
 ```python
 # Code for the function create_split_json
-```
+def create_split_json(train_list, val_list): #Note that here, as we use only fold 0 or fold all, we don't need to specify all the separation in all the other folds. You will need to complete this function in order to randomize the distribution train/validate for each fold
+    data_list = [{"train": train_list, "val": val_list}] #Add all the image named train in the training and all of the validate image in the val
 
+    os.makedirs(os.path.join(nnunet_preprocessed_path, full_dataset_name))
+    json_split_path = os.path.join(nnunet_preprocessed_path, full_dataset_name, "splits_final.json") #Create the split json file
+    with open(json_split_path, 'w') as json_file:
+        json.dump(data_list, json_file, indent=4)
+```
 </details>
 
 
@@ -314,9 +320,18 @@ def process_image(input_filename_path, output_filename_path):
 
 ```python
 # Code for the function get_channel_names
+def get_channel_names():
+    channels = {}
+    num_channels = 1
+    for i in range(num_channels):
+        channel_name = image_type
+        channels[str(i)] = channel_name
+    return channels
 ```
 
 </details>
+
+
 
 #### get_labels
 
@@ -330,26 +345,22 @@ def process_image(input_filename_path, output_filename_path):
 
 ```python
 # Code for the function get_labels
+def get_labels():
+    labels = {}
+    num_labels = label_number + 1  
+    for i in range(num_labels):
+        if i == 0:
+            label_name_fct = "background"
+            labels[label_name_fct] = i
+        else:
+            labels[f"Label {i}"] = i
+    return labels
 ```
 
 </details>
 
 
 
-#### get_labels
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): This function appears to be designed to retrieve labels for the nnUNet JSON structure. Based on the provided label number, it generates a dictionary of labels.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
-- ![Returns](https://img.shields.io/badge/-Returns-red): A dictionary with label names and their corresponding indices.
-
-<details>
-  <summary>Click to view the code for the function `get_labels`</summary>
-
-```python
-# Code for the function get_labels
-```
-
-</details>
 
 #### delete_all_folders
 
@@ -398,20 +409,7 @@ def process_image(input_filename_path, output_filename_path):
 
 </details>
 
-#### clean_all
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): Load the docker image.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
-- ![Returns](https://img.shields.io/badge/-Returns-red): None.
-
-<details>
-  <summary>Click to view the code for the function `clean_all`</summary>
-
-```python
-# Code for the function clean_all
-```
-
-</details>
 
 #### gpu_available
 
