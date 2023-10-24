@@ -245,12 +245,16 @@ Ensure you have the following libraries installed:
 
 </details>
 
-:point_right:move_result:point_left:
+:point_right:move_result():point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-  - None
-- ![Returns](https://img.shields.io/badge/-Returns-red) Doesn't return a value.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Copy all the results needed for the user in the output file
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
+   -`checkpoint_final.pth`
+  - `splits_final.json`
+  - `nnUNetPlans.json`
+  - `info_model.json`
+- ![Returns](https://img.shields.io/badge/-Returns-red)
+  - `output_pretrain`
 
 <details>
   <summary>Click to view the code for the function `move_result`</summary>
@@ -261,15 +265,13 @@ Ensure you have the following libraries installed:
 
 </details>
 
-:point_right:delete_all_folders:point_left:
+:point_right:delete_all_folders(path_folder, docker_path):point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Delete all the useless folders
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-  - `path_folder`
-  - `docker_path`
-  - `path_folder`
-  - `docker_path`
-- ![Returns](https://img.shields.io/badge/-Returns-red) Doesn't return a value.
+  - `path_folder`; path to the folder we want to delete
+  - `docker_path`: path to the docker nnUNet
+- ![Returns](https://img.shields.io/badge/-Returns-red) Free space folders
 
 <details>
   <summary>Click to view the code for the function `delete_all_folders`</summary>
@@ -280,13 +282,12 @@ Ensure you have the following libraries installed:
 
 </details>
 
-remove_docker_container:point_left:
+:point_right:remove_docker_container(id):point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Stop and remove the Docker container
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-  - `id`: Variable
-  - `id`: Description to be added.
-- ![Returns](https://img.shields.io/badge/-Returns-red) Doesn't return a value.
+  - `id`: id of the container
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
   <summary>Click to view the code for the function `remove_docker_container`</summary>
@@ -297,12 +298,12 @@ remove_docker_container:point_left:
 
 </details>
 
-#### clean_all
+:point_right:clean_all():point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Open the container, call the previous function to delete the folders and close the container 
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
   - None
-- ![Returns](https://img.shields.io/badge/-Returns-red) Doesn't return a value.
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
   <summary>Click to view the code for the function `clean_all`</summary>
@@ -313,12 +314,12 @@ remove_docker_container:point_left:
 
 </details>
 
-#### gpu_available
+:point_right:gpu_available():point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Check if GPU available (Use nbr.1)
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-  - None
-- ![Returns](https://img.shields.io/badge/-Returns-red) Returns a value.
+  - Use nvidia-smi
+- ![Returns](https://img.shields.io/badge/-Returns-red) Return a list of the GPU's available
 
 <details>
   <summary>Click to view the code for the function `gpu_available`</summary>
@@ -329,13 +330,12 @@ remove_docker_container:point_left:
 
 </details>
 
-#### exec_in_docker
+:point_right:exec_in_docker(cmd):point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Function that is called when we have to execute a command in the docker
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-  - `cmd`: Variable
-  - `cmd`: Description to be added.
-- ![Returns](https://img.shields.io/badge/-Returns-red) Returns a value.
+  - `cmd`: Command that we wanted to execute
+- ![Returns](https://img.shields.io/badge/-Returns-red) Results of this execution
 
 <details>
   <summary>Click to view the code for the function `exec_in_docker`</summary>
@@ -346,7 +346,7 @@ remove_docker_container:point_left:
 
 </details>
 
-#### creation_checkpoint_folder
+:point_right:creation_checkpoint_folder():point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
@@ -362,7 +362,9 @@ remove_docker_container:point_left:
 
 </details>
 
-#### load_image
+##  
+ 
+:point_right:load_image:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
@@ -378,7 +380,7 @@ remove_docker_container:point_left:
 
 </details>
 
-#### launch_docker
+:point_right:launch_docker:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
@@ -394,7 +396,7 @@ remove_docker_container:point_left:
 
 </details>
 
-### Usage
+:point_right:Usage:point_left:
 
 To execute the `exe_pretrain.py` script, use the following command:
 
