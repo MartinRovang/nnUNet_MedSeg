@@ -112,7 +112,8 @@ else:
 ```
 </details>
 
-<hr style="border-top: 1px dashed #8c8b8b;">
+<hr style="border-top: 1px dotted #8c8b8b;">
+
 
 
 
