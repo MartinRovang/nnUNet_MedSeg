@@ -47,7 +47,6 @@ Ensure you have the following libraries installed:
   <summary>Click to view the code for the main execution</summary>
 
 ```python
-# Main code
 #MAIN PATHS 
 main_path = os.path.dirname(os.path.abspath(__file__)) #Get the parent path of the main folder
 grandparent_main_path = os.path.dirname(main_path)
@@ -60,18 +59,6 @@ nnunet_raw_path = os.path.join(dataset_train_path, "nnUNet_raw")
 nnunet_preprocessed_path =  os.path.join(dataset_train_path, "nnUNet_preprocessed")
 nnunet_result_path =  os.path.join(dataset_train_path, "nnUNet_results")
 delete_all_script_path = os.path.join(grandparent_main_path, "delete_all.py")
-
-
-#PREDICT FOLDER PATHS
-model_predict_path_raw = os.path.join(grandparent_main_path, "predict", "model", "nnUNet_raw") #Path to the model predict raw
-model_predict_path_result = os.path.join(grandparent_main_path, "predict", "model", "nnUNet_results")
-model_predict_path_preprocessed = os.path.join(grandparent_main_path, "predict", "model", "nnUNet_preprocessed")
-
-
-#DOCKER path
-docker_nnunet_raw_path = "/app/nnUNet/train/Dataset_Train/nnUNet_raw"
-docker_nnunet_preprocessed_path = "/app/nnUNet/train/Dataset_Train/nnUNet_preprocessed"
-docker_nnunet_result_path = "/app/nnUNet/train/Dataset_Train/nnUNet_results"
 
 
 #VARIABLES
