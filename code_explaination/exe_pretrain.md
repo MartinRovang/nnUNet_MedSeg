@@ -63,6 +63,8 @@ Ensure you have the following libraries installed:
 
 </details>
 
+##  
+
 :point_right:process_image:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Processes a NIfTI image to retain only a specified label.
@@ -80,6 +82,8 @@ Ensure you have the following libraries installed:
 
 </details>
 
+##  
+
 :point_right:get_model_name:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Get model name which has to be finetuned.
@@ -95,6 +99,8 @@ Ensure you have the following libraries installed:
 ```
 
 </details>
+
+##  
 
 :point_right:get_fold_value:point_left:
 
@@ -112,6 +118,8 @@ Ensure you have the following libraries installed:
 
 </details>
 
+##  
+
 :point_right:remove_folder_model:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Delete the content of `model` folder 
@@ -127,6 +135,8 @@ Ensure you have the following libraries installed:
 ```
 
 </details>
+
+##  
 
 :point_right:list_new_data:point_left:
 
@@ -144,6 +154,8 @@ Ensure you have the following libraries installed:
 
 </details>
 
+##  
+
 :point_right:new_json:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Write a new JSON file with the right split
@@ -159,6 +171,8 @@ Ensure you have the following libraries installed:
 ```
 
 </details>
+
+##  
 
 :point_right:copy_json_file:point_left:
 
@@ -176,6 +190,8 @@ Ensure you have the following libraries installed:
 
 </details>
 
+##  
+
 :point_right:create_split_json:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates and sets up necessary components for the create_split_json.
@@ -190,6 +206,8 @@ Ensure you have the following libraries installed:
 ```
 
 </details>
+
+##  
 
 :point_right:get_channel_names:point_left:
 
@@ -207,6 +225,8 @@ Ensure you have the following libraries installed:
 
 </details>
 
+##  
+
 :point_right:get_labels:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green): Retrieves labels for the nnUNet JSON structure.
@@ -222,6 +242,8 @@ Ensure you have the following libraries installed:
 ```
 
 </details>
+
+##  
 
 :point_right:create_structure:point_left:
 
@@ -245,6 +267,8 @@ Ensure you have the following libraries installed:
 
 </details>
 
+##  
+
 :point_right:move_result():point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Copy all the results needed for the user in the output file
@@ -265,6 +289,8 @@ Ensure you have the following libraries installed:
 
 </details>
 
+##  
+
 :point_right:delete_all_folders(path_folder, docker_path):point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Delete all the useless folders
@@ -282,6 +308,8 @@ Ensure you have the following libraries installed:
 
 </details>
 
+##  
+
 :point_right:remove_docker_container(id):point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Stop and remove the Docker container
@@ -297,6 +325,8 @@ Ensure you have the following libraries installed:
 ```
 
 </details>
+
+##  
 
 :point_right:clean_all():point_left:
 
@@ -314,6 +344,8 @@ Ensure you have the following libraries installed:
 
 </details>
 
+##  
+
 :point_right:gpu_available():point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Check if GPU available (Use nbr.1)
@@ -330,6 +362,8 @@ Ensure you have the following libraries installed:
 
 </details>
 
+##  
+
 :point_right:exec_in_docker(cmd):point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Function that is called when we have to execute a command in the docker
@@ -345,6 +379,8 @@ Ensure you have the following libraries installed:
 ```
 
 </details>
+
+##  
 
 :point_right:creation_checkpoint_folder():point_left:
 
@@ -380,6 +416,8 @@ Ensure you have the following libraries installed:
 
 </details>
 
+##  
+
 :point_right:launch_docker:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
@@ -395,6 +433,8 @@ Ensure you have the following libraries installed:
 ```
 
 </details>
+
+---
 
 :point_right:Usage:point_left:
 
