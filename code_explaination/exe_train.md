@@ -44,7 +44,7 @@ Ensure you have the following libraries installed:
 4. If not found, it exits, indicating the missing folder
 
 <details>
-  <summary>Click to view the code for the main execution</summary>
+  <summary> **Click to view the code for the main execution** </summary>
 
 ```python
 #MAIN PATHS 
@@ -112,14 +112,14 @@ else:
 ```
 </details>
 
-:point_right: Create_structure() :point_left:
+:point_right: Create_structure( ) :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates the main folder directory (with the right name) + all the necessary json files
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
-  <summary>Click to view the code for the function `create_structure`</summary>
+  <summary>**Click to view the code for the function `create_structure`**</summary>
 
 ```python
 def create_structure():
@@ -243,7 +243,7 @@ def create_structure():
   - `False` otherwise.
 
 <details>
-  <summary>Click to view the code for the function `check_for_train_or_validate`</summary>
+  <summary>**Click to view the code for the function `check_for_train_or_validate`**</summary>
 
 ```python
 # Code for the function check_for_train_or_validate
@@ -266,7 +266,7 @@ def check_for_train_or_validate(directory):
 - ![Returns](https://img.shields.io/badge/-Returns-red): None. The processed image is saved to the specified path.
 
 <details>
-  <summary>Click to view the code for the function `process_image`</summary>
+  <summary>**Click to view the code for the function `process_image`**</summary>
 
 ```python
 # Code for the function process_image
@@ -279,7 +279,7 @@ def process_image(input_filename_path, output_filename_path):
 </details>
 
 
-#### create_split_json
+:point_right: Create_split_json(train_list, val_list) :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green): Constructs a JSON structure denoting training and validation splits.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
@@ -289,7 +289,7 @@ def process_image(input_filename_path, output_filename_path):
 
 
 <details>
-  <summary>Click to view the code for the function `create_split_json`</summary>
+  <summary>**Click to view the code for the function `create_split_json`**</summary>
 
 ```python
 # Code for the function create_split_json
@@ -304,8 +304,7 @@ def create_split_json(train_list, val_list): #Note that here, as we use only fol
 </details>
 
 
-
-#### get_channel_names
+:point_right: Get_channel_names( ) :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green): Fetches channel names required for the nnUNet JSON structure.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
