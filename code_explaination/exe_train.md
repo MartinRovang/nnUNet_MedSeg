@@ -33,10 +33,7 @@ Ensure you have the following libraries installed:
 
 ### Functions
 
-**#### Main Execution**
-
-
-
+:point_right: Main Execution :point_left:
 
 1. Definition of all the different needed path for the process and the global variables
 2. Checks if the input folder exists
@@ -115,8 +112,7 @@ else:
 ```
 </details>
 
-
-#### create_structure
+:point_right: Create_structure() :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates the main folder directory (with the right name) + all the necessary json files
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
@@ -237,8 +233,7 @@ def create_structure():
 </details>
 
 
-
-#### check_for_train_or_validate
+:point_right: Check_for_train_or_validate(directory) :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green): Determines if the provided directory contains images designated for training or validation.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
@@ -262,8 +257,7 @@ def check_for_train_or_validate(directory):
 </details>
 
 
-
-#### process_image
+:point_right: Process_image(input_filename_path, output_filename_path) :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green): Processes a NIfTI image to retain only a specified label.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
