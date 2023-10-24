@@ -384,10 +384,12 @@ Ensure you have the following libraries installed:
 
 :point_right:creation_checkpoint_folder():point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Copy of the `model` folder into the `dataset_source_name` folder in `nnunet_result_path`
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-  - None
-- ![Returns](https://img.shields.io/badge/-Returns-red) Doesn't return a value.
+  - `nnunet_result_path`: path to the nnUNet results
+  - `dataset_source_name`: name of the checkpoint folder
+  - `model_folder_path`: path to the `model` folder
+- ![Returns](https://img.shields.io/badge/-Returns-red)
 
 <details>
   <summary>Click to view the code for the function `creation_checkpoint_folder`</summary>
@@ -402,10 +404,10 @@ Ensure you have the following libraries installed:
  
 :point_right:load_image:point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Load the Docker image `nnUNet_timev22`
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-  - None
-- ![Returns](https://img.shields.io/badge/-Returns-red) Doesn't return a value.
+  - `image_docker.tar`: Name of the Docker image 
+- ![Returns](https://img.shields.io/badge/-Returns-red)
 
 <details>
   <summary>Click to view the code for the function `load_image`</summary>
@@ -420,10 +422,17 @@ Ensure you have the following libraries installed:
 
 :point_right:launch_docker:point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green)
+  - Launch the Docker with the Loaded Image
+  - Execute the main part of the script.
+  - Check the time remaining after preprocessing.
+  - Share the plans between the previous and new dataset.
+  - Initiate the transfer learning (referred to as pretraining) using the remaining time.
+
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-  - None
-- ![Returns](https://img.shields.io/badge/-Returns-red) Doesn't return a value.
+  - `grandparent_main_path`: path shared with the docker
+  - time chosed by the user
+- ![Returns](https://img.shields.io/badge/-Returns-red) 
 
 <details>
   <summary>Click to view the code for the function `launch_docker`</summary>
