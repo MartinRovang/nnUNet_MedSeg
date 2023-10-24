@@ -297,11 +297,11 @@ def process_image(input_filename_path, output_filename_path):
 
 :point_right: Create_split_json(train_list, val_list) :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): Constructs a JSON structure denoting training and validation splits.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Constructs a JSON structure denoting training and validation splits
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
-  - `train_list` (list): List of training images.
-  - `val_list` (list): List of validation images.
-- ![Returns](https://img.shields.io/badge/-Returns-red): None. The JSON structure is saved in the appropriate directory.
+  - `train_list` (list): List of training images
+  - `val_list` (list): List of validation images
+- ![Returns](https://img.shields.io/badge/-Returns-red): None. The JSON structure is saved in the appropriate directory
 
 
 <details>
@@ -351,10 +351,10 @@ def get_channel_names():
 
 :point_right: Get_labels( ) :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): Retrieves labels for the nnUNet JSON structure.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - A dictionary with label names and their corresponding indices.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Retrieves labels for the nnUNet JSON structur
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) 
+  - A dictionary with label names and their corresponding indices
 
 <details>
   <summary><strong>Click to view the code for the function `get_labels`</strong></summary>
@@ -381,9 +381,9 @@ def get_labels():
 
 :point_right: Launch_docker( ) :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): Handles the process of launching the Docker image.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
-- ![Returns](https://img.shields.io/badge/-Returns-red): None.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Handles the process of launching the Docker image
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
   <summary><strong>Click to view the code for the function `launch_docker`</strong></summary>
@@ -443,99 +443,179 @@ def launch_docker(dataset_full_name):
 </details>
 
 
-#### delete_all_folders
+##
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): Based on the function name, it is likely used to delete all folders in a specified path or perform some cleanup.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
-- ![Returns](https://img.shields.io/badge/-Returns-red): None.
 
-<details>
-  <summary>Click to view the code for the function `delete_all_folders`</summary>
+:point_right: Load_image( ) :point_left:
 
-```python
-# Code for the function delete_all_folders
-```
-
-</details>
-
-#### remove_docker_container
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): This function is intended to remove a Docker container based on a specified name or ID.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
-- ![Returns](https://img.shields.io/badge/-Returns-red): None.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Function for the terminal to do image loading for the nnUNet model
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
-  <summary>Click to view the code for the function `remove_docker_container`</summary>
-
-```python
-# Code for the function remove_docker_container
-```
-
-</details>
-
-
-
-#### move_result
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): Handles the process of moving results.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
-- ![Returns](https://img.shields.io/badge/-Returns-red): None.
-
-<details>
-  <summary>Click to view the code for the function `move_result`</summary>
-
-```python
-# Code for the function move_result
-```
-
-</details>
-
-
-
-#### gpu_available
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): Decodes the output and splits it into lines to determine GPU availability.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
-- ![Returns](https://img.shields.io/badge/-Returns-red): Boolean indicating if GPU is available.
-
-<details>
-  <summary>Click to view the code for the function `gpu_available`</summary>
-
-```python
-# Code for the function gpu_available
-```
-
-</details>
-
-#### exec_in_docker
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): Executes commands within the Docker container.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
-- ![Returns](https://img.shields.io/badge/-Returns-red): None.
-
-<details>
-  <summary>Click to view the code for the function `exec_in_docker`</summary>
-
-```python
-# Code for the function exec_in_docker
-```
-
-</details>
-
-#### load_image
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): Function for the terminal to do image loading.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
-- ![Returns](https://img.shields.io/badge/-Returns-red): None.
-
-<details>
-  <summary>Click to view the code for the function `load_image`</summary>
+  <summary><strong>Click to view the code for the function `load_image`</strong></summary>
 
 ```python
 # Code for the function load_image
+def load_image():
+    exec_command = f"docker load -i {grandparent_main_path}/{image_docker}.tar"
+    subprocess.call(exec_command, shell=True)
+```
+</details>
+
+
+##
+
+
+:point_right: Gpu_available( ) :point_left:
+
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Decodes the output and splits it into lines to determine GPU availability
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red)
+   - `available_gpus` (list): It is the list of all the available GPUs
+
+<details>
+  <summary><strong>Click to view the code for the function `gpu_available`</strong></summary>
+
+```python
+# Code for the function gpu_available
+def gpu_available():
+    result = subprocess.run(['nvidia-smi', '--query-gpu=index,utilization.gpu', '--format=csv,noheader,nounits'], stdout=subprocess.PIPE)
+    # Decode the output and split it into lines
+    lines = result.stdout.decode('utf-8').strip().split("\n")
+    available_gpus = [] # List to store indices of available GPUs
+
+    for line in lines:
+        index, util = line.split(", ")
+        if int(util) < 10:
+            available_gpus.append(index)
+
+    # Check the number of available GPUs and act accordingly
+    if not available_gpus:
+        print("No GPUs are available, try later.")
+        delete_all.launch_docker(delete_input_folder=True)
+        sys.exit()
+
+    return available_gpus
+```
+</details>
+
+
+##
+
+
+:point_right: Exec_in_docker(cmd) :point_left:
+
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Executes commands within the Docker container
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
+   - `cmd` (str): Command to execute inside the docker container
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
+
+<details>
+  <summary><strong>Click to view the code for the function `exec_in_docker`</strong></summary>
+
+```python
+# Code for the function exec_in_docker
+def exec_in_docker(cmd):
+    exec_command = f"docker exec -i {container_id} bash -c '{cmd}'"
+    result = subprocess.call(exec_command, shell=True)
+    return result
+```
+</details>
+
+
+##
+
+
+:point_right: Move_result( ) :point_left:
+
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Handles the process of moving results
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
+
+<details>
+  <summary><strong>Click to view the code for the function `move_result`</strong></summary>
+
+```python
+# Code for the function move_result
+def move_result():
+    for folder in os.listdir(nnunet_result_path): #For loop inside the result folder of the nnUNet (usually, it is only 1 folder)
+        tot_path = os.path.join(output_folder_path, folder)
+        shutil.copytree(os.path.join(nnunet_result_path, folder), tot_path) #Copy everything to the Output folder
+        new_tot_path = os.path.join(tot_path, f"nnUNetTrainer__nnUNetPlans__{configuration_model}")
+
+        for new_folder in os.listdir(new_tot_path): #For loop inside the output folder, to keep only the needed file
+            path_final = os.path.join(new_tot_path, new_folder)
+            if os.path.isdir(path_final) and new_folder.split("_")[0] == "fold":
+                tot_path_fold = ""
+                if not fold_all_value: #Be careful, if you modify the code to use different fold, you will need to change this!
+                    tot_path_fold = os.path.join(new_tot_path, "fold_0")
+                else:
+                    tot_path_fold = os.path.join(new_tot_path, "fold_all")
+
+                for files in os.listdir(tot_path_fold): #Continung looping inside the results folder (structure of the nnUNet)
+                    if files != "checkpoint_final.pth" and files.split("_")[0] != "training" and files != "progress.png": #We keep only the final weights of the model, the training log and the progress image, all of the other files/folder will be deleted
+                        path_to_check = os.path.join(tot_path_fold, files)
+                        if os.path.isfile(path_to_check):
+                            os.remove(path_to_check)
+                        elif os.path.isdir(path_to_check):
+                            shutil.rmtree(path_to_check)
+
+            elif os.path.isdir(path_final): #We don't need to keep all of the folder that doesn't start with "fold"
+                path_to_del = os.path.join(new_tot_path, new_folder)
+                shutil.rmtree(path_to_del)
+
+        #We need also different files that are located in the preprocessed nnUNet folder (to do the Transfer Learning later)
+        for files in os.listdir(os.path.join(nnunet_preprocessed_path, folder)): #For loop in the nnUNet preprocessed folder
+            if files == "splits_final.json": #We need to keep the splits_final json file
+                shutil.copy2(os.path.join(nnunet_preprocessed_path, folder, files), os.path.join(output_folder_path, folder, files))
+                print("Copy splits_final.json file!")
+
+            elif files == "nnUNetPlans.json": #We need to keep the nnUnetPlans json file
+                shutil.copy2(os.path.join(nnunet_preprocessed_path, folder, files), os.path.join(output_folder_path, folder, files))
+                print("Copy nnUNetPlans.json file!")
+
+        #We need also one fils that is located in the raw nnUNet folder (to do the Transfer Learning later)    
+        for files in os.listdir(dataset_train_path):
+            if files == "info_model.json": #We need to keep the info model json that we created to get some additionnal information about the model
+                shutil.copy2(os.path.join(dataset_train_path, files), os.path.join(output_folder_path, folder, files))
+                os.remove(os.path.join(dataset_train_path, files))
+                print("Copy info_model.json file!")
+
+    print("Model saved and cleaned!")
 ```
 
 </details>
+
+
+
+##
+
+
+:point_right: Remove_docker_container( ) :point_left:
+
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) This function is intended to remove a Docker container based on a specified name or ID
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
+
+<details>
+  <summary><strong>Click to view the code for the function `remove_docker_container`</strong></summary>
+
+```python
+# Code for the function remove_docker_container
+def remove_docker_container(id):
+    global_commands = f"docker stop {id}"
+    subprocess.check_output(global_commands, shell=True, stderr=subprocess.STDOUT)
+
+    global_commands = f"docker rm {id}"
+    subprocess.check_output(global_commands, shell=True, stderr=subprocess.STDOUT)
+
+    print(f"Docker container id: {id} has been removed")
+```
+
+</details>
+
+
 
 
 
