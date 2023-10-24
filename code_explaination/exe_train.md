@@ -40,6 +40,15 @@ Ensure you have the following libraries installed:
 - **Returns**: 
   - `True` if training or validation images are found.
   - `False` otherwise.
+ 
+<details>
+  <summary>Cliquez pour afficher le code de la fonction `function_name`</summary>
+
+```python
+def function_name():
+    # code here
+</details>
+```
 
 #### process_image
 
