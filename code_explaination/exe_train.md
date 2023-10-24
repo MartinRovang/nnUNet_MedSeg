@@ -32,6 +32,96 @@ Ensure you have the following libraries installed:
 
 ### Functions
 
+### Main Execution
+
+On executing the script:
+
+1. Definition of all the different needed path for the process and the global variables
+2. Checks if the input folder exists
+3. If found, 3 different cases might happen:
+  - TEST
+  - TEST
+  - TEST
+5. If not, it exits, indicating the missing folder.
+
+```python
+# Main code
+#MAIN PATHS 
+main_path = os.path.dirname(os.path.abspath(__file__)) #Get the parent path of the main folder
+grandparent_main_path = os.path.dirname(main_path)
+input_folder_name = "Input_nnUNet_train"
+output_folder_name = "Output_model"
+input_folder_path = os.path.join(main_path, input_folder_name)
+output_folder_path = os.path.join(main_path, output_folder_name)
+dataset_train_path = os.path.join(main_path, "Dataset_Train") #Here is the full path name of the directory file
+nnunet_raw_path = os.path.join(dataset_train_path, "nnUNet_raw")
+nnunet_preprocessed_path =  os.path.join(dataset_train_path, "nnUNet_preprocessed")
+nnunet_result_path =  os.path.join(dataset_train_path, "nnUNet_results")
+delete_all_script_path = os.path.join(grandparent_main_path, "delete_all.py")
+
+
+#PREDICT FOLDER PATHS
+model_predict_path_raw = os.path.join(grandparent_main_path, "predict", "model", "nnUNet_raw") #Path to the model predict raw
+model_predict_path_result = os.path.join(grandparent_main_path, "predict", "model", "nnUNet_results")
+model_predict_path_preprocessed = os.path.join(grandparent_main_path, "predict", "model", "nnUNet_preprocessed")
+
+
+#DOCKER path
+docker_nnunet_raw_path = "/app/nnUNet/train/Dataset_Train/nnUNet_raw"
+docker_nnunet_preprocessed_path = "/app/nnUNet/train/Dataset_Train/nnUNet_preprocessed"
+docker_nnunet_result_path = "/app/nnUNet/train/Dataset_Train/nnUNet_results"
+
+
+#VARIABLES
+full_dataset_name = ""
+dataset_name = ""
+label_number = 0
+image_type = ""
+time_input = 0
+image_docker = "nnunet_timev22"
+file_ending = ".nii.gz"
+configuration_model = ""
+fold_all_value = False
+
+
+
+if input_folder_path:
+    if len(os.listdir(input_folder_path)) == 0: #This means that the data was not added into the right folder
+        print("Input folder is empty!")
+        sys.exit() 
+
+    elif len(os.listdir(input_folder_path)) > 1: #This case is not possible, just clean everything and stop the process
+        delete_all.launch_docker(delete_input_folder=True)
+        print("Too many input folders, everything was cleaned, launch the training again!")
+        sys.exit()
+
+    else:
+        print(f"Found {input_folder_name} at: {input_folder_path}")
+        delete_all.launch_docker(delete_input_folder=False) #To clean everything up in case something went wrong before
+        if __name__ == "__main__":
+            #Get the values of the input command
+            timer_training_start = tm.time()
+            parser = argparse.ArgumentParser()
+            parser.add_argument("-d", "--dataset_name", dest="dataset_name", type=str, default="No_Name")
+            parser.add_argument("-l", "--label", dest="label", type=int)
+            parser.add_argument("-i", "--image_type", dest="image_type", type=str, default= "CT")
+            parser.add_argument("-t", "--time", dest="time", type=int, default=60)
+            parser.add_argument("-c", "--configuration_model", dest="configuration_model", type=str, default= "3d_fullres")
+            args = parser.parse_args()
+            dataset_name = args.dataset_name
+            label_number = args.label
+            image_type = args.image_type
+            time_input = args.time
+            configuration_model = args.configuration_model
+
+            #Main code to run
+            create_structure()
+            
+else:
+    print(f"{input_folder_name} not found.")
+    sys.exit()
+```
+
 #### check_for_train_or_validate
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green): Determines if the provided directory contains images designated for training or validation.
@@ -278,13 +368,7 @@ def process_image(input_filename_path, output_filename_path):
 
 ---
 
-### Main Execution
 
-On executing the script:
-
-1. It checks if the input folder exists.
-2. If found, it processes the command-line arguments and initiates the image preparation procedure.
-3. If not, it exits, indicating the missing folder.
 
 ---
 
