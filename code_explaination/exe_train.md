@@ -112,6 +112,9 @@ else:
 ```
 </details>
 
+---
+---
+
 :point_right: Create_structure( ) :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates the main folder directory (with the right name) + all the necessary json files
