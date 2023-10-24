@@ -231,11 +231,9 @@ Ensure you have the following libraries installed:
 
 - `Dataset_pretrain`
   - `nUNet raw`
-     -`Dataset_001_XXX`
   - `nnUNet_preprocessed`
-     -`Dataset_001_XXX`
   - `nnUNet results`
-      -`Dataset_001_XXX`
+      
 
 
 <details>
