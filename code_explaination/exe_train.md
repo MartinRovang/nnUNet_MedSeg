@@ -44,7 +44,7 @@ Ensure you have the following libraries installed:
 4. If not found, it exits, indicating the missing folder
 
 <details>
-  **<summary> Click to view the code for the main execution</summary>**
+  <summary><strong> Click to view the code for the main execution</strong></summary>
 
 ```python
 #MAIN PATHS 
@@ -119,7 +119,7 @@ else:
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
-  <summary>**Click to view the code for the function `create_structure`**</summary>
+  <summary><strong>Click to view the code for the function `create_structure`</strong></summary>
 
 ```python
 def create_structure():
@@ -243,7 +243,7 @@ def create_structure():
   - `False` otherwise.
 
 <details>
-  <summary>**Click to view the code for the function `check_for_train_or_validate`**</summary>
+  <summary><strong>Click to view the code for the function `check_for_train_or_validate`</strong></summary>
 
 ```python
 # Code for the function check_for_train_or_validate
