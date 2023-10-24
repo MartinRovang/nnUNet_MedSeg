@@ -32,10 +32,7 @@ Ensure you have the following libraries installed:
 ---
 
 ### Functions
-
-<span style="color: red;">Texte en rouge</span>
-
-
++ Texte en vert
 
 #### Main Execution
 
