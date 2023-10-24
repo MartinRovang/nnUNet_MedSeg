@@ -266,7 +266,7 @@ def check_for_train_or_validate(directory):
 - ![Returns](https://img.shields.io/badge/-Returns-red): None. The processed image is saved to the specified path.
 
 <details>
-  <summary>**Click to view the code for the function `process_image`**</summary>
+  <summary><strong>Click to view the code for the function `process_image`</strong><</summary>
 
 ```python
 # Code for the function process_image
@@ -289,7 +289,7 @@ def process_image(input_filename_path, output_filename_path):
 
 
 <details>
-  <summary>**Click to view the code for the function `create_split_json`**</summary>
+  <summary><strong>Click to view the code for the function `create_split_json`</strong><</summary>
 
 ```python
 # Code for the function create_split_json
