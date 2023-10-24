@@ -34,10 +34,10 @@ Ensure you have the following libraries installed:
 
 #### check_for_train_or_validate
 
-- <span style="color:green">**Purpose**</span>: Determines if the provided directory contains images designated for training or validation.
-- <span style="color:blue">**Parameters**</span>: 
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Determines if the provided directory contains images designated for training or validation.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
   - `directory` (str): Path to the directory to check.
-- <span style="color:red">**Returns**</span>: 
+- ![Returns](https://img.shields.io/badge/-Returns-red): 
   - `True` if training or validation images are found.
   - `False` otherwise.
 
@@ -52,11 +52,11 @@ Ensure you have the following libraries installed:
 
 #### process_image
 
-- <span style="color:green">**Purpose**</span>: Processes a NIfTI image to retain only a specified label.
-- <span style="color:blue">**Parameters**</span>: 
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Processes a NIfTI image to retain only a specified label.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
   - `input_filename_path` (str): Path to the input image.
   - `output_filename_path` (str): Path to save the processed image.
-- <span style="color:red">**Returns**</span>: None. The processed image is saved to the specified path.
+- ![Returns](https://img.shields.io/badge/-Returns-red): None. The processed image is saved to the specified path.
 
 <details>
   <summary>Click to view the code for the function `process_image`</summary>
@@ -69,9 +69,9 @@ Ensure you have the following libraries installed:
 
 #### get_channel_names
 
-- <span style="color:green">**Purpose**</span>: Fetches channel names required for the nnUNet JSON structure.
-- <span style="color:blue">**Parameters**</span>: None.
-- <span style="color:red">**Returns**</span>: 
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Fetches channel names required for the nnUNet JSON structure.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
+- ![Returns](https://img.shields.io/badge/-Returns-red): 
   - A dictionary with channel names.
 
 <details>
@@ -85,9 +85,9 @@ Ensure you have the following libraries installed:
 
 #### get_labels
 
-- <span style="color:green">**Purpose**</span>: Retrieves labels for the nnUNet JSON structure.
-- <span style="color:blue">**Parameters**</span>: None.
-- <span style="color:red">**Returns**</span>: 
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Retrieves labels for the nnUNet JSON structure.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
+- ![Returns](https://img.shields.io/badge/-Returns-red): 
   - A dictionary with label names and their corresponding indices.
 
 <details>
@@ -101,11 +101,11 @@ Ensure you have the following libraries installed:
 
 #### create_split_json
 
-- <span style="color:green">**Purpose**</span>: Constructs a JSON structure denoting training and validation splits.
-- <span style="color:blue">**Parameters**</span>: 
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Constructs a JSON structure denoting training and validation splits.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
   - `train_list` (list): List of training images.
   - `val_list` (list): List of validation images.
-- <span style="color:red">**Returns**</span>: None. The JSON structure is saved in the appropriate directory.
+- ![Returns](https://img.shields.io/badge/-Returns-red): None. The JSON structure is saved in the appropriate directory.
 
 
 <details>
@@ -119,9 +119,9 @@ Ensure you have the following libraries installed:
 
 #### get_labels
 
-- <span style="color:green">**Purpose**</span>: This function appears to be designed to retrieve labels for the nnUNet JSON structure. Based on the provided label number, it generates a dictionary of labels.
-- <span style="color:blue">**Parameters**</span>: None.
-- <span style="color:red">**Returns**</span>: A dictionary with label names and their corresponding indices.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): This function appears to be designed to retrieve labels for the nnUNet JSON structure. Based on the provided label number, it generates a dictionary of labels.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
+- ![Returns](https://img.shields.io/badge/-Returns-red): A dictionary with label names and their corresponding indices.
 
 <details>
   <summary>Click to view the code for the function `get_labels`</summary>
@@ -134,9 +134,9 @@ Ensure you have the following libraries installed:
 
 #### delete_all_folders
 
-- <span style="color:green">**Purpose**</span>: Based on the function name, it is likely used to delete all folders in a specified path or perform some cleanup.
-- <span style="color:blue">**Parameters**</span>: None.
-- <span style="color:red">**Returns**</span>: None.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Based on the function name, it is likely used to delete all folders in a specified path or perform some cleanup.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
+- ![Returns](https://img.shields.io/badge/-Returns-red): None.
 
 <details>
   <summary>Click to view the code for the function `delete_all_folders`</summary>
@@ -149,9 +149,9 @@ Ensure you have the following libraries installed:
 
 #### remove_docker_container
 
-- <span style="color:green">**Purpose**</span>: This function is intended to remove a Docker container based on a specified name or ID.
-- <span style="color:blue">**Parameters**</span>: None.
-- <span style="color:red">**Returns**</span>: None.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): This function is intended to remove a Docker container based on a specified name or ID.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
+- ![Returns](https://img.shields.io/badge/-Returns-red): None.
 
 <details>
   <summary>Click to view the code for the function `remove_docker_container`</summary>
@@ -164,9 +164,9 @@ Ensure you have the following libraries installed:
 
 #### create_structure
 
-- <span style="color:green">**Purpose**</span>: Creating the main folder directory (with the right name).
-- <span style="color:blue">**Parameters**</span>: None.
-- <span style="color:red">**Returns**</span>: None.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Creating the main folder directory (with the right name).
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
+- ![Returns](https://img.shields.io/badge/-Returns-red): None.
 
 <details>
   <summary>Click to view the code for the function `create_structure`</summary>
@@ -179,9 +179,9 @@ Ensure you have the following libraries installed:
 
 #### move_result
 
-- <span style="color:green">**Purpose**</span>: Handles the process of moving results.
-- <span style="color:blue">**Parameters**</span>: None.
-- <span style="color:red">**Returns**</span>: None.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Handles the process of moving results.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
+- ![Returns](https://img.shields.io/badge/-Returns-red): None.
 
 <details>
   <summary>Click to view the code for the function `move_result`</summary>
@@ -194,9 +194,9 @@ Ensure you have the following libraries installed:
 
 #### clean_all
 
-- <span style="color:green">**Purpose**</span>: Load the docker image.
-- <span style="color:blue">**Parameters**</span>: None.
-- <span style="color:red">**Returns**</span>: None.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Load the docker image.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
+- ![Returns](https://img.shields.io/badge/-Returns-red): None.
 
 <details>
   <summary>Click to view the code for the function `clean_all`</summary>
@@ -209,9 +209,9 @@ Ensure you have the following libraries installed:
 
 #### gpu_available
 
-- <span style="color:green">**Purpose**</span>: Decodes the output and splits it into lines to determine GPU availability.
-- <span style="color:blue">**Parameters**</span>: None.
-- <span style="color:red">**Returns**</span>: Boolean indicating if GPU is available.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Decodes the output and splits it into lines to determine GPU availability.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
+- ![Returns](https://img.shields.io/badge/-Returns-red): Boolean indicating if GPU is available.
 
 <details>
   <summary>Click to view the code for the function `gpu_available`</summary>
@@ -224,9 +224,9 @@ Ensure you have the following libraries installed:
 
 #### exec_in_docker
 
-- <span style="color:green">**Purpose**</span>: Executes commands within the Docker container.
-- <span style="color:blue">**Parameters**</span>: None.
-- <span style="color:red">**Returns**</span>: None.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Executes commands within the Docker container.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
+- ![Returns](https://img.shields.io/badge/-Returns-red): None.
 
 <details>
   <summary>Click to view the code for the function `exec_in_docker`</summary>
@@ -239,9 +239,9 @@ Ensure you have the following libraries installed:
 
 #### load_image
 
-- <span style="color:green">**Purpose**</span>: Function for the terminal to do image loading.
-- <span style="color:blue">**Parameters**</span>: None.
-- <span style="color:red">**Returns**</span>: None.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Function for the terminal to do image loading.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
+- ![Returns](https://img.shields.io/badge/-Returns-red): None.
 
 <details>
   <summary>Click to view the code for the function `load_image`</summary>
@@ -254,9 +254,9 @@ Ensure you have the following libraries installed:
 
 #### launch_docker
 
-- <span style="color:green">**Purpose**</span>: Handles the process of launching the Docker image.
-- <span style="color:blue">**Parameters**</span>: None.
-- <span style="color:red">**Returns**</span>: None.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green): Handles the process of launching the Docker image.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
+- ![Returns](https://img.shields.io/badge/-Returns-red): None.
 
 <details>
   <summary>Click to view the code for the function `launch_docker`</summary>
