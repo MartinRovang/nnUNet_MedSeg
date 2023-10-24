@@ -65,13 +65,11 @@ Ensure you have the following libraries installed:
 
 #### process_image
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Description to be added.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
-  - `input_filename_path`: Path or directory
-  - `output_filename_path`: Path or directory
-  - `input_filename_path`: Description to be added.
-  - `output_filename_path`: Description to be added.
-- ![Returns](https://img.shields.io/badge/-Returns-red) Doesn't return a value.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Processes a NIfTI image to retain only a specified label.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
+  - `input_filename_path` (str): Path to the input image.
+  - `output_filename_path` (str): Path to save the processed image.
+- ![Returns](https://img.shields.io/badge/-Returns-red) The processed image is saved to the specified path.
 
 <details>
   <summary>Click to view the code for the function `process_image`</summary>
@@ -84,9 +82,10 @@ Ensure you have the following libraries installed:
 
 #### get_model_name
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Retrieves necessary components related to get_model_name.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-- ![Returns](https://img.shields.io/badge/-Returns-red) Doesn't return a value.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Get model name which has to be finetuned.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
+  - `model_folder_path` (str): path to the `model` folder.
+- ![Returns](https://img.shields.io/badge/-Returns-red) Update full_dataset_name.
 
 <details>
   <summary>Click to view the code for the function `get_model_name`</summary>
@@ -99,9 +98,10 @@ Ensure you have the following libraries installed:
 
 #### get_fold_value
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Retrieves necessary components related to get_fold_value.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-- ![Returns](https://img.shields.io/badge/-Returns-red) Returns a value.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Check the fold value.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
+  - Path to the `fold` folder 
+- ![Returns](https://img.shields.io/badge/-Returns-red) return the folder value
 
 <details>
   <summary>Click to view the code for the function `get_fold_value`</summary>
