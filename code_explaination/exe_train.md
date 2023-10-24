@@ -46,6 +46,11 @@ Ensure you have the following libraries installed:
 
 ```python
 # Code for the function check_for_train_or_validate
+def check_for_train_or_validate(directory):
+    for filename in os.listdir(directory): #List all the files in the folder
+        if filename.startswith('train.') or filename.startswith('validate.'): #Check if the name starts with "train" or "validate"
+            return True
+    return False
 ```
 
 </details>
@@ -63,6 +68,10 @@ Ensure you have the following libraries installed:
 
 ```python
 # Code for the function process_image
+def process_image(input_filename_path, output_filename_path):
+    image = sitk.ReadImage(input_filename_path) # Load the nifti image
+    output_image = sitk.Threshold(image, lower=0, upper=label_number, outsideValue=0) # Threshold the image: values above label_number (global variable definied in a flag) are set to 0, all other values remain unchanged
+    sitk.WriteImage(output_image, output_filename_path)
 ```
 
 </details>
