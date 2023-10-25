@@ -222,14 +222,14 @@ def launch_docker(dataset_full_name):
 To run the script, use:
 
 ```bash
-python exe_train.py -d [DATASET_NAME] -l [LABEL] -i [IMAGE_TYPE] -t [TIME] -c [CONFIGURATION]
+python exe_train.py -d [DATASET_NAME] -l [LABEL] -i [IMAGE_TYPE] -t [TIME] -c [CONFIGURATION_MODEL]
 ```
 
 - `-d, --dataset_name`: Name of the dataset (default: "No_Name").
 - `-l, --label`: Label number to retain in the image.
 - `-i, --image_type`: Type of the image (default: "CT").
 - `-t, --time`: Time parameter (default: 60).
-- `-c, --configuration`: Configuration (default: 3d_fullres).
+- `-c, --configuration_model`: Configuration (default: 3d_fullres).
 
 ---
 
