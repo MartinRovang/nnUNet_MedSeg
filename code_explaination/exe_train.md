@@ -10,7 +10,6 @@ The `exe_train.py` script is designed for processing and preparing NIfTI (.nii) 
 ### Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Variables](#variables)
 - [Functions](#functions)
 - [Main Execution](#main-execution)
 - [Usage](#usage)
@@ -32,9 +31,6 @@ Ensure you have the following libraries installed:
   
 
 ----------
-### Variables
-
----
 
 ### Main Execution 
 
