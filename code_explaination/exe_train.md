@@ -130,7 +130,7 @@ else:
 
 
 <details>
-  <summary><strong>Click to view the code for the function `create_split_json`</strong></summary>
+  <summary><strong>Click to view the code for the function `Create_split_json( )`</strong></summary>
 
 ```python
 # Code for the function create_split_json
@@ -155,7 +155,7 @@ def create_split_json(train_list, val_list): #Note that here, as we use only fol
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
-  <summary><strong>Click to view the code for the function `launch_docker`</strong></summary>
+  <summary><strong>Click to view the code for the function `Launch_docker( )`</strong></summary>
 
 ```python
 # Code for the function launch_docker
