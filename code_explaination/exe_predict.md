@@ -37,7 +37,7 @@ The script starts by defining the main paths and necessary variables. It then ch
 
 ### Functions
 
-:point_right: **list_model_available()** :point_left:
+:point_right: **list_model_available( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Displays all available models in the specified folder.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
@@ -54,7 +54,7 @@ The script starts by defining the main paths and necessary variables. It then ch
 
 ##  
 
-:point_right: **create_folder()** :point_left:
+:point_right: **create_folder( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates the necessary folders for input and output, and copies the input files and models to the appropriate folders.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
@@ -71,7 +71,7 @@ The script starts by defining the main paths and necessary variables. It then ch
 
 ##  
 
-:point_right: **remove_folder()** :point_left:
+:point_right: **remove_folder( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Removes all temporary folders and unnecessary files.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
@@ -88,7 +88,7 @@ The script starts by defining the main paths and necessary variables. It then ch
 
 ##  
 
-:point_right: **get_dataset_name()** :point_left:
+:point_right: **get_dataset_name( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Gets the dataset name from the model name.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
@@ -105,7 +105,7 @@ The script starts by defining the main paths and necessary variables. It then ch
 
 ##  
 
-:point_right: **get_fold_value()** :point_left:
+:point_right: **get_fold_value( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Gets the fold value from the model folder.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
@@ -158,7 +158,7 @@ The script starts by defining the main paths and necessary variables. It then ch
 
 ##  
 
-:point_right: **gpu_available()** :point_left:
+:point_right: **gpu_available( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Checks for available GPUs for running.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
@@ -193,7 +193,7 @@ The script starts by defining the main paths and necessary variables. It then ch
 
 ##  
 
-:point_right: **load_image()** :point_left:
+:point_right: **load_image( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Loads a Docker image.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
@@ -210,7 +210,7 @@ The script starts by defining the main paths and necessary variables. It then ch
 
 ##  
 
-:point_right: **launch_docker_prediction()** :point_left:
+:point_right: **launch_docker_prediction( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Launches the prediction using Docker and the nnUNet model.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
