@@ -1,11 +1,11 @@
 
-## Documentation for `script_python.py`
+## Documentation for `exe_predict.py`
 
 ---
 
 ### Overview
 
-The `script_python.py` script is designed to perform predictions using a deep learning model with the nnUNet library. It takes images as input, processes them through a pre-trained model, and produces the prediction results.
+The `exe_predict.py` script is designed to perform predictions using a deep learning model with the nnUNet model. It takes images as input, processes them through a trained model, and produces the prediction results.
 
 ### Table of Contents
 
@@ -139,9 +139,9 @@ Ensure you have the following libraries installed:
 
 </details>
 
-##  
+---  
 
-:point_right:Usage:point_left:
+### Usage
 
 To execute the `exe_predict.py` script, use the following command:
 
