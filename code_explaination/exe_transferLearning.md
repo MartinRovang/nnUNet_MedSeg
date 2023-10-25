@@ -33,7 +33,7 @@ Ensure you have the following libraries installed:
 
 ---
 
-:point_right: Main Execution :point_left:
+### Main Execution
 
 
 
