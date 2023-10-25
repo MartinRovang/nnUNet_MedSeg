@@ -31,7 +31,6 @@ Ensure you have the following libraries installed:
 
 ### Main Execution
 
-The script starts by defining the main paths and necessary variables. It then checks if the input folder contains data for prediction. If data is present, it initiates the prediction using Docker and the nnUNet model. After the prediction, it cleans up temporary folders and displays a message indicating that the prediction is done.
 
 ---
 
@@ -71,22 +70,6 @@ The script starts by defining the main paths and necessary variables. It then ch
 
 ##  
 
-:point_right: **remove_folder( )** :point_left:
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Removes all temporary folders and unnecessary files.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
-- ![Returns](https://img.shields.io/badge/-Returns-red) None
-
-<details>
-  <summary>Click to view the code for the function `remove_folder()`</summary>
-
-```python
-# Code for the function process_image
-```
-
-</details>
-
-##  
 
 :point_right: **get_dataset_name( )** :point_left:
 
@@ -140,75 +123,6 @@ The script starts by defining the main paths and necessary variables. It then ch
 
 ##  
 
-:point_right: **remove_docker_container(id)** :point_left:
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Removes a Docker container using its ID.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
-  - `id` (str): The ID of the Docker container to remove.
-- ![Returns](https://img.shields.io/badge/-Returns-red) None
-
-<details>
-  <summary>Click to view the code for the function `remove_docker_container(id)`</summary>
-
-```python
-# Code for the function process_image
-```
-
-</details>
-
-##  
-
-:point_right: **gpu_available( )** :point_left:
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Checks for available GPUs for running.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
-- ![Returns](https://img.shields.io/badge/-Returns-red) `list`: Indices of available GPUs.
-
-<details>
-  <summary>Click to view the code for the function `gpu_available()`</summary>
-
-```python
-# Code for the function process_image
-```
-
-</details>
-
-##  
-
-:point_right: **exec_in_docker(cmd)** :point_left:
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Executes a command within the Docker container.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
-  - `cmd` (str): The command to execute.
-- ![Returns](https://img.shields.io/badge/-Returns-red) None
-
-<details>
-  <summary>Click to view the code for the function `exec_in_docker(cmd)`</summary>
-
-```python
-# Code for the function process_image
-```
-
-</details>
-
-##  
-
-:point_right: **load_image( )** :point_left:
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Loads a Docker image.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
-- ![Returns](https://img.shields.io/badge/-Returns-red) None
-
-<details>
-  <summary>Click to view the code for the function `load_image()`</summary>
-
-```python
-# Code for the function process_image
-```
-
-</details>
-
-##  
 
 :point_right: **launch_docker_prediction( )** :point_left:
 
