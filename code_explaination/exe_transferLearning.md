@@ -10,6 +10,7 @@ The `exe_transferLearning.py` script is designed for finetune an existing model 
 ### Table of Contents
 
 - [Prerequisites](#prerequisites)
+- [Variables](#variables)
 - [Main Execution](#main-execution)
 - [Functions](#functions)
 - [Usage](#usage)
@@ -30,6 +31,9 @@ Ensure you have the following libraries installed:
 - time
 - datetime
 - random
+
+---
+### Variables
 
 ---
 
