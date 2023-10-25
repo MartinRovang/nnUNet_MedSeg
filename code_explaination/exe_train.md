@@ -126,7 +126,7 @@ else:
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
   - `train_list` (list): List of training images
   - `val_list` (list): List of validation images
-- ![Returns](https://img.shields.io/badge/-Returns-red) None. The JSON structure is saved in the appropriate directory
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 
 <details>
