@@ -82,7 +82,8 @@ Ensure you have the following libraries installed:
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Sort the data into 'val' and 'train', keep previous data in the original split
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
   - `data_tot_path`(str): Path or directory
-- ![Returns](https://img.shields.io/badge/-Returns-red) ?????????????????
+- ![Returns](https://img.shields.io/badge/-Returns-red)
+  -?????????????????
 
 <details>
   <summary>Click to view the code for the function `List_new_data( )`</summary>
@@ -98,9 +99,8 @@ Ensure you have the following libraries installed:
 :point_right: **New_json( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Write a new JSON file with the right split
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-  - None
-- ![Returns](https://img.shields.io/badge/-Returns-red) new JSON file.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
   <summary>Click to view the code for the function `New_json( )`</summary>
@@ -116,9 +116,9 @@ Ensure you have the following libraries installed:
 :point_right: **Copy_json_file( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Copy the JSON file in the right folder
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-  - None
-- ![Returns](https://img.shields.io/badge/-Returns-red) Copied the JSON file onto splits_final.json
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red)
+  - Copied the JSON file into `splits_final.json`
 
 <details>
   <summary>Click to view the code for the function `Copy_json_file( )`</summary>
@@ -133,9 +133,9 @@ Ensure you have the following libraries installed:
 
 :point_right: **Create_split_json( )** :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates and sets up necessary components for the create_split_json.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-- ![Returns](https://img.shields.io/badge/-Returns-red) Doesn't return a value.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates and sets up necessary components for the `create_split_json`
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
   <summary>Click to view the code for the function `Create_split_json( )`</summary>
@@ -151,11 +151,8 @@ Ensure you have the following libraries installed:
 :point_right: **Creation_checkpoint_folder( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Copy of the `model` folder into the `dataset_source_name` folder in `nnunet_result_path`
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-  - `nnunet_result_path`: path to the nnUNet results
-  - `dataset_source_name`: name of the checkpoint folder
-  - `model_folder_path`: path to the `model` folder
-- ![Returns](https://img.shields.io/badge/-Returns-red)
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
   <summary>Click to view the code for the function `Creation_checkpoint_folder( )`</summary>
