@@ -70,7 +70,7 @@ def check_for_train_or_validate(directory):
  - The processed image are saved to the specified path.
 
 <details>
-  <summary><strong>Click to view the code for the function `process_image`</strong><</summary>
+  <summary><strong>Click to view the code for the function `Process_image(input_filename_path, output_filename_path)`</strong><</summary>
 
 ```python
 # Code for the function process_image
@@ -86,7 +86,7 @@ def process_image(input_filename_path, output_filename_path):
 ##  
 
 
-:point_right: **get_model_name( )** :point_left:
+:point_right: **Get_model_name( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Get the model name 
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
@@ -95,7 +95,7 @@ def process_image(input_filename_path, output_filename_path):
  -`full_dataset_name` (str): name of the dataset/model
 
 <details>
-  <summary>Click to view the code for the function `get_model_name`</summary>
+  <summary>Click to view the code for the function `Get_model_name( )`</summary>
 
 ```python
 # Code for the function get_model_name
@@ -114,7 +114,7 @@ def process_image(input_filename_path, output_filename_path):
   - `channels` (list): list of the channels name
 
 <details>
-  <summary><strong>Click to view the code for the function `get_channel_names`</strong></summary>
+  <summary><strong>Click to view the code for the function `Get_channel_names( )`</strong></summary>
 
 ```python
 # Code for the function get_channel_names
@@ -141,7 +141,7 @@ def get_channel_names():
   - `labels` (dict): A dictionary with label names and their corresponding indices
 
 <details>
-  <summary><strong>Click to view the code for the function `get_labels`</strong></summary>
+  <summary><strong>Click to view the code for the function `Get_labels( )`</strong></summary>
 
 ```python
 # Code for the function get_labels
@@ -170,7 +170,7 @@ def get_labels():
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
-  <summary><strong>Click to view the code for the function `create_structure`</strong></summary>
+  <summary><strong>Click to view the code for the function `Create_structure( )`</strong></summary>
 
 ```python
 def create_structure():
@@ -294,7 +294,7 @@ def create_structure():
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
-  <summary><strong>Click to view the code for the function `move_result`</strong></summary>
+  <summary><strong>Click to view the code for the function `Move_result( )`</strong></summary>
 
 ```python
 # Code for the function move_result
@@ -357,7 +357,7 @@ def move_result():
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
-  <summary><strong>Click to view the code for the function `remove_docker_container`</strong></summary>
+  <summary><strong>Click to view the code for the function `Remove_docker_container(id)`</strong></summary>
 
 ```python
 # Code for the function remove_docker_container
@@ -383,7 +383,7 @@ def remove_docker_container(id):
    - `available_gpus` (list): list of all the available GPUs
 
 <details>
-  <summary><strong>Click to view the code for the function `gpu_available`</strong></summary>
+  <summary><strong>Click to view the code for the function `Gpu_available( )`</strong></summary>
 
 ```python
 # Code for the function gpu_available
@@ -420,7 +420,7 @@ def gpu_available():
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
-  <summary><strong>Click to view the code for the function `exec_in_docker`</strong></summary>
+  <summary><strong>Click to view the code for the function `Exec_in_docker(cmd, container_id)`</strong></summary>
 
 ```python
 # Code for the function exec_in_docker
@@ -442,7 +442,7 @@ def exec_in_docker(cmd):
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
-  <summary><strong>Click to view the code for the function `load_image`</strong></summary>
+  <summary><strong>Click to view the code for the function `Load_image( )`</strong></summary>
 
 ```python
 # Code for the function load_image
