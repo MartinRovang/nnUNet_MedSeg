@@ -122,11 +122,11 @@ else:
 
 :point_right: **Create_split_json(train_list, val_list)** :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): Constructs a JSON structure denoting training and validation splits
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Constructs a JSON structure denoting training and validation splits
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
   - `train_list` (list): List of training images
   - `val_list` (list): List of validation images
-- ![Returns](https://img.shields.io/badge/-Returns-red): None. The JSON structure is saved in the appropriate directory
+- ![Returns](https://img.shields.io/badge/-Returns-red) None. The JSON structure is saved in the appropriate directory
 
 
 <details>
