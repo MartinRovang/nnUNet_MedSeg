@@ -41,7 +41,7 @@ Ensure you have the following libraries installed:
 ### Functions
 
 
-:point_right:**get_fold_value( )**:point_left:
+:point_right: **get_fold_value( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Check the fold value.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
@@ -59,7 +59,7 @@ Ensure you have the following libraries installed:
 
 ##  
 
-:point_right:**remove_folder_model( )**:point_left:
+:point_right: **remove_folder_model( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Delete the content of `model` folder 
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
@@ -77,7 +77,7 @@ Ensure you have the following libraries installed:
 
 ##  
 
-:point_right:**list_new_data(data_tot_path)**:point_left:
+:point_right: **list_new_data(data_tot_path)** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Sort the data into 'val' and 'train', keep previous data in the original split
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
@@ -95,7 +95,7 @@ Ensure you have the following libraries installed:
 
 ##  
 
-:point_right:**new_json( )**:point_left:
+:point_right: **new_json( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Write a new JSON file with the right split
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
@@ -113,7 +113,7 @@ Ensure you have the following libraries installed:
 
 ##  
 
-:point_right:**copy_json_file( )**:point_left:
+:point_right: **copy_json_file( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Copy the JSON file in the right folder
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
@@ -131,7 +131,7 @@ Ensure you have the following libraries installed:
 
 ##  
 
-:point_right:**create_split_json( )**:point_left:
+:point_right: **create_split_json( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates and sets up necessary components for the create_split_json.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
@@ -148,7 +148,7 @@ Ensure you have the following libraries installed:
  
 ##  
 
-:point_right:creation_checkpoint_folder():point_left:
+:point_right: **creation_checkpoint_folder( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Copy of the `model` folder into the `dataset_source_name` folder in `nnunet_result_path`
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
@@ -169,7 +169,7 @@ Ensure you have the following libraries installed:
 ##  
  
 
-:point_right:launch_docker:point_left:
+:point_right: **launch_docker( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green)
   - Launch the Docker with the Loaded Image
@@ -194,7 +194,7 @@ Ensure you have the following libraries installed:
 
 ---
 
-:point_right:Usage:point_left:
+### Usage 
 
 To execute the `exe_transferLearning.py` script, use the following command:
 
