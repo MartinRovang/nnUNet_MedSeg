@@ -44,7 +44,7 @@ Ensure you have the following libraries installed:
   - print all the models available
 
 <details>
-  <summary>Click to view the code for the function `list_model_available()`</summary>
+  <summary>Click to view the code for the function `list_model_available( )`</summary>
 
 ```python
 # Code for the function process_image
@@ -61,7 +61,7 @@ Ensure you have the following libraries installed:
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
-  <summary>Click to view the code for the function `create_folder()`</summary>
+  <summary>Click to view the code for the function `create_folder( )`</summary>
 
 ```python
 # Code for the function process_image
@@ -80,7 +80,7 @@ Ensure you have the following libraries installed:
  - `folder`(str): The name of the dataset.
 
 <details>
-  <summary>Click to view the code for the function `get_dataset_name()`</summary>
+  <summary>Click to view the code for the function `get_dataset_name( )`</summary>
 
 ```python
 # Code for the function process_image
@@ -98,7 +98,7 @@ Ensure you have the following libraries installed:
  - `folder.split("_")[1]`(str): The fold value.
 
 <details>
-  <summary>Click to view the code for the function `get_fold_value()`</summary>
+  <summary>Click to view the code for the function `get_fold_value( )`</summary>
 
 ```python
 # Code for the function process_image
@@ -135,7 +135,7 @@ Ensure you have the following libraries installed:
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
-  <summary>Click to view the code for the function `launch_docker_prediction()`</summary>
+  <summary>Click to view the code for the function `launch_docker_prediction( )`</summary>
 
 ```python
 # Code for the function process_image
