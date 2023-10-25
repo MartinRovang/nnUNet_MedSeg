@@ -37,104 +37,201 @@ The script starts by defining the main paths and necessary variables. It then ch
 
 ### Functions
 
-:point_right: **list_model_available** :point_left:
+:point_right: **list_model_available()** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Displays all available models in the specified folder.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
+<details>
+  <summary>Click to view the code for the function `list_model_available()`</summary>
+
 ```python
-def list_model_available():
-    print("All models available:")
-    for folder in os.listdir(model_folder_path_result):
-        print(f"{folder}")
+# Code for the function process_image
 ```
 
----
+</details>
 
-:point_right: **create_folder** :point_left:
+##  
+
+:point_right: **create_folder()** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates the necessary folders for input and output, and copies the input files and models to the appropriate folders.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
----
+<details>
+  <summary>Click to view the code for the function `create_folder()`</summary>
 
-:point_right: **remove_folder** :point_left:
+```python
+# Code for the function process_image
+```
+
+</details>
+
+##  
+
+:point_right: **remove_folder()** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Removes all temporary folders and unnecessary files after prediction.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
----
+<details>
+  <summary>Click to view the code for the function `remove_folder()`</summary>
 
-:point_right: **get_dataset_name** :point_left:
+```python
+# Code for the function process_image
+```
+
+</details>
+
+##  
+
+:point_right: **get_dataset_name()** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Gets the dataset name from the model name.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
 - ![Returns](https://img.shields.io/badge/-Returns-red) `str`: The name of the dataset.
 
----
+<details>
+  <summary>Click to view the code for the function `get_dataset_name()`</summary>
 
-:point_right: **get_fold_value** :point_left:
+```python
+# Code for the function process_image
+```
+
+</details>
+
+##  
+
+:point_right: **get_fold_value()** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Gets the fold value from the model folder.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
 - ![Returns](https://img.shields.io/badge/-Returns-red) `str`: The fold value.
 
----
+<details>
+  <summary>Click to view the code for the function `get_fold_value()`</summary>
 
-:point_right: **extract_values** :point_left:
+```python
+# Code for the function process_image
+```
+
+</details>
+
+##  
+
+:point_right: **extract_values(file_path)** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Extracts necessary values from a file.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
   - `file_path` (str): Path to the file to be read.
 - ![Returns](https://img.shields.io/badge/-Returns-red) `tuple`: The extracted values.
 
----
+<details>
+  <summary>Click to view the code for the function `extract_value(file_path)`</summary>
 
-:point_right: **remove_docker_container** :point_left:
+```python
+# Code for the function process_image
+```
+
+</details>
+
+##  
+
+:point_right: **remove_docker_container(id)** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Removes a Docker container using its ID.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
   - `id` (str): The ID of the Docker container to remove.
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
----
+<details>
+  <summary>Click to view the code for the function `remove_docker_container(id)`</summary>
 
-:point_right: **gpu_available** :point_left:
+```python
+# Code for the function process_image
+```
+
+</details>
+
+##  
+
+:point_right: **gpu_available()** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Checks for available GPUs for Docker.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
 - ![Returns](https://img.shields.io/badge/-Returns-red) `list`: Indices of available GPUs.
 
----
+<details>
+  <summary>Click to view the code for the function `gpu_available()`</summary>
 
-:point_right: **exec_in_docker** :point_left:
+```python
+# Code for the function process_image
+```
+
+</details>
+
+##  
+
+:point_right: **exec_in_docker(cmd)** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Executes a command within the Docker container.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
   - `cmd` (str): The command to execute.
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
----
+<details>
+  <summary>Click to view the code for the function `exec_in_docker(cmd)`</summary>
 
-:point_right: **load_image** :point_left:
+```python
+# Code for the function process_image
+```
+
+</details>
+
+##  
+
+:point_right: **load_image()** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Loads a Docker image.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
----
+<details>
+  <summary>Click to view the code for the function `load_image()`</summary>
 
-:point_right: **launch_docker_prediction** :point_left:
+```python
+# Code for the function process_image
+```
+
+</details>
+
+##  
+
+:point_right: **launch_docker_prediction()** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Launches the prediction using Docker and the nnUNet model.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
----
+<details>
+  <summary>Click to view the code for the function `launch_docker_prediction()`</summary>
 
-### Usage
+```python
+# Code for the function process_image
+```
 
-To use this script, place your input data in the specified folder and run the script. Ensure that all dependencies are installed and Docker is properly configured on your machine.
+</details>
+
+##  
+
+:point_right:Usage:point_left:
+
+To execute the `exe_predict.py` script, use the following command:
+
+```
+python exe_predict.py 
+```
+
