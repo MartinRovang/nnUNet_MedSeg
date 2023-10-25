@@ -44,7 +44,7 @@ Ensure you have the following libraries installed:
   - `False` otherwise.
 
 <details>
-  <summary>Click to view the code for the function `check_for_train_or_validate`</summary>
+  <summary><strong>Click to view the code for the function `check_for_train_or_validate`</strong></summary>
 
 ```python
 # Code for the function check_for_train_or_validate
@@ -70,7 +70,7 @@ def check_for_train_or_validate(directory):
  - The processed image are saved to the specified path.
 
 <details>
-  <summary><strong>Click to view the code for the function `Process_image(input_filename_path, output_filename_path)`</strong><</summary>
+  <summary><strong>Click to view the code for the function `Process_image(input_filename_path, output_filename_path)`</strong></summary>
 
 ```python
 # Code for the function process_image
