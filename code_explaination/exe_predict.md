@@ -1,24 +1,24 @@
 
-## Documentation pour `script_python.py`
+## Documentation for `script_python.py`
 
 ---
 
-### Vue d'ensemble
+### Overview
 
-Le script `script_python.py` est conçu pour réaliser des prédictions en utilisant un modèle de deep learning avec la bibliothèque nnUNet. Il prend en entrée des images, les traite à travers un modèle pré-entraîné, et produit les résultats de la prédiction.
+The `script_python.py` script is designed to perform predictions using a deep learning model with the nnUNet library. It takes images as input, processes them through a pre-trained model, and produces the prediction results.
 
-### Table des matières
+### Table of Contents
 
-- [Prérequis](#prérequis)
-- [Exécution Principale](#exécution-principale)
-- [Fonctions](#fonctions)
-- [Utilisation](#utilisation)
+- [Prerequisites](#prerequisites)
+- [Main Execution](#main-execution)
+- [Functions](#functions)
+- [Usage](#usage)
 
 ---
 
-### Prérequis
+### Prerequisites
 
-Assurez-vous d'avoir les bibliothèques suivantes installées :
+Ensure you have the following libraries installed:
 
 - os
 - sys
@@ -29,19 +29,19 @@ Assurez-vous d'avoir les bibliothèques suivantes installées :
 
 ---
 
-### Exécution Principale
+### Main Execution
 
-Le script commence par définir les chemins principaux et les variables nécessaires. Il vérifie ensuite si le dossier d'entrée contient des données pour la prédiction. Si des données sont présentes, il lance la prédiction en utilisant Docker et le modèle nnUNet. Après la prédiction, il nettoie les dossiers temporaires et affiche un message indiquant que la prédiction est terminée.
+The script starts by defining the main paths and necessary variables. It then checks if the input folder contains data for prediction. If data is present, it initiates the prediction using Docker and the nnUNet model. After the prediction, it cleans up temporary folders and displays a message indicating that the prediction is done.
 
 ---
 
-### Fonctions
+### Functions
 
-#### list_model_available
+:point_right: **list_model_available** :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Affiche tous les modèles disponibles dans le dossier spécifié.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) Aucun
-- ![Returns](https://img.shields.io/badge/-Returns-red) Aucun
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Displays all available models in the specified folder.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 ```python
 def list_model_available():
@@ -52,90 +52,89 @@ def list_model_available():
 
 ---
 
-#### create_folder
+:point_right: **create_folder** :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Crée les dossiers nécessaires pour l'entrée et la sortie, et copie les fichiers d'entrée et les modèles dans les dossiers appropriés.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) Aucun
-- ![Returns](https://img.shields.io/badge/-Returns-red) Aucun
-
----
-
-#### remove_folder
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Supprime tous les dossiers temporaires et les fichiers inutiles après la prédiction.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) Aucun
-- ![Returns](https://img.shields.io/badge/-Returns-red) Aucun
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates the necessary folders for input and output, and copies the input files and models to the appropriate folders.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 ---
 
-#### get_dataset_name
+:point_right: **remove_folder** :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Obtient le nom du dataset à partir du nom du modèle.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) Aucun
-- ![Returns](https://img.shields.io/badge/-Returns-red) `str`: Le nom du dataset.
-
----
-
-#### get_fold_value
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Obtient la valeur du fold à partir du dossier du modèle.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) Aucun
-- ![Returns](https://img.shields.io/badge/-Returns-red) `str`: La valeur du fold.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Removes all temporary folders and unnecessary files after prediction.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 ---
 
-#### extract_values
+:point_right: **get_dataset_name** :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Extrait les valeurs nécessaires à partir d'un fichier.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Gets the dataset name from the model name.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) `str`: The name of the dataset.
+
+---
+
+:point_right: **get_fold_value** :point_left:
+
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Gets the fold value from the model folder.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) `str`: The fold value.
+
+---
+
+:point_right: **extract_values** :point_left:
+
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Extracts necessary values from a file.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
-  - `file_path` (str): Le chemin du fichier à lire.
-- ![Returns](https://img.shields.io/badge/-Returns-red) `tuple`: Les valeurs extraites.
+  - `file_path` (str): Path to the file to be read.
+- ![Returns](https://img.shields.io/badge/-Returns-red) `tuple`: The extracted values.
 
 ---
 
-#### remove_docker_container
+:point_right: **remove_docker_container** :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Supprime un conteneur Docker en utilisant son ID.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Removes a Docker container using its ID.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
-  - `id` (str): L'ID du conteneur Docker à supprimer.
-- ![Returns](https://img.shields.io/badge/-Returns-red) Aucun
+  - `id` (str): The ID of the Docker container to remove.
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 ---
 
-#### gpu_available
+:point_right: **gpu_available** :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Vérifie la disponibilité des GPUs pour Docker.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) Aucun
-- ![Returns](https://img.shields.io/badge/-Returns-red) `list`: Les indices des GPUs disponibles.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Checks for available GPUs for Docker.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) `list`: Indices of available GPUs.
 
 ---
 
-#### exec_in_docker
+:point_right: **exec_in_docker** :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Exécute une commande dans le conteneur Docker.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Executes a command within the Docker container.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
-  - `cmd` (str): La commande à exécuter.
-- ![Returns](https://img.shields.io/badge/-Returns-red) Aucun
+  - `cmd` (str): The command to execute.
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 ---
 
-#### load_image
+:point_right: **load_image** :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Charge une image Docker.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) Aucun
-- ![Returns](https://img.shields.io/badge/-Returns-red) Aucun
-
----
-
-#### launch_docker_prediction
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Lance la prédiction en utilisant Docker et le modèle nnUNet.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) Aucun
-- ![Returns](https://img.shields.io/badge/-Returns-red) Aucun
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Loads a Docker image.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 ---
 
-### Utilisation
+:point_right: **launch_docker_prediction** :point_left:
 
-Pour utiliser ce script, placez vos données d'entrée dans le dossier spécifié et exécutez le script. Assurez-vous que toutes les dépendances sont installées et que Docker est configuré correctement sur votre machine.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Launches the prediction using Docker and the nnUNet model.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
 
+---
+
+### Usage
+
+To use this script, place your input data in the specified folder and run the script. Ensure that all dependencies are installed and Docker is properly configured on your machine.
