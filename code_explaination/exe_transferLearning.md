@@ -171,17 +171,9 @@ Ensure you have the following libraries installed:
 
 :point_right: **Launch_docker( )** :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green)
-  - Launch the Docker with the Loaded Image
-  - Execute the main part of the script.
-  - Check the time remaining after preprocessing.
-  - Share the plans between the previous and new dataset.
-  - Initiate the transfer learning (referred to as transferLearninging) using the remaining time.
-
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-  - `grandparent_main_path`: path shared with the docker
-  - time chosed by the user
-- ![Returns](https://img.shields.io/badge/-Returns-red) 
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Handles the process of launching the Docker image
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
   <summary>Click to view the code for the function `launch_docker`</summary>
