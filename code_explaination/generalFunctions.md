@@ -92,7 +92,7 @@ def process_image(input_filename_path, output_filename_path):
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
   - : path to the `model` folder.
 - ![Returns](https://img.shields.io/badge/-Returns-red)
- -`full_dataset_name` (str): name of the dataset/model
+   -`full_dataset_name` (str): name of the dataset/model
 
 <details>
   <summary>Click to view the code for the function `Get_model_name( )`</summary>
@@ -110,8 +110,8 @@ def process_image(input_filename_path, output_filename_path):
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Fetches channel names required for the nnUNet JSON structure.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
  - `image_type` (str):???????????? 
-- ![Returns](https://img.shields.io/badge/-Returns-red) 
-  - `channels` (list): list of the channels name
+- ![Returns](https://img.shields.io/badge/-Returns-red)
+ -`channels` (list): list of the channels name
 
 <details>
   <summary><strong>Click to view the code for the function `Get_channel_names( )`</strong></summary>
