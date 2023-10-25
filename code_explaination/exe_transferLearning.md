@@ -1,11 +1,11 @@
 
-## Documentation for `exe_train.py`
+## Documentation for `exe_transferLearning.py`
 
 ---
 
 ### Overview
 
-The `exe_pretrain.py` script is designed for finetune an existing model to make it more accurate.
+The `exe_transferLearning.py` script is designed for finetune an existing model to make it more accurate.
 
 ### Table of Contents
 
@@ -45,7 +45,7 @@ Ensure you have the following libraries installed:
 
 ### Functions
 
-:point_right:check_for_train_or_validate:point_left:
+:point_right:**check_for_train_or_validate(directory)**:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Checks if there's a file named 'train' or 'validate' in the directory.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
@@ -65,7 +65,7 @@ Ensure you have the following libraries installed:
 
 ##  
 
-:point_right:process_image:point_left:
+:point_right:**process_image( )**:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Processes a NIfTI image to retain only a specified label.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
@@ -251,7 +251,7 @@ Ensure you have the following libraries installed:
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
 - ![Returns](https://img.shields.io/badge/-Returns-red):
 
-- `Dataset_pretrain`
+- `Dataset_transferLearning`
   - `nUNet raw`
   - `nnUNet_preprocessed`
   - `nnUNet results`
@@ -278,7 +278,7 @@ Ensure you have the following libraries installed:
   - `nnUNetPlans.json`
   - `info_model.json`
 - ![Returns](https://img.shields.io/badge/-Returns-red)
-  - `output_pretrain`
+  - `output_transferLearning`
 
 <details>
   <summary>Click to view the code for the function `move_result`</summary>
@@ -427,7 +427,7 @@ Ensure you have the following libraries installed:
   - Execute the main part of the script.
   - Check the time remaining after preprocessing.
   - Share the plans between the previous and new dataset.
-  - Initiate the transfer learning (referred to as pretraining) using the remaining time.
+  - Initiate the transfer learning (referred to as transferLearninging) using the remaining time.
 
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
   - `grandparent_main_path`: path shared with the docker
@@ -447,10 +447,10 @@ Ensure you have the following libraries installed:
 
 :point_right:Usage:point_left:
 
-To execute the `exe_pretrain.py` script, use the following command:
+To execute the `exe_transferLearning.py` script, use the following command:
 
 ```
-python exe_pretrain.py [-l LABEL] [-i IMAGE_TYPE] [-t TIME]
+python exe_transferLearning.py [-l LABEL] [-i IMAGE_TYPE] [-t TIME]
 ```
 
 Arguments:
