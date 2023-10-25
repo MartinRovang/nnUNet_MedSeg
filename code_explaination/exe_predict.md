@@ -40,8 +40,8 @@ The script starts by defining the main paths and necessary variables. It then ch
 :point_right: **list_model_available()** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Displays all available models in the specified folder.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
-- ![Returns](https://img.shields.io/badge/-Returns-red) None
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
+- ![Returns](https://img.shields.io/badge/-Returns-red) Print all the models available
 
 <details>
   <summary>Click to view the code for the function `list_model_available()`</summary>
@@ -73,7 +73,7 @@ The script starts by defining the main paths and necessary variables. It then ch
 
 :point_right: **remove_folder()** :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Removes all temporary folders and unnecessary files after prediction.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Removes all temporary folders and unnecessary files.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
@@ -124,7 +124,7 @@ The script starts by defining the main paths and necessary variables. It then ch
 
 :point_right: **extract_values(file_path)** :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Extracts necessary values from a file.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Extracts necessary values from a file to get the right command line. (Find best configuration) Not used.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
   - `file_path` (str): Path to the file to be read.
 - ![Returns](https://img.shields.io/badge/-Returns-red) `tuple`: The extracted values.
@@ -160,7 +160,7 @@ The script starts by defining the main paths and necessary variables. It then ch
 
 :point_right: **gpu_available()** :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Checks for available GPUs for Docker.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Checks for available GPUs for running.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
 - ![Returns](https://img.shields.io/badge/-Returns-red) `list`: Indices of available GPUs.
 
