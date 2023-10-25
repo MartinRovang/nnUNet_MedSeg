@@ -10,7 +10,6 @@ The `exe_predict.py` script is designed to perform predictions using a deep lear
 ### Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Variables](#variables)
 - [Main Execution](#main-execution)
 - [Functions](#functions)
 - [Usage](#usage)
@@ -27,9 +26,6 @@ Ensure you have the following libraries installed:
 - argparse
 - subprocess
 - re
-
----
-### Variables
 
 ---
 
