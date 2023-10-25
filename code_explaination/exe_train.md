@@ -215,27 +215,6 @@ def launch_docker(dataset_full_name):
 ##
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 
 ### Usage
@@ -254,7 +233,4 @@ python exe_train.py -d [DATASET_NAME] -l [LABEL] -i [IMAGE_TYPE] -t [TIME] -c [C
 
 ---
 
-**Note**: This documentation serves as a starting point. Depending on additional functionalities or changes in the code, the documentation might require updates.
-
----
 
