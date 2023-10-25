@@ -49,7 +49,7 @@ Ensure you have the following libraries installed:
 - ![Returns](https://img.shields.io/badge/-Returns-red) return the folder value
 
 <details>
-  <summary>Click to view the code for the function `get_fold_value`</summary>
+  <summary>Click to view the code for the function `Get_fold_value( )`</summary>
 
 ```python
 # Code for the function get_fold_value
@@ -67,7 +67,7 @@ Ensure you have the following libraries installed:
 - ![Returns](https://img.shields.io/badge/-Returns-red) None.
 
 <details>
-  <summary>Click to view the code for the function `remove_folder_model`</summary>
+  <summary>Click to view the code for the function `Remove_folder_model( )`</summary>
 
 ```python
 # Code for the function remove_folder_model
@@ -85,7 +85,7 @@ Ensure you have the following libraries installed:
 - ![Returns](https://img.shields.io/badge/-Returns-red) ?????????????????
 
 <details>
-  <summary>Click to view the code for the function `list_new_data`</summary>
+  <summary>Click to view the code for the function `List_new_data( )`</summary>
 
 ```python
 # Code for the function list_new_data
@@ -103,7 +103,7 @@ Ensure you have the following libraries installed:
 - ![Returns](https://img.shields.io/badge/-Returns-red) new JSON file.
 
 <details>
-  <summary>Click to view the code for the function `new_json`</summary>
+  <summary>Click to view the code for the function `New_json( )`</summary>
 
 ```python
 # Code for the function new_json
@@ -121,7 +121,7 @@ Ensure you have the following libraries installed:
 - ![Returns](https://img.shields.io/badge/-Returns-red) Copied the JSON file onto splits_final.json
 
 <details>
-  <summary>Click to view the code for the function `copy_json_file`</summary>
+  <summary>Click to view the code for the function `Copy_json_file( )`</summary>
 
 ```python
 # Code for the function copy_json_file
@@ -138,7 +138,7 @@ Ensure you have the following libraries installed:
 - ![Returns](https://img.shields.io/badge/-Returns-red) Doesn't return a value.
 
 <details>
-  <summary>Click to view the code for the function `create_split_json`</summary>
+  <summary>Click to view the code for the function `Create_split_json( )`</summary>
 
 ```python
 # Code for the function create_split_json
@@ -158,7 +158,7 @@ Ensure you have the following libraries installed:
 - ![Returns](https://img.shields.io/badge/-Returns-red)
 
 <details>
-  <summary>Click to view the code for the function `creation_checkpoint_folder`</summary>
+  <summary>Click to view the code for the function `Creation_checkpoint_folder( )`</summary>
 
 ```python
 # Code for the function creation_checkpoint_folder
@@ -176,7 +176,7 @@ Ensure you have the following libraries installed:
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
-  <summary>Click to view the code for the function `launch_docker`</summary>
+  <summary>Click to view the code for the function `Launch_docker( )`</summary>
 
 ```python
 # Code for the function launch_docker
