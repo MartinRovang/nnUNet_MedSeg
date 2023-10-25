@@ -120,7 +120,7 @@ else:
 
 
 
-:point_right: Create_split_json(train_list, val_list) :point_left:
+:point_right: **Create_split_json(train_list, val_list)** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green): Constructs a JSON structure denoting training and validation splits
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
@@ -148,7 +148,7 @@ def create_split_json(train_list, val_list): #Note that here, as we use only fol
 ##  
 
 
-:point_right: Launch_docker( ) :point_left:
+:point_right: **Launch_docker( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Handles the process of launching the Docker image
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
