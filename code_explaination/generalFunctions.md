@@ -86,7 +86,7 @@ def process_image(input_filename_path, output_filename_path):
 ##  
 
 
-:point_right:**get_model_name( )**:point_left:
+:point_right: **get_model_name( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Get the model name 
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
