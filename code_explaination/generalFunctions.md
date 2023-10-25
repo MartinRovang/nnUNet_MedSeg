@@ -34,7 +34,7 @@ Ensure you have the following libraries installed:
 ### Functions
 
 
-:point_right: Check_for_train_or_validate(directory) :point_left:
+:point_right: **Check_for_train_or_validate(directory)** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green): Determines if the provided directory contains images designated for training or validation.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
@@ -60,7 +60,7 @@ def check_for_train_or_validate(directory):
 
 ##
 
-:point_right: Process_image(input_filename_path, output_filename_path) :point_left:
+:point_right: **Process_image(input_filename_path, output_filename_path)** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green): Processes a NIfTI image to retain only a specified label.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
@@ -86,7 +86,7 @@ def process_image(input_filename_path, output_filename_path):
 ##  
 
 
-:point_right:get_model_name:point_left:
+:point_right:**get_model_name( )**:point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Get the model name 
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
@@ -105,7 +105,7 @@ def process_image(input_filename_path, output_filename_path):
 
 ##  
 
-:point_right: Get_channel_names( ) :point_left:
+:point_right: **Get_channel_names( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Fetches channel names required for the nnUNet JSON structure.
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
@@ -132,7 +132,7 @@ def get_channel_names():
 
 ##  
 
-:point_right: Get_labels( ) :point_left:
+:point_right: **Get_labels( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Retrieves labels for the nnUNet JSON structur
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
@@ -162,7 +162,7 @@ def get_labels():
 
 ##
 
-:point_right: Create_structure( ) :point_left:
+:point_right: **Create_structure( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates the main folder directory (with the right name) + all the necessary json files
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
@@ -287,7 +287,7 @@ def create_structure():
 ##  
 
 
-:point_right: Move_result( ) :point_left:
+:point_right: **Move_result( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Handles the process of moving results in the right emplacement 
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
@@ -349,7 +349,7 @@ def move_result():
 
 ##
 
-:point_right: Remove_docker_container(id) :point_left:
+:point_right: **Remove_docker_container(id)** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Remove a Docker container based on a specified name or ID
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
@@ -375,7 +375,7 @@ def remove_docker_container(id):
 
 ##  
 
-:point_right: Gpu_available( ) :point_left:
+:point_right: **Gpu_available( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Decodes the result and splits it into lines to determine GPU availability
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
@@ -411,7 +411,7 @@ def gpu_available():
 
 ##
 
-:point_right: Exec_in_docker(cmd, container_id) :point_left:
+:point_right: **Exec_in_docker(cmd, container_id)** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Executes commands within the Docker container
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
@@ -435,7 +435,7 @@ def exec_in_docker(cmd):
 ##
 
 
-:point_right: Load_image( ) :point_left:
+:point_right: **Load_image( )** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Load nnUNet docker images
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
