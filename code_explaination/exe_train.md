@@ -28,12 +28,12 @@ Ensure you have the following libraries installed:
 - argparse
 - SimpleITK
 - delete_all (other python script in the same project)
+  
 
 ----------
 
-### Functions
 
-:point_right: Main Execution :point_left:
+### Main Execution 
 
 1. Definition of all the different needed path for the process and the global variables
 2. Checks if the input folder exists
@@ -112,11 +112,11 @@ else:
 ```
 </details>
 
+---
 
 
-##  
 
-
+### Functions
 
 
 :point_right: Create_structure( ) :point_left:
