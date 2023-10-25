@@ -44,7 +44,7 @@ Ensure you have the following libraries installed:
   - `False` otherwise.
 
 <details>
-  <summary><strong>Click to view the code for the function `check_for_train_or_validate`</strong></summary>
+  <summary>Click to view the code for the function `check_for_train_or_validate`</summary>
 
 ```python
 # Code for the function check_for_train_or_validate
