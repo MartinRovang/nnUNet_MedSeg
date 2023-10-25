@@ -66,7 +66,8 @@ def check_for_train_or_validate(directory):
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue): 
   - `input_filename_path` (str): Path to the input image.
   - `output_filename_path` (str): Path to save the processed image.
-- ![Returns](https://img.shields.io/badge/-Returns-red): None. The processed image are saved to the specified path.
+- ![Returns](https://img.shields.io/badge/-Returns-red):
+ - The processed image are saved to the specified path.
 
 <details>
   <summary><strong>Click to view the code for the function `process_image`</strong><</summary>
@@ -87,10 +88,11 @@ def process_image(input_filename_path, output_filename_path):
 
 :point_right:get_model_name:point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Get model name which has to be finetuned.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Get the model name 
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
-  - `model_folder_path` (str): path to the `model` folder.
-- ![Returns](https://img.shields.io/badge/-Returns-red) Update full_dataset_name.
+  - : path to the `model` folder.
+- ![Returns](https://img.shields.io/badge/-Returns-red)
+ -`full_dataset_name` (str): name of the dataset/model
 
 <details>
   <summary>Click to view the code for the function `get_model_name`</summary>
@@ -105,10 +107,11 @@ def process_image(input_filename_path, output_filename_path):
 
 :point_right: Get_channel_names( ) :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green): Fetches channel names required for the nnUNet JSON structure.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue): None.
-- ![Returns](https://img.shields.io/badge/-Returns-red): 
-  - A dictionary with channel names.
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Fetches channel names required for the nnUNet JSON structure.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
+ - `image_type` (str):???????????? 
+- ![Returns](https://img.shields.io/badge/-Returns-red) 
+  - `channels` (list): list of the channels name
 
 <details>
   <summary><strong>Click to view the code for the function `get_channel_names`</strong></summary>
@@ -132,9 +135,10 @@ def get_channel_names():
 :point_right: Get_labels( ) :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Retrieves labels for the nnUNet JSON structur
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
+ - `label_number` (int): ????????????
 - ![Returns](https://img.shields.io/badge/-Returns-red) 
-  - A dictionary with label names and their corresponding indices
+  - `labels` (dict): A dictionary with label names and their corresponding indices
 
 <details>
   <summary><strong>Click to view the code for the function `get_labels`</strong></summary>
@@ -161,7 +165,8 @@ def get_labels():
 :point_right: Create_structure( ) :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates the main folder directory (with the right name) + all the necessary json files
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
+ - `train` (???): ????????????
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
@@ -284,7 +289,7 @@ def create_structure():
 
 :point_right: Move_result( ) :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Handles the process of moving results
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Handles the process of moving results in the right emplacement 
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
@@ -346,8 +351,9 @@ def move_result():
 
 :point_right: Remove_docker_container(id) :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) This function is intended to remove a Docker container based on a specified name or ID
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) `id` (str): id of the container
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Remove a Docker container based on a specified name or ID
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
+ - `id` (int ???): ID of the container
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
@@ -371,10 +377,10 @@ def remove_docker_container(id):
 
 :point_right: Gpu_available( ) :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Decodes the output and splits it into lines to determine GPU availability
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Decodes the result and splits it into lines to determine GPU availability
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
 - ![Returns](https://img.shields.io/badge/-Returns-red)
-   - `available_gpus` (list): It is the list of all the available GPUs
+   - `available_gpus` (list): list of all the available GPUs
 
 <details>
   <summary><strong>Click to view the code for the function `gpu_available`</strong></summary>
@@ -405,11 +411,12 @@ def gpu_available():
 
 ##
 
-:point_right: Exec_in_docker(cmd) :point_left:
+:point_right: Exec_in_docker(cmd, container_id) :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Executes commands within the Docker container
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue)
    - `cmd` (str): Command to execute inside the docker container
+   - `container_id` (int ???): ID of the container
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
@@ -430,7 +437,7 @@ def exec_in_docker(cmd):
 
 :point_right: Load_image( ) :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Function for the terminal to do image loading for the nnUNet model
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Load nnUNet docker images
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
