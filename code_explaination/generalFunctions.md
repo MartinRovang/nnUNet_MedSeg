@@ -4,7 +4,7 @@
 
 ### Overview
 
-The `generalFunctions.py` script is designed to clean up the code and contains all the functions that are general for both scripts
+The `generalFunctions.py` script is designed to contains all the functions that are general for both scripts (mainly train and transfer learning)
 
 ### Table of Contents
 
@@ -23,16 +23,142 @@ Ensure you have the following libraries installed:
 - sys
 - shutil
 - subprocess
-- datetime
-- exe_train
-- exe_transferLearning
-- delete_all
+- datetime import datetime
+- time as tm
+- eSimpleITK as sitk
+- delete_all (python script)
+- globalPath (python script)
+
+
+---
+
+### Main execution
+
+At first, some global variables and paths are defined to ensure the code to work correctly. After that, all the necessary functions to preprocess and process for the training/transfer learning are defined as well.
+
+<details>
+  <summary><strong>Click to view the code for the code for the main execution</strong></summary>
+
+```python
+"""-----------------------------GLOBAL VARIABLES------------------------------"""
+#GLOBAL VARIABLES
+full_dataset_name = ""
+container_id = ""
+fold_all_value = False
+file_ending = ".nii.gz"
+image_docker = "nnunet_timev22"
+current_script = None
+image_type = None
+time_input = None
+
+#TRAINING VARIABLES
+timer_training_start = None
+dataset_name = None
+label_number = None
+configuration_model = None
+
+
+#TRANSFER LEARNING VARIABLES
+part_tot=[]
+new_data=[]
+new_data_train=[]
+new_data_val = []
+name_img_dic = {}
+timer_pretraining_start = None
+fold_0_or_all_value = None
+fold_cross_validation_number = 5
+split_final_json = "splits_final.json"
+dataset_source_name = "Dataset999_SOURCE"
+
+
+#MAIN PATHS 
+main_path = os.path.dirname(os.path.abspath(__file__)) #Get the parent path of the main folder
+```
+
+</details>
 
 
 ---
 
 ### Functions
+:point_right: **Start_process_training(timer_training_start_fct, dataset_name_fct, label_number_fct, image_type_fct, time_input_fct, configuration_model_fct)** :point_left:
 
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Set up the correct values and launch the process for the training
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
+  - `timer_training_start_fct` (int): It is the value of the timer to know how much time the code takes for the process
+  - `dataset_name_fct` (str): Name of the model
+  - `label_number_fct` (int): Number of label that is in the process
+  - `image_type_fct` (str): Type of the image (CT, MRI,..)
+  - `time_input_fct` (int): Time for the training
+  - `configuration_model_fct` (str): Configuration of the model (3d_fullred, ...)
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
+
+<details>
+  <summary><strong>Click to view the code for the function `Start_process_training`</strong></summary>
+
+```python
+# Code for the function check_for_train_or_validate
+def start_process_training(timer_training_start_fct, dataset_name_fct, label_number_fct, image_type_fct, time_input_fct, configuration_model_fct):
+    global timer_training_start, dataset_name, label_number, image_type, time_input, configuration_model, current_script
+
+    #Setting up the different variables
+    current_script = "train"
+    timer_training_start = timer_training_start_fct
+    dataset_name = dataset_name_fct
+    label_number = label_number_fct
+    image_type = image_type_fct
+    time_input = time_input_fct
+    configuration_model = configuration_model_fct
+
+    #Setting up the correct paths
+    globalPath.myPath(current_script)
+
+    #Starting the actual process
+    create_structure(train=True)
+```
+</details>
+
+
+:point_right: **Start_process_tl(timer_pretraining_start_fct, label_number_fct, image_type_fct, time_input_fct, configuration_model_fct)** :point_left:
+
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Set up the correct values and launch the process for the transfer learning
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
+  - `timer_pretraining_start_fct` (int): It is the value of the timer to know how much time the code takes for the process
+  - `label_number_fct` (int): Number of label that is in the process
+  - `image_type_fct` (str): Type of the image (CT, MRI,..)
+  - `time_input_fct` (int): Time for the training
+  - `configuration_model_fct` (str): Configuration of the model (3d_fullred, ...)
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
+
+<details>
+  <summary><strong>Click to view the code for the function `Start_process_tl`</strong></summary>
+
+```python
+# Code for the function check_for_train_or_validate
+def start_process_tl(timer_pretraining_start_fct, label_number_fct, image_type_fct, time_input_fct, configuration_model_fct):
+    global timer_pretraining_start, label_number, image_type, time_input, configuration_model, current_script, fold_0_or_all_value
+
+    #Setting up the correct paths
+    current_script = "transferLearning"
+    globalPath.myPath(current_script)
+    delete_all.clean_all(delete_input_folder=False, delete_output_folder=True, delete_model_folder=False, delete_all_nnunet_folder=False, script=current_script)
+    get_model_name()
+
+    #Setting up the different variables
+    timer_pretraining_start = timer_pretraining_start_fct
+    label_number = label_number_fct
+    image_type = image_type_fct
+    time_input = time_input_fct
+    configuration_model = configuration_model_fct
+
+    
+    
+    fold_0_or_all_value = get_fold_value()
+
+    #Starting the actual process
+    create_structure(train=False)
+```
+</details>
 
 :point_right: **Check_for_train_or_validate(directory)** :point_left:
 
