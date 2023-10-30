@@ -51,9 +51,9 @@ You can also find in the main_nnUNet folder, the different scripts that we be ex
 </p>
 
 ## Let's Get Started! 🌟
-- [Training 101: The Basics](documentation/training.md)
+- [Training: The Basics](documentation/training.md)
 - [Begin with Your Own Dataset](documentation/train_new_dataset.md)
-- [Unraveling Model Predictions](documentation/prediction.md)
+- [Model Predictions](documentation/prediction.md)
 
 ## Go the Extra Mile! 🚀
 - [Leverage transfer learning Powerhouses](documentation/transfer_learning.md)
