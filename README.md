@@ -49,6 +49,14 @@ You can also find in the main_nnUNet folder, the different scripts that we be ex
 <p align="center">
 <img src="pictures/exefolder.png" width="300"  >
 </p>
+You can find all the explaination of those scripts in the following fodlers
+- [exe_train](code_explaination/exe_train.md)
+- [exe_predict](code_explaination/exe_predict.md)
+- [exe_transferLearning](code_explaination/exe_transferLearning.md)
+- [generalFunctions](code_explaination/generalFunctions.md)
+- [globalPath](code_explaination/globalPath.md)
+- [delete_all](code_explaination/delete_all.md)
+
 
 ## Let's Get Started! 🌟
 - [Training: The Basics](documentation/training.md)
