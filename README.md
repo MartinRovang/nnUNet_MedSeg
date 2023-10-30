@@ -47,7 +47,7 @@ Please be aware that in every mentioned directory, all data will be completly de
 You can also find in the main_nnUNet folder, the different scripts that we be executed.
 
 <p align="center">
-<img src="pictures/exefolder.drawio (1).png" width="300"  >
+<img src="pictures/exefolder.png" width="300"  >
 </p>
 
 ## Let's Get Started! 🌟
