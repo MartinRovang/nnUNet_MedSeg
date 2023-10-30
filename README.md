@@ -42,7 +42,16 @@ Please be aware that in every mentioned directory, all data will be completly de
 <img src="pictures/finalfo.png" width="500"  >
 </p>
 
-# Scripts
+
+## Let's Get Started! 🌟
+- [Training: The Basics](documentation/training.md)
+- [Begin with Your Own Dataset](documentation/train_new_dataset.md)
+- [Model Predictions](documentation/prediction.md)
+
+## Go the Extra Mile! 🚀
+- [Leverage transfer learning Powerhouses](documentation/transfer_learning.md)
+
+## Scripts
 
 In the `main_nnUNet` folder, you will find various scripts that are set to be executed.
 
@@ -57,16 +66,6 @@ Detailed explanations for each script can be found in the following folders:
 - [generalFunctions](documentation/code_explanation/generalFunctions.md)
 - [globalPath](documentation/code_explanation/globalPath.md)
 - [delete_all](documentation/code_explanation/delete_all.md)
-
-
-
-## Let's Get Started! 🌟
-- [Training: The Basics](documentation/training.md)
-- [Begin with Your Own Dataset](documentation/train_new_dataset.md)
-- [Model Predictions](documentation/prediction.md)
-
-## Go the Extra Mile! 🚀
-- [Leverage transfer learning Powerhouses](documentation/transfer_learning.md)
 
 ---
 
