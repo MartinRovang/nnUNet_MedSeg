@@ -47,7 +47,7 @@ Please be aware that in every mentioned directory, all data will be completly de
 In the `main_nnUNet` folder, you will find various scripts that are set to be executed.
 
 <p align="center">
-<img src="pictures/exefolder.png" width="300">
+<img src="pictures/exe.drawio.png" width="300">
 </p>
 
 Detailed explanations for each script can be found in the following folders:
