@@ -5,14 +5,14 @@ Welcome to the `nnUNet_MedSeg` repository. This Toolkit facilitates the user-fri
 
 # Table of Contents
 
-1. [nnUNet_MedSeg Overview](#nnunet_medseg-overview)
+1. [Purpose of the Toolkit](#purpose-of-the-toolkit)
 2. [Let's Get Started! 🌟](#lets-get-started-)
 3. [Go the Extra Mile! 🚀](#go-the-extra-mile-)
 4. [Scripts explaination](#scripts)
 
 
 
-## Purpose of the Toolkit
+# Purpose of the Toolkit
 
 This script simplifies the implementation of the nnUNetv2 model designed for biomedical image segmentation. Its primary goal is to assist users in utilizing the model without diving into its underlying implementation details. To get started, users need to organize their dataset according to specified folder naming conventions and place it into the designated input folders of the script.
 
