@@ -70,12 +70,12 @@ In the `main_nnUNet` folder, you will find various scripts that are set to be ex
 </p>
 
 Detailed explanations for each script can be found in the following folders:
-- [exe_train](documentation/code_explanation/exe_train.md)
-- [exe_predict](documentation/code_explanation/exe_predict.md)
-- [exe_transferLearning](documentation/code_explanation/exe_transferLearning.md)
-- [generalFunctions](documentation/code_explanation/generalFunctions.md)
-- [globalPath](documentation/code_explanation/globalPath.md)
-- [delete_all](documentation/code_explanation/delete_all.md)
+- [exe_train](code_explanation/exe_train.md)
+- [exe_predict](code_explanation/exe_predict.md)
+- [exe_transferLearning](code_explanation/exe_transferLearning.md)
+- [generalFunctions](code_explanation/generalFunctions.md)
+- [globalPath](code_explanation/globalPath.md)
+- [delete_all](code_explanation/delete_all.md)
 
 ---
 
