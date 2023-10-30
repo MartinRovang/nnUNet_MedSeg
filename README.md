@@ -12,7 +12,7 @@ The Toolkit comprises 3 main components:
 
 1. **<u><b>Training Files</b></u>**: Set up your dataset by copying it into `Input_nnUNet_train` and then execute `exe_train.py` to obtain the output file.
 2. **<u><b>Prediction Files</b></u>**: After training, users can perform predictions. Copy a test dataset into `Input_nnUNet_predict` to generate prediction images.
-3. **<u><b>Transfer Learning Files</b></u>**: For a more robust model, users should fine-tune an existing model by adding more data."
+3. **<u><b>Transfer Learning Files</b></u>**: To fine-tune a model with new data.  "
 4. **<u><b>Docker Image</b></u>**: Contains essential software that the script relies upon, including Pytorch version 2.0.0, CUDA version 11.8, and the nnUNet model.
 
 ## Docker Image Directory
@@ -30,7 +30,7 @@ The prediction directory mirrors the training one. Users should place a **copy**
 
 
 ## Transfer Leaerning Directory 
-The Transfer Leaerning directory mirrors other directories. Users should place their new dataset[^1] in `input_pretrain` to fine-tune an existing model. Like in the prediction directory, the `model` folder is where the users have to copy the model located in the output of the training folder. 
+The Transfer Leaerning directory mirrors other directories. Users should place their new dataset[^1] in `input_transferLearning` to fine-tune an existing model. Like in the prediction directory, the `model` folder is where the users have to copy the model located in the output of the training folder. 
 
 
 [^1]: The new dataset must include the same images as the original model, supplemented with completely new data.
