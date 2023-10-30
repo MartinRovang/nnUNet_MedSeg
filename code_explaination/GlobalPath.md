@@ -9,16 +9,11 @@ The `GlobalPath.py` serves as a central hub for consolidating various paths requ
 
 ---
 
-### Table of Contents
-
-- [Train Path](#train-path)
-- [Transfer Learning Path](#transfer-learning-path)
-- [Predict Path](#predict-path)
 
 
----
+### Code
 
-### Train Path
+Only 1 function is in the code. The global variables (which are all the different paths) are defined wether it is in training or transfer learning.
 
 
 ```bash
@@ -33,26 +28,4 @@ The `GlobalPath.py` serves as a central hub for consolidating various paths requ
 ---
 
 
-### Transfer Learning Path
-
-
-
-```bash
-
-
-```
-
-
----
-
-
-### Predict Path
-
-```bash
-
-
-```
-
-
----
 
