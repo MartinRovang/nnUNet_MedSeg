@@ -119,6 +119,9 @@ def start_process_training(timer_training_start_fct, dataset_name_fct, label_num
 </details>
 
 
+##
+
+
 :point_right: **Start_process_tl(timer_pretraining_start_fct, label_number_fct, image_type_fct, time_input_fct, configuration_model_fct)** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Set up the correct values and launch the process for the transfer learning
@@ -159,6 +162,130 @@ def start_process_tl(timer_pretraining_start_fct, label_number_fct, image_type_f
     create_structure(train=False)
 ```
 </details>
+
+
+##
+
+
+:point_right: **Create_structure(train)** :point_left:
+
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates the main folder directory (with the right name) + all the necessary json files
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
+ - `train` (Boolean): True or false. To know in which case we are.
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
+
+<details>
+  <summary><strong>Click to view the code for the function `Create_structure( )`</strong></summary>
+
+```python
+def create_structure(train):
+    global full_dataset_name, fold_all_value
+
+    if train:
+        next_number = 1 
+        main_folder_name = f"Dataset{next_number:03}_{dataset_name}"  #Formatting the number to be 3 digits
+        full_dataset_name = main_folder_name
+
+    main_folder_path = os.path.join(globalPath.nnunet_raw_path , full_dataset_name)  # Combine with actual_path (nnunet raw folder)
+
+    if not os.path.exists(main_folder_path): #Check if the name already exists (normally not because everything is deleted after each training)
+        os.makedirs(main_folder_path)
+    else:
+        print(f"Folder {full_dataset_name} already exists.")
+        return
+
+    #Create 2 sub-folders inside the main folder
+    subfolders = ['imagesTr', 'labelsTr']
+    for subfolder in subfolders:
+        os.makedirs(os.path.join(main_folder_path, subfolder))
+
+    #Definition of paths and variables
+    img_destination = os.path.join(globalPath.nnunet_raw_path, full_dataset_name, "imagesTr") 
+    train_destination = os.path.join(globalPath.nnunet_raw_path, full_dataset_name, "labelsTr")
+    num_training = 0
+    num_images = 0
+    tr_cases = 0
+    val_cases = 0
+    train_img_list = []
+    validate_img_list=[]
+
+    #Moving the images in the right directory
+    for directory in os.listdir(globalPath.input_folder_path): #For loop on the input folder (there should be only 1 folder inside!)
+        directory_path = os.path.join(globalPath.input_folder_path, directory)
+
+        for img_directory in os.listdir(directory_path): #For loop on all the folder inside the folder input
+            img_directory_path = os.path.join(directory_path, img_directory)
+
+            for files in os.listdir(img_directory_path): #For loop on all the folder to get the img and mask niifti image      
+                if check_for_train_or_validate(img_directory_path): #Returns True if the name starts with train or validate, otherwise, returns False and we don't use this image for the training
+                    file_path = os.path.join(img_directory_path, files)
+                    first_name = files.split('.')[0]
+                    new_filename = img_directory  #Rename file with folder name prepended (Patient number)
+                                    
+                    # Check the file's prefix and move accordingly
+                    if first_name == 'img': 
+                        num_images += 1
+                        new_name_img = new_filename +  '_' + '0000' + '.' + 'nii' + '.' + 'gz' #Rename the image correctly
+                        shutil.copy2(file_path, os.path.join(img_destination, new_name_img))
+                                        
+                    elif first_name == 'train' or first_name == 'validate':
+                        num_training += 1
+                        new_name_img = new_filename + '.' + 'nii' + '.' + 'gz' #Rename the mask correctly
+                        process_image(file_path, os.path.join(train_destination, new_name_img)) #This function allows us to keep only the number of labels wanted for the training
+                        if first_name == "train": #This will allow us to create a json file to keep track of which image were used for the training and for the validation (uuseful for transfer learning)
+                            tr_cases += 1
+                            train_img_list.append(new_filename)
+                        elif first_name == "validate":
+                            val_cases += 1
+                            validate_img_list.append(new_filename)
+
+    if len(validate_img_list) == 0: #If there is none validitate image, we do the fold all (all images are used both in the validation and training)! 
+        fold_all_value = True
+
+
+    #Check if the number of images is normal                 
+    if num_training == num_images:
+
+        create_split_json(train_img_list, validate_img_list, current_script) #Split json is created to use the right image in the training and in the validation 
+
+        # Create a dataset JSON file inside the main folder to be able to start the nnUNet model training
+        channel_names = get_channel_names() # Get channel names
+        labels = get_labels() # Get labels
+        json_file_path = os.path.join(main_folder_path, 'dataset.json')
+        with open(json_file_path, 'w') as json_file:
+            data = {
+                "channel_names": channel_names,
+                "labels": labels,
+                "numTraining": num_training,
+                "file_ending": file_ending
+            }
+            json.dump(data, json_file, indent=4)
+
+        #Create a JSON file info to have some information of the model
+        json_file_path = os.path.join(globalPath.dataset_train_path, 'info_model.json')
+        data = {
+            "training cases": tr_cases,
+            "validation cases": val_cases,
+            "creation date": datetime.now().strftime("%Y-%m-%d %H:%M:%S") ,
+            "total time": time_input,
+        }
+        with open(json_file_path, 'w') as json_file:
+            json.dump(data, json_file, indent=4)
+
+        print("Files moved and renamed successfully!")
+        print(f"Successfully created structure in {main_folder_path}")
+
+        #Delete the input directory to clean up the input folder
+        for directory in os.listdir(globalPath.input_folder_path): 
+            directory_path = os.path.join(globalPath.input_folder_path, directory)
+            shutil.rmtree(directory_path)
+            print(f"Input folder ({directory}) has been deleted")
+
+        launch_docker(full_dataset_name, current_script) #Once the images are well separated, the training can start
+```
+
+</details>
+
 
 :point_right: **Check_for_train_or_validate(directory)** :point_left:
 
@@ -288,126 +415,7 @@ def get_labels():
 
 ##
 
-:point_right: **Create_structure( )** :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates the main folder directory (with the right name) + all the necessary json files
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
- - `train` (???): ????????????
-- ![Returns](https://img.shields.io/badge/-Returns-red) None
-
-<details>
-  <summary><strong>Click to view the code for the function `Create_structure( )`</strong></summary>
-
-```python
-def create_structure():
-    global full_dataset_name, fold_all_value
-
-    #Creating the main folder directory (with the right name)
-    next_number = 1 
-    main_folder_name = f"Dataset{next_number:03}_{dataset_name}"  #Formatting the number to be 3 digits
-    full_dataset_name = main_folder_name
-    main_folder_path = os.path.join(nnunet_raw_path , main_folder_name)  # Combine with actual_path (nnunet raw folder)
-    if not os.path.exists(main_folder_path): #Check if the name already exists (normally not because everything is deleted after each training)
-        os.makedirs(main_folder_path)
-    else:
-        print(f"Folder {main_folder_name} already exists.")
-        return
-
-    #Create 2 sub-folders inside the main folder
-    subfolders = ['imagesTr', 'labelsTr']
-    for subfolder in subfolders:
-        os.makedirs(os.path.join(main_folder_path, subfolder))
-
-    #Definition of paths and variables
-    img_destination = os.path.join(nnunet_raw_path, main_folder_name, "imagesTr") 
-    train_destination = os.path.join(nnunet_raw_path, main_folder_name, "labelsTr")
-    num_training = 0
-    num_images = 0
-    tr_cases = 0
-    val_cases = 0
-    train_img_list = []
-    validate_img_list=[]
-
-    #Moving the images in the right directory
-    for directory in os.listdir(input_folder_path): #For loop on the input folder (there should be only 1 folder inside!)
-        directory_path = os.path.join(input_folder_path, directory)
-
-        for img_directory in os.listdir(directory_path): #For loop on all the folder inside the folder input
-            img_directory_path = os.path.join(directory_path, img_directory)
-
-            for files in os.listdir(img_directory_path): #For loop on all the folder to get the img and mask niifti image      
-                if check_for_train_or_validate(img_directory_path): #Returns True if the name starts with train or validate, otherwise, returns False and we don't use this image for the training
-                    file_path = os.path.join(img_directory_path, files)
-                    first_name = files.split('.')[0]
-                    new_filename = img_directory  #Rename file with folder name prepended (Patient number)
-                                    
-                    # Check the file's prefix and move accordingly
-                    if first_name == 'img': 
-                        num_images += 1
-                        new_name_img = new_filename +  '_' + '0000' + '.' + 'nii' + '.' + 'gz' #Rename the image correctly
-                        shutil.copy2(file_path, os.path.join(img_destination, new_name_img))
-                                        
-                    elif first_name == 'train' or first_name == 'validate':
-                        num_training += 1
-                        new_name_img = new_filename + '.' + 'nii' + '.' + 'gz' #Rename the mask correctly
-                        process_image(file_path, os.path.join(train_destination, new_name_img)) #This function allows us to keep only the number of labels wanted for the training
-                        if first_name == "train": #This will allow us to create a json file to keep track of which image were used for the training and for the validation (uuseful for transfer learning)
-                            tr_cases += 1
-                            train_img_list.append(new_filename)
-                        elif first_name == "validate":
-                            val_cases += 1
-                            validate_img_list.append(new_filename)
-
-    if len(validate_img_list) == 0: #If there is none validitate image, we do the fold all (all images are used both in the validation and training)! 
-        fold_all_value = True
-
-
-    #Check if the number of images is normal                 
-    if num_training == num_images:
-        create_split_json(train_img_list, validate_img_list) #Split json is created to use the right image in the training and in the validation 
-
-        # Create a dataset JSON file inside the main folder to be able to start the nnUNet model training
-        channel_names = get_channel_names() # Get channel names
-        labels = get_labels() # Get labels
-        json_file_path = os.path.join(main_folder_path, 'dataset.json')
-        with open(json_file_path, 'w') as json_file:
-            data = {
-                "channel_names": channel_names,
-                "labels": labels,
-                "numTraining": num_training,
-                "file_ending": file_ending
-            }
-            json.dump(data, json_file, indent=4)
-
-        #Create a JSON file info to have some information of the model
-        json_file_path = os.path.join(dataset_train_path, 'info_model.json')
-        data = {
-            "training cases": tr_cases,
-            "validation cases": val_cases,
-            "creation date": datetime.now().strftime("%Y-%m-%d %H:%M:%S") ,
-            "total time": time_input,
-        }
-        with open(json_file_path, 'w') as json_file:
-            json.dump(data, json_file, indent=4)
-
-        print("Files moved and renamed successfully!")
-        print(f"Successfully created structure in {main_folder_path}")
-
-        #Delete the input directory to clean up the input folder
-        for directory in os.listdir(input_folder_path): 
-            directory_path = os.path.join(input_folder_path, directory)
-            shutil.rmtree(directory_path)
-            print(f"Input folder ({directory}) has been deleted")
-
-        launch_docker(main_folder_name) #Once the images are well separated, the training can start
-
-    else: #If there is a mismatch in the number of images, clean all the folders + stops the code
-        print("ERROR number of images")
-        delete_all.launch_docker(delete_input_folder=True)
-        sys.exit()
-```
-
-</details>
 
 
 ##  
