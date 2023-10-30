@@ -1,4 +1,4 @@
-## Documentation for `delet_all.py`
+## Documentation for `delete_all.py`
 
 ---
 
@@ -99,12 +99,45 @@ def delete_all_folders(path_folder, docker_path):
   <summary>Click to view the code for the function `clean_all(delete_input_folder, delete_output_folder, delete_model_folder, delete_all_nnunet_folder, script)`:summary>
 
 ```python
-def exec_in_docker(cmd, container_id):
-    exec_command = f"docker exec -i {container_id} bash -c '{cmd}'"
-    result = subprocess.call(exec_command, shell=True)
-    return result
+def clean_all(delete_input_folder, delete_output_folder, delete_model_folder, delete_all_nnunet_folder, script):
+    global container_id
+        
+    #Once the training is done, it will delete all the created folders!
+    docker_command = f"docker run -d -it --gpus all --shm-size 8g -v {main_path}:/app/nnUNet {image_docker} bash"
+    container_id = subprocess.check_output(docker_command, shell=True).decode().strip()
+
+    globalPath.myPath(script) #To have the right value for the different paths
+    
+    if delete_input_folder: #Delete only if the value is TRUE!
+        delete_all_folders(globalPath.input_folder_path, globalPath.docker_nnunet_input_path)
+
+    if delete_output_folder: #Delete only if the value is TRUE!
+        delete_all_folders(globalPath.output_folder_path, globalPath.docker_nnunet_output_path)
+
+    if script == "transferLearning" and delete_model_folder: #Only for the transferLearning!
+        delete_all_folders(globalPath.model_folder_path, globalPath.docker_model_path)
+
+    if delete_all_nnunet_folder:
+        delete_all_folders(globalPath.nnunet_preprocessed_path, globalPath.docker_nnunet_preprocessed_path)
+        delete_all_folders(globalPath.nnunet_result_path, globalPath.docker_nnunet_result_path)
+        delete_all_folders(globalPath.nnunet_raw_path, globalPath.docker_nnunet_raw_path)
+
+    
+
+    global_commands = f"docker stop {container_id}"
+    subprocess.check_output(global_commands, shell=True, stderr=subprocess.STDOUT)
+
+    global_commands = f"docker rm {container_id}"
+    subprocess.check_output(global_commands, shell=True, stderr=subprocess.STDOUT)
+
+    print(f"Docker container id: {container_id} has been removed")
+    print("Deletion completed")
 ```
 
 </details>
 
 ##  
+
+### Usage
+
+called in [generalFunctions](generalFunctions), [exe_train](exe_train.md), [exe_predict](exe_predict.md) and [exe_transferLearning](exe_transferLearning.md)
