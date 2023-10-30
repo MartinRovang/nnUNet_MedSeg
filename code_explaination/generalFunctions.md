@@ -167,6 +167,27 @@ def start_process_tl(timer_pretraining_start_fct, label_number_fct, image_type_f
 ##
 
 
+:point_right: **Get_model_name( )** :point_left:
+
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Get the model name 
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
+  - : path to the `model` folder.
+- ![Returns](https://img.shields.io/badge/-Returns-red)
+   -`full_dataset_name` (str): name of the dataset/model
+
+<details>
+  <summary>Click to view the code for the function `Get_model_name( )`</summary>
+
+```python
+# Code for the function get_model_name
+```
+
+</details>
+
+
+##
+
+
 :point_right: **Create_structure(train)** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates the main folder directory (with the right name) + all the necessary json files
@@ -287,6 +308,9 @@ def create_structure(train):
 </details>
 
 
+##
+
+
 :point_right: **Check_for_train_or_validate(directory)** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green): Determines if the provided directory contains images designated for training or validation.
@@ -312,6 +336,7 @@ def check_for_train_or_validate(directory):
 
 
 ##
+
 
 :point_right: **Process_image(input_filename_path, output_filename_path)** :point_left:
 
@@ -339,22 +364,7 @@ def process_image(input_filename_path, output_filename_path):
 ##  
 
 
-:point_right: **Get_model_name( )** :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Get the model name 
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
-  - : path to the `model` folder.
-- ![Returns](https://img.shields.io/badge/-Returns-red)
-   -`full_dataset_name` (str): name of the dataset/model
-
-<details>
-  <summary>Click to view the code for the function `Get_model_name( )`</summary>
-
-```python
-# Code for the function get_model_name
-```
-
-</details>
 
 ##  
 
