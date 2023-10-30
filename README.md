@@ -6,19 +6,9 @@ Welcome to the `nnUNet_MedSeg` repository. This Toolkit facilitates the user-fri
 # Table of Contents
 
 1. [nnUNet_MedSeg Overview](#nnunet_medseg-overview)
-   - [Purpose of the Toolkit](#purpose-of-the-toolkit)
-   - [Toolkit Workflow](#toolkit-workflow)
-   - [Docker Image Directory](#docker-image-directory)
-   - [Training Directory](#training-directory)
-   - [Prediction Directory](#prediction-directory)
-   - [Transfer Learning Directory](#transfer-learning-directory)
 2. [Let's Get Started! 🌟](#lets-get-started-)
-   - [Training: The Basics](documentation/training.md)
-   - [Begin with Your Own Dataset](documentation/train_new_dataset.md)
-   - [Model Predictions](documentation/prediction.md)
 3. [Go the Extra Mile! 🚀](#go-the-extra-mile-)
-   - [Leverage Transfer Learning Powerhouses](documentation/transfer_learning.md)
-4. [Scripts](#scripts)
+4. [Scripts explaination](#scripts)
 
 
 
