@@ -11,11 +11,11 @@ To ensure the optimal utilization of the `nnUNet_medseg` program and prevent dat
 3 primary use-cases can be achieved with this program:
 
 1. [New Dataset Training](train_new_dataset.md): Train from scratch using an entirely new dataset. (Most common use-case)
-2. [Use transfer learning](transfer_learning.md): Make use of an existing model and fine tune it.
+2. [Use transfer learning](transfer_learning.md): Make use of an existing model and fine tune it with new cases.
 
 ### User Interaction
 
-Users will primarily engage with the `Input_nnUNet_train`, `exe_train.py`, and its output counterpart. It's imperative to ⚠️**COPY**⚠️ the dataset into `Input_nnUNet_train`. The program will sort the dataset for the nnUNet model and then delete it post-operation. Post-training, users will receive an output containing the trained model. All other data will be ⚠️**DELETED**⚠️.
+Users will first engage with the `Input_nnUNet_train`, `exe_train.py`, and its output counterpart. It's imperative to ⚠️**COPY**⚠️ the dataset into `Input_nnUNet_train`. The program will sort the dataset for the nnUNet model and then delete it post-operation. Post-training, users will receive an output containing the trained model. All other data will be ⚠️**DELETED**⚠️.
 
 ### Command Execution
 
@@ -40,19 +40,20 @@ python3 FULL_PATH/exe_train.py --dataset_name DATASET_NAME --label LABEL --image
 - `TIME`: Desired duration of all the process in MINUTE. (**default value**: 60)
 
 
-**Note 1**: Default values are in place for all parameters and will be employed if a user omits specific arguments. Training caps at 10,000 epochs. However, to ensure efficiency, a time parameter is introduced. If time elapses during an ongoing epoch, the epoch will finalize before terminating the training process.
+**Note 1**: Default values are in place for all parameters and will be employed if a user omits specific arguments. Training caps at 10,000 epochs. However, to ensure efficiency, a time parameter is introduced. If time elapses during an ongoing epoch, the epoch will finalize before ending the training process.
 
 
 ## FOLDS
 
-Users can dictate how their dataset is split, determining which images are used for training versus validation. 
+Users can dictate how their dataset is split, determining which images are used for training or validation. 
 
 - If you've structured your dataset as outlined in [dataset_format](dataset_format.md):
   - Images labeled as "train" will be allocated to the training set.
   - Images labeled as "validation" will be reserved for validation.
   - This gives you full autonomy over your dataset's division.
+  - A JSON file will be created where the user can see the split of the data
 
-- **Note**: If no images are designated for validation, the script will use all available data for both training and validation purposes.
+- **Note 2**: If no images are designated for validation, the script will use all available data for both training and validation purposes (FOLD = all).
 
 
 
