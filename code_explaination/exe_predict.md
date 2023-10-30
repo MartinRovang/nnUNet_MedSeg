@@ -23,9 +23,10 @@ Ensure you have the following libraries installed:
 - os
 - sys
 - shutil
-- argparse
 - subprocess
 - re
+- delete_all
+- generalFunctions
 
 ---
 
