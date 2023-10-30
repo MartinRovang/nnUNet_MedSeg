@@ -39,7 +39,7 @@ The Transfer Leaerning directory mirrors other directories. Users should place t
 Please be aware that in every mentioned directory, all data will be completly deleted. Only the files in the output sections of each directory will be retained.
 
 <p align="center">
-<img src="pictures/finalfold.drawio.png" width="500"  >
+<img src="pictures/finalfol.png" width="500"  >
 </p>
 
 # Scripts
