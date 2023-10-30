@@ -188,6 +188,26 @@ def start_process_tl(timer_pretraining_start_fct, label_number_fct, image_type_f
 ##
 
 
+:point_right: **Get_fold_value( )** :point_left:
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Check the fold value.
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) return the folder value
+<details>
+  <summary>Click to view the code for the function `Get_fold_value( )`</summary>
+  
+```python
+# Code for the function get_fold_value
+def get_fold_value():
+  for folder in os.listdir(os.path.join(globalPath.model_folder_path, full_dataset_name, "nnUNetTrainer__nnUNetPlans__3d_fullres")): #Change here if you are changing the configuration of the model!
+      if folder.split("_")[0] == "fold":
+          return folder.split("_")[1] 
+```
+</details>
+
+
+##
+
+
 :point_right: **Create_structure(train)** :point_left:
 
 - ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates the main folder directory (with the right name) + all the necessary json files
@@ -364,6 +384,19 @@ def process_image(input_filename_path, output_filename_path):
 ##  
 
 
+
+:point_right: **Create_split_json(train_list, val_list, current_script)** :point_left:
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates and sets up necessary components for the `create_split_json`. There are 2 possibilities if function of the value of current_script (if train or transfer learning)
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
+- `train_list` (list): All the images in used for the training
+- `val_list` (list): All the images in used for the training
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
+<details>
+  <summary>Click to view the code for the function `Create_split_json( )`</summary>
+```python
+# Code for the function create_split_json
+```
+</details>
 
 
 ##  
