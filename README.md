@@ -44,18 +44,20 @@ Please be aware that in every mentioned directory, all data will be completly de
 
 # Scripts
 
-You can also find in the main_nnUNet folder, the different scripts that we be executed.
+In the `main_nnUNet` folder, you will find various scripts that are set to be executed.
 
 <p align="center">
-<img src="pictures/exefolder.png" width="300"  >
+<img src="pictures/exefolder.png" width="300">
 </p>
-You can find all the explaination of those scripts in the following fodlers
-- [exe_train](code_explaination/exe_train.md)
-- [exe_predict](code_explaination/exe_predict.md)
-- [exe_transferLearning](code_explaination/exe_transferLearning.md)
-- [generalFunctions](code_explaination/generalFunctions.md)
-- [globalPath](code_explaination/globalPath.md)
-- [delete_all](code_explaination/delete_all.md)
+
+Detailed explanations for each script can be found in the following folders:
+- [exe_train](documentation/code_explanation/exe_train.md)
+- [exe_predict](documentation/code_explanation/exe_predict.md)
+- [exe_transferLearning](documentation/code_explanation/exe_transferLearning.md)
+- [generalFunctions](documentation/code_explanation/generalFunctions.md)
+- [globalPath](documentation/code_explanation/globalPath.md)
+- [delete_all](documentation/code_explanation/delete_all.md)
+
 
 
 ## Let's Get Started! 🌟
