@@ -11,7 +11,7 @@ Before starting, users should:
 
 ## Initiating the Training Process
 
-To begin, simply execute the `exe_train.py` script. When executed, the script undergoes several stages:
+To begin, simply [execute](training.md#command-execution) the `exe_train.py` script. When executed, the script undergoes several stages:
 
 - **Data Sorting Stage**: At this point, data labeled as 'validate' or 'train' gets selected for the training process.
   
