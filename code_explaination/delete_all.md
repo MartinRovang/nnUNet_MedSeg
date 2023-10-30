@@ -42,7 +42,7 @@ Ensure you have the following libraries installed:
   - reslut
 
 <details>
-  <summary>Click to view the code for the function `exec_in_docker(cmd, container_id)`:summary>
+  <summary>Click to view the code for the function `exec_in_docker(cmd, container_id):summary>
 
 ```python
 def exec_in_docker(cmd, container_id):
@@ -67,7 +67,7 @@ def exec_in_docker(cmd, container_id):
   - reslut
 
 <details>
-  <summary>Click to view the code for the function `delete_all_folders(path_folder, docker_path)`:summary>
+  <summary>Click to view the code for the function `delete_all_folders(path_folder, docker_path):summary>
 
 ```python
 def delete_all_folders(path_folder, docker_path):
@@ -96,7 +96,7 @@ def delete_all_folders(path_folder, docker_path):
   - reslut
 
 <details>
-  <summary>Click to view the code for the function `clean_all(delete_input_folder, delete_output_folder, delete_model_folder, delete_all_nnunet_folder, script)`:summary>
+  <summary>Click to view the code for the function `clean_all(delete_input_folder, delete_output_folder, delete_model_folder, delete_all_nnunet_folder, script):summary>
 
 ```python
 def clean_all(delete_input_folder, delete_output_folder, delete_model_folder, delete_all_nnunet_folder, script):
