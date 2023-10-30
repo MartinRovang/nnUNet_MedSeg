@@ -20,20 +20,21 @@ The `exe_transferLearning.py` script is designed for finetune an existing model 
 
 Ensure you have the following libraries installed:
 
+import time as tm
+
+
+import delete_all
+import generalFunctions
+
 - os
-- json
-- shutil
 - sys
-- subprocess
 - argparse
-- SimpleITK
-- time
-- datetime
-- random
+- time as tm
 
 ---
 
 ### Main Execution
+The logics is exactly the same as the [exe_train.md](exe_train.md). The differences are the values of the different variables and, if everything is correct, it will start the "start_process_tl" function from general
 
 
 ---
