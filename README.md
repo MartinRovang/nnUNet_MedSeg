@@ -42,6 +42,13 @@ Please be aware that in every mentioned directory, all data will be completly de
 <img src="pictures/folders_train_predictVfinal2.drawio.png" width="500"  >
 </p>
 
+# Scripts
+
+You can also find in the main_nnUNet folder, the different scripts that we be executed.
+
+<p align="center">
+<img src="pictures/exefolder.drawio.png" width="500"  >
+</p>
 
 ## Let's Get Started! 🌟
 - [Training 101: The Basics](documentation/training.md)
