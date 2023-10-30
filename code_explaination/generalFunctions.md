@@ -180,6 +180,16 @@ def start_process_tl(timer_pretraining_start_fct, label_number_fct, image_type_f
 
 ```python
 # Code for the function get_model_name
+def get_model_name():
+    global full_dataset_name
+
+    for folder in os.listdir(globalPath.model_folder_path):
+        if full_dataset_name == "":
+            full_dataset_name = folder
+        else:
+            print("2 differents model, keep only 1!")
+            delete_all.clean_all(delete_input_folder=True, delete_output_folder=True, delete_model_folder=True, delete_all_nnunet_folder=True, script=current_script)
+            sys.exit()
 ```
 
 </details>
@@ -393,13 +403,118 @@ def process_image(input_filename_path, output_filename_path):
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 <details>
   <summary>Click to view the code for the function `Create_split_json( )`</summary>
+  
 ```python
 # Code for the function create_split_json
+def create_split_json(train_list, val_list, current_script): #Note that here, as we use only fold 0 or fold all, we don't need to specify all the separation in all the other folds. You will need to complete this function in order to randomize the distribution train/validate for each fold
+    if current_script == "train":
+        data_list = [{"train": train_list, "val": val_list}] #Add all the image named train in the training and all of the validate image in the val
+
+        os.makedirs(os.path.join(globalPath.nnunet_preprocessed_path, full_dataset_name))
+        json_split_path = os.path.join(globalPath.nnunet_preprocessed_path, full_dataset_name, "splits_final.json") #Create the split json file
+        with open(json_split_path, 'w') as json_file:
+            json.dump(data_list, json_file, indent=4)
+
+    elif current_script == "transferLearning":
+        list_new_data() 
+        new_json()  
+        copy_json_file()
 ```
 </details>
 
 
 ##  
+
+
+:point_right: **List_new_data()** :point_left:
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Add the new images into the list
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
+<details>
+  <summary>Click to view the code for the function `List_new_data( )`</summary>
+  
+```python
+# Code for the function create_split_json
+def list_new_data():
+    global new_data
+
+    split_json_path = os.path.join(globalPath.model_folder_path, full_dataset_name, split_final_json) #Path to the split final json
+    jsonfile = split_json_path
+
+    with open(jsonfile,"r") as file:
+        data = json.load(file)
+        for f in os.listdir(os.path.join(globalPath.nnunet_raw_path, full_dataset_name,"imagesTr")):
+            f = f.split("_")[0]
+            if f not in data[0]["val"] and f not in data[0]["train"]:
+                new_data.append(f) #Adding the value in the list if it is not present in the training or validation
+
+    os.makedirs(os.path.join(globalPath.nnunet_preprocessed_path, dataset_source_name))
+
+    for files in os.listdir(os.path.join(globalPath.model_folder_path, full_dataset_name)):
+        if files == "nnUNetPlans.json":
+            shutil.copy2(os.path.join(globalPath.model_folder_path, full_dataset_name, files), os.path.join(globalPath.nnunet_preprocessed_path, dataset_source_name, files))
+
+```
+</details>
+
+
+##
+
+
+:point_right: **New_json()** :point_left:
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Add the new data into the right json file
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
+<details>
+  <summary>Click to view the code for the function `List_new_data( )`</summary>
+  
+```python
+# Code for the function create_split_json
+def new_json():
+    split_json_path = os.path.join(globalPath.model_folder_path, full_dataset_name, split_final_json)
+    jsonfile = split_json_path
+
+    with open(jsonfile,"r") as file:
+        data = json.load(file)
+            
+        for j in range (len(new_data)):
+            if name_img_dic[new_data[j]] == "validate":
+                data[0]["val"].append(new_data[j])
+
+            elif name_img_dic[new_data[j]] == "train":
+                data[0]["train"].append(new_data[j])
+
+    with open(jsonfile, "w") as file:
+        json.dump(data, file, indent=4) 
+
+```
+</details>
+
+
+##
+
+
+:point_right: **Copy_json_file()** :point_left:
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Copy the new json file that contain all the information
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
+<details>
+  <summary>Click to view the code for the function `List_new_data( )`</summary>
+  
+```python
+# Code for the function create_split_json
+def copy_json_file():
+    split_json_path = os.path.join(globalPath.model_folder_path, full_dataset_name, split_final_json)
+    copy_folder_path = os.path.join(globalPath.nnunet_preprocessed_path, full_dataset_name)
+    os.makedirs(copy_folder_path)
+    shutil.copy2(split_json_path, os.path.join(copy_folder_path, split_final_json)) #Name of the json file is always splits_final.json in this case 
+
+```
+</details>
+
+
+##
+
 
 :point_right: **Get_channel_names( )** :point_left:
 
@@ -459,98 +574,143 @@ def get_labels():
 ##
 
 
+:point_right: **Launch_docker(dataset_full_name, current_script)** :point_left:
+
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) It is this function that will actually start the nnUNet model
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
+ - `dataset_full_name` (str): Name of the dataset
+ - `current_script` (str): If it is "train" or "transfer validation"
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
+
+<details>
+  <summary><strong>Click to view the code for the function `Launch_docker( )`</strong></summary>
+
+```python
+# Code for the function get_labels
+#Function for the terminal to do and starts the training 
+def launch_docker(dataset_full_name, current_sript):
+    global container_id
+    dataset_id = dataset_full_name.split("_")[0].replace("Dataset", "")
+    
+    load_image() #Loading the docker image 
+    
+    # Execute the Docker command
+    docker_command = f"docker run -d -it --gpus all --shm-size 8g -v {globalPath.dataset_train_path}:/app/nnUNet {image_docker} bash"
+    container_id = subprocess.check_output(docker_command, shell=True).decode().strip()
+
+    if current_sript == "train":
+        #Execute other commands
+        #gpu_number = gpu_available()[0] #Take the first available gpu on the list, Uncomment if you want to use this function 
+        gpu_number = 1 #In this case, we use the GPU 0 for the training and the GPU for the inference
+    
+        global_commands = f"CUDA_VISIBLE_DEVICES={gpu_number} nnUNetv2_plan_and_preprocess -d {dataset_id} -c {configuration_model} --verify_dataset_integrity"
+        delete_all.exec_in_docker(global_commands, container_id) #Execute the command inside the docker container
+
+        #Calcul the remaining time to see if there is still enough time to actually starts the training
+        timer_training_end = tm.time()
+        elapsed_time_training = (timer_training_end - timer_training_start) / 60 
+        total_training_time = time_input - elapsed_time_training
+        print(f"Time left for the training: {total_training_time}")
+
+        if total_training_time <= 0: #In the case we don't have enough time, we stop the process
+            print("Not enough time was given to train the model, try with a higher time")
+            delete_all.clean_all(delete_input_folder=True, delete_output_folder=True, delete_model_folder=False, delete_all_nnunet_folder=True, script="train") #Clean all the folder to make sure we don't have any problems for the next training
+            sys.exit()
+
+        else: #If enough time, start the actual training of the nnUNet
+            print("Starting training...")
+            if not fold_all_value:
+                global_commands = f"echo {int(total_training_time)} | CUDA_VISIBLE_DEVICES={gpu_number} nnUNetv2_train {dataset_id} {configuration_model} 0 --npz" #See nnUNet document to have a better understanding but we need the GPU, dataset_id, configuration of the model and the value for the fold 
+                delete_all.exec_in_docker(global_commands, container_id) 
+
+            elif fold_all_value:
+                global_commands = f"echo {int(total_training_time)} | CUDA_VISIBLE_DEVICES={gpu_number} nnUNetv2_train {dataset_id} {configuration_model} all --npz"  
+                delete_all.exec_in_docker(global_commands, container_id) 
+
+            """ ---------------UNCOMMENT IF MANY FOLDS AND SEE THE BEST CONFIGURATION-------------------------
+            global_commands = f"nnUNetv2_find_best_configuration {dataset_id} -c {configuration_model}"    
+            exec_in_docker(global_commands) 
+            """
+
+        #Once the training is done we can close the docker container and move all the results inside the right folder
+        remove_docker_container(container_id)
+        move_result()
+        delete_all.clean_all(delete_input_folder=True, delete_output_folder=False, delete_model_folder=False, delete_all_nnunet_folder=True, script="train") #Everything is deleted at the end to clean up
+
+    elif current_script == "transferLearning":
+        creation_checkpoint_folder()
+
+        #gpu_number = gpu_available()[0] #Take the first available gpu on the list, Uncomment if you want to use this function 
+        gpu_number = 1 #In this case, we use the GPU 0 for the training and the GPU for the inference
+
+        global_commands = f"CUDA_VISIBLE_DEVICES={gpu_number} nnUNetv2_plan_and_preprocess -d {dataset_id} -c 3d_fullres --verify_dataset_integrity"
+        delete_all.exec_in_docker(global_commands, container_id)
+
+        timer_training_end = tm.time()
+        elapsed_time_training = (timer_training_end - timer_pretraining_start) / 60 
+        total_training_time = time_input - elapsed_time_training
+        print(f"Time left for the pretraining: {total_training_time}")
+
+        if total_training_time <= 0: #Check if the user input time is enough to train the model after the preprocessing is done
+            print("Not enough time was given to pretrain the model, try with a higher time")
+            delete_all.clean_all(delete_input_folder=True, delete_output_folder=True, delete_model_folder=True, delete_all_nnunet_folder=True, script="transferLearning") #Clean all the folder to make sure we don't have any problems for the next training
+            sys.exit()
+
+        else:
+            print("Moving plans between datasets...")
+            global_commands = f"nnUNetv2_move_plans_between_datasets -s {999} -t {dataset_id} -sp nnUNetPlans -tp nnUNetPlans"
+            delete_all.exec_in_docker(global_commands, container_id)
+
+            print("Starting transfer learning...")
+            if not fold_all_value:  
+                docker_result_path = os.path.join("/app", "nnUNet", "nnUNet_results", dataset_source_name, "nnUNetTrainer__nnUNetPlans__3d_fullres", f"fold_{fold_0_or_all_value}", "checkpoint_final.pth")
+                global_commands = f"echo {int(total_training_time)} | CUDA_VISIBLE_DEVICES={gpu_number} nnUNetv2_train {dataset_id} 3d_fullres 0 -pretrained_weights {docker_result_path}"
+                delete_all.exec_in_docker(global_commands, container_id) 
+
+            else:  
+                docker_result_path = os.path.join("/app", "nnUNet", "nnUNet_results", dataset_source_name, "nnUNetTrainer__nnUNetPlans__3d_fullres", f"fold_{fold_0_or_all_value}", "checkpoint_final.pth")
+                global_commands = f"echo {int(total_training_time)} | CUDA_VISIBLE_DEVICES={gpu_number} nnUNetv2_train {dataset_id} 3d_fullres all -pretrained_weights {docker_result_path}"
+                delete_all.exec_in_docker(global_commands, container_id) 
+
+            """UNCOMMENT IF ALL FOLDS ARE USED
+            print("Finding best configurations...")
+            global_commands = f"nnUNetv2_find_best_configuration {dataset_id} -c 3d_fullres"    
+            exec_in_docker(global_commands) 
+            """
+
+        #Once the training is done we can close the docker container and move all the results inside the right folder
+        remove_docker_container(container_id)
+        move_result()
+        delete_all.clean_all(delete_input_folder=True, delete_output_folder=False, delete_model_folder=True, delete_all_nnunet_folder=True, script="transferLearning") #Everything is deleted at the end to clean up
+
+```
+
+</details>
 
 
-##  
+##
 
 
-:point_right: **Move_result( )** :point_left:
+:point_right: **Load_image( )** :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Handles the process of moving results in the right emplacement 
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Load nnUNet docker images
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
 <details>
-  <summary><strong>Click to view the code for the function `Move_result( )`</strong></summary>
+  <summary><strong>Click to view the code for the function `Load_image( )`</strong></summary>
 
 ```python
-# Code for the function move_result
-def move_result():
-    for folder in os.listdir(nnunet_result_path): #For loop inside the result folder of the nnUNet (usually, it is only 1 folder)
-        tot_path = os.path.join(output_folder_path, folder)
-        shutil.copytree(os.path.join(nnunet_result_path, folder), tot_path) #Copy everything to the Output folder
-        new_tot_path = os.path.join(tot_path, f"nnUNetTrainer__nnUNetPlans__{configuration_model}")
-
-        for new_folder in os.listdir(new_tot_path): #For loop inside the output folder, to keep only the needed file
-            path_final = os.path.join(new_tot_path, new_folder)
-            if os.path.isdir(path_final) and new_folder.split("_")[0] == "fold":
-                tot_path_fold = ""
-                if not fold_all_value: #Be careful, if you modify the code to use different fold, you will need to change this!
-                    tot_path_fold = os.path.join(new_tot_path, "fold_0")
-                else:
-                    tot_path_fold = os.path.join(new_tot_path, "fold_all")
-
-                for files in os.listdir(tot_path_fold): #Continung looping inside the results folder (structure of the nnUNet)
-                    if files != "checkpoint_final.pth" and files.split("_")[0] != "training" and files != "progress.png": #We keep only the final weights of the model, the training log and the progress image, all of the other files/folder will be deleted
-                        path_to_check = os.path.join(tot_path_fold, files)
-                        if os.path.isfile(path_to_check):
-                            os.remove(path_to_check)
-                        elif os.path.isdir(path_to_check):
-                            shutil.rmtree(path_to_check)
-
-            elif os.path.isdir(path_final): #We don't need to keep all of the folder that doesn't start with "fold"
-                path_to_del = os.path.join(new_tot_path, new_folder)
-                shutil.rmtree(path_to_del)
-
-        #We need also different files that are located in the preprocessed nnUNet folder (to do the Transfer Learning later)
-        for files in os.listdir(os.path.join(nnunet_preprocessed_path, folder)): #For loop in the nnUNet preprocessed folder
-            if files == "splits_final.json": #We need to keep the splits_final json file
-                shutil.copy2(os.path.join(nnunet_preprocessed_path, folder, files), os.path.join(output_folder_path, folder, files))
-                print("Copy splits_final.json file!")
-
-            elif files == "nnUNetPlans.json": #We need to keep the nnUnetPlans json file
-                shutil.copy2(os.path.join(nnunet_preprocessed_path, folder, files), os.path.join(output_folder_path, folder, files))
-                print("Copy nnUNetPlans.json file!")
-
-        #We need also one fils that is located in the raw nnUNet folder (to do the Transfer Learning later)    
-        for files in os.listdir(dataset_train_path):
-            if files == "info_model.json": #We need to keep the info model json that we created to get some additionnal information about the model
-                shutil.copy2(os.path.join(dataset_train_path, files), os.path.join(output_folder_path, folder, files))
-                os.remove(os.path.join(dataset_train_path, files))
-                print("Copy info_model.json file!")
-
-    print("Model saved and cleaned!")
+# Code for the function load_image
+def load_image():
+    exec_command = f"docker load -i {grandparent_main_path}/{image_docker}.tar"
+    subprocess.call(exec_command, shell=True)
 ```
-
 </details>
+
 
 ##
 
-:point_right: **Remove_docker_container(id)** :point_left:
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Remove a Docker container based on a specified name or ID
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
- - `id` (int ???): ID of the container
-- ![Returns](https://img.shields.io/badge/-Returns-red) None
-
-<details>
-  <summary><strong>Click to view the code for the function `Remove_docker_container(id)`</strong></summary>
-
-```python
-# Code for the function remove_docker_container
-def remove_docker_container(id):
-    global_commands = f"docker stop {id}"
-    subprocess.check_output(global_commands, shell=True, stderr=subprocess.STDOUT)
-
-    global_commands = f"docker rm {id}"
-    subprocess.check_output(global_commands, shell=True, stderr=subprocess.STDOUT)
-
-    print(f"Docker container id: {id} has been removed")
-```
-
-</details>
-
-##  
 
 :point_right: **Gpu_available( )** :point_left:
 
@@ -588,33 +748,10 @@ def gpu_available():
 
 ##
 
-:point_right: **Exec_in_docker(cmd, container_id)** :point_left:
 
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Executes commands within the Docker container
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
-   - `cmd` (str): Command to execute inside the docker container
-   - `container_id` (int ???): ID of the container
-- ![Returns](https://img.shields.io/badge/-Returns-red) None
+:point_right: **creation_checkpoint_folder( )** :point_left:
 
-<details>
-  <summary><strong>Click to view the code for the function `Exec_in_docker(cmd, container_id)`</strong></summary>
-
-```python
-# Code for the function exec_in_docker
-def exec_in_docker(cmd):
-    exec_command = f"docker exec -i {container_id} bash -c '{cmd}'"
-    result = subprocess.call(exec_command, shell=True)
-    return result
-```
-</details>
-
-
-##
-
-
-:point_right: **Load_image( )** :point_left:
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Load nnUNet docker images
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates the different folder for the transfer learning
 - ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
 - ![Returns](https://img.shields.io/badge/-Returns-red) None
 
@@ -623,12 +760,116 @@ def exec_in_docker(cmd):
 
 ```python
 # Code for the function load_image
-def load_image():
-    exec_command = f"docker load -i {grandparent_main_path}/{image_docker}.tar"
-    subprocess.call(exec_command, shell=True)
+def creation_checkpoint_folder():
+    os.makedirs(os.path.join(globalPath.nnunet_result_path, dataset_source_name))
+    for folder in os.listdir(globalPath.model_folder_path):
+        for files in os.listdir(os.path.join(globalPath.model_folder_path, folder)):
+            if os.path.isdir(os.path.join(globalPath.model_folder_path, folder, files)):
+                shutil.copytree(os.path.join(globalPath.model_folder_path, folder, files) , os.path.join(globalPath.nnunet_result_path, dataset_source_name, files)) #Copy the models inside the Dataset train like that it can acces the weight
+            elif os.path.isfile(os.path.join(globalPath.model_folder_path, folder, files)):
+                shutil.copy2(os.path.join(globalPath.model_folder_path, folder, files) , os.path.join(globalPath.nnunet_result_path, dataset_source_name, files))
+
 ```
 </details>
 
 
 ##
+
+
+:point_right: **Remove_docker_container(id)** :point_left:
+
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Remove a Docker container based on a specified name or ID
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
+ - `id` (int ???): ID of the container
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
+
+<details>
+  <summary><strong>Click to view the code for the function `Remove_docker_container(id)`</strong></summary>
+
+```python
+# Code for the function remove_docker_container
+def remove_docker_container(id):
+    global_commands = f"docker stop {id}"
+    subprocess.check_output(global_commands, shell=True, stderr=subprocess.STDOUT)
+
+    global_commands = f"docker rm {id}"
+    subprocess.check_output(global_commands, shell=True, stderr=subprocess.STDOUT)
+
+    print(f"Docker container id: {id} has been removed")
+```
+
+</details>
+
+
+##  
+
+
+:point_right: **Move_result( )** :point_left:
+
+- ![Purpose](https://img.shields.io/badge/-Purpose-green) Handles the process of moving results in the right emplacement 
+- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
+- ![Returns](https://img.shields.io/badge/-Returns-red) None
+
+<details>
+  <summary><strong>Click to view the code for the function `Move_result( )`</strong></summary>
+
+```python
+# Code for the function move_result
+def move_result():
+    for folder in os.listdir(globalPath.nnunet_result_path): #For loop inside the result folder of the nnUNet (usually, it is only 1 folder)
+        if folder != "Dataset999_SOURCE":
+            tot_path = os.path.join(globalPath.output_folder_path, folder)
+            shutil.copytree(os.path.join(globalPath.nnunet_result_path, folder), tot_path) #Copy everything to the Output folder
+            new_tot_path = os.path.join(tot_path, "nnUNetTrainer__nnUNetPlans__3d_fullres") #Change here also if you are using another configuration for the model
+
+            for new_folder in os.listdir(new_tot_path): #For loop inside the output folder, to keep only the needed file
+                path_final = os.path.join(new_tot_path, new_folder)
+                if os.path.isdir(path_final) and new_folder.split("_")[0] == "fold":
+                    tot_path_fold = ""
+                    if not fold_all_value: #Be careful, if you modify the code to use different fold, you will need to change this!
+                        tot_path_fold = os.path.join(new_tot_path, "fold_0")
+                    else:
+                        tot_path_fold = os.path.join(new_tot_path, "fold_all")
+
+                    for files in os.listdir(tot_path_fold): #Continung looping inside the results folder (structure of the nnUNet)
+                        if files != "checkpoint_final.pth" and files.split("_")[0] != "training" and files != "progress.png": #We keep only the final weights of the model, the training log and the progress image, all of the other files/folder will be deleted
+                            path_to_check = os.path.join(tot_path_fold, files)
+                            if os.path.isfile(path_to_check):
+                                os.remove(path_to_check)
+                            elif os.path.isdir(path_to_check):
+                                shutil.rmtree(path_to_check)
+
+                elif os.path.isdir(path_final): #We don't need to keep all of the folder that doesn't start with "fold"
+                    path_to_del = os.path.join(new_tot_path, new_folder)
+                    shutil.rmtree(path_to_del)
+
+            #We need also different files that are located in the preprocessed nnUNet folder (to do the Transfer Learning later)
+            for files in os.listdir(os.path.join(globalPath.nnunet_preprocessed_path, folder)): #For loop in the nnUNet preprocessed folder
+                if files == "splits_final.json": #We need to keep the splits_final json file
+                    shutil.copy2(os.path.join(globalPath.nnunet_preprocessed_path, folder, files), os.path.join(globalPath.output_folder_path, folder, files))
+                    print("Copy splits_final.json file!")
+
+                elif files == "nnUNetPlans.json": #We need to keep the nnUnetPlans json file
+                    shutil.copy2(os.path.join(globalPath.nnunet_preprocessed_path, folder, files), os.path.join(globalPath.output_folder_path, folder, files))
+                    print("Copy nnUNetPlans.json file!")
+
+            #We need also one fils that is located in the raw nnUNet folder (to do the Transfer Learning later)    
+            for files in os.listdir(globalPath.dataset_train_path):
+                if files == "info_model.json": #We need to keep the info model json that we created to get some additionnal information about the model
+                    shutil.copy2(os.path.join(globalPath.dataset_train_path, files), os.path.join(globalPath.output_folder_path, folder, files))
+                    os.remove(os.path.join(globalPath.dataset_train_path, files))
+                    print("Copy info_model.json file!")
+
+    print("Model saved and cleaned!")
+```
+
+</details>
+
+##
+
+
+
+
+
+
 
