@@ -27,6 +27,5 @@ Upon running the command, the script:
 - Properly locates the data and sets off the preprocessing.
 - Splits the new images into their rightful categories, be it training or validation. Cross-check with the specifications in the [training section](training.md#FOLDS).
 - Uses the same plans as the previous dataset to have the same topology.
-
-  As the training, the user will have in the `output_transferLearning` the new model fine tuned.
+- As the training, the user will have in the `output_transferLearning` the fine tuned model.
   
