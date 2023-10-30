@@ -1,11 +1,11 @@
 
-# Predictive Segmentation with nnUNet
+# Prediction with nnUNet
 
 Using a trained model, it's now possible to make predictions on new images and obtain precise segmentation masks. The process is designed to be user-friendly, minimizing manual intervention.
 
 ## Understanding the Prediction Process
 
-After successfully training a model, users should copy the folder named after the dataset from `output_nnUNet_train` to the `model` directory within the prediction set.
+After successfully training (or TL) a model, users should copy the folder named after the dataset from `output_nnUNet_train` (or `output_transferLearning`) to the `model` directory within the prediction set.
 
 
 The workflow involves placing a ⚠️**COPY**⚠️ of the image they wish to get predictions for into the `input_nnUNet_predict` folder. After the prediction process concludes, the corresponding segmentation masks will be available in the `output_nnUNet_folder` and the input image will be ⚠️**DELETED**⚠️.
