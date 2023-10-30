@@ -105,7 +105,7 @@ python exe_transferLearning.py [-l LABEL] [-i IMAGE_TYPE] [-t TIME]
 ```
 
 Arguments:
-- `-l` or `--label`: Label to be used (default: "TUMOR").
+- `-l` or `--label`: Number of label to be used ().
 - `-i` or `--image_type`: Type of image (default: "CT").
 - `-t` or `--time`: Time parameter (default: 60).
 
