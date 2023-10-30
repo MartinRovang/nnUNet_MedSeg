@@ -8,7 +8,7 @@ Using a trained model, it's now possible to make predictions on new images and o
 After successfully training (or TL) a model, users should copy the folder named after the dataset from `output_nnUNet_train` (or `output_transferLearning`) to the `model` directory within the prediction set.
 
 
-The workflow involves placing a ⚠️**COPY**⚠️ of the image they wish to get predictions for into the `input_nnUNet_predict` folder. After the prediction process concludes, the corresponding segmentation masks will be available in the `output_nnUNet_folder` and the input image will be ⚠️**DELETED**⚠️.
+The workflow involves placing a ⚠️**COPY**⚠️ of the image they wish to get predictions for into the `input_nnUNet_predict` folder. After the prediction process concludes, the corresponding segmentation masks will be available in the `output_nnUNet_predict` and the input image will be ⚠️**DELETED**⚠️.
 
 ## Running the Prediction Script
 
@@ -20,7 +20,7 @@ python3 FULL_PATH/exe_predict.py
 ```
 
 
-The script will automatically use the model located in the `model` directory. Users can find the resulting image mask they wanted in the `output_nnUNet_prediction` folder.
+The script will automatically use the model located in the `model` directory. Users can find the resulting image mask they wanted in the `output_nnUNet_predict` folder.
 
 ### Visualizing Results
 
