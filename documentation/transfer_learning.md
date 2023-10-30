@@ -8,7 +8,7 @@ Leverage the power of an existing model through the application of transfer lear
 Firstly, ensure your dataset is formatted as described in the [dataset guide](dataset_format.md).
 
 1. **Setup**: Deposit your dataset in the `input_nnUNet_transferLearning` directory.
-2. **Model**: Don't forget to copy paste the model you want to fine tune in the `model` folder of the `transferLearning` folder from the `output_train` folder
+2. **Model**: Don't forget to copy paste the model you want to fine tune in the `model` folder from the `output_train` folder.
 3. **Execution**: Use the following command to kickstart the transfer learning process:
 
 ```bash
