@@ -37,150 +37,62 @@ import generalFunctions
 The logics is exactly the same as the [exe_train.md](exe_train.md). The differences are the values of the different variables and, if everything is correct, it will start the "start_process_tl" function from general
 
 
----
-
-### Functions
-
-
-:point_right: **Get_fold_value( )** :point_left:
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Check the fold value.
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue)
-  - Path to the `fold` folder 
-- ![Returns](https://img.shields.io/badge/-Returns-red) return the folder value
-
 <details>
-  <summary>Click to view the code for the function `Get_fold_value( )`</summary>
+  <summary><strong> Click to view the code for the main execution</strong></summary>
 
 ```python
-# Code for the function get_fold_value
-```
+import os
+import sys
+import argparse
+import time as tm
 
+
+import delete_all
+import generalFunctions
+
+
+"""-----------------------------GLOBAL VARIABLES------------------------------"""
+#MAIN PATHS 
+main_path = os.path.dirname(os.path.abspath(__file__)) #Get the parent path of the main folder
+
+input_folder_name = "Input_transferLearning"
+input_folder_path = os.path.join(main_path, "transferLearning", input_folder_name)
+
+if input_folder_path:
+    if len(os.listdir(input_folder_path)) == 0: #This means that the data was not added into the right folder
+        print("Input transfer learning folder is empty!")
+        sys.exit() 
+
+    elif len(os.listdir(input_folder_path)) > 1: #This case is not possible, just clean everything and stop the process
+        delete_all.clean_all(delete_input_folder=True, delete_output_folder=True, delete_model_folder=True, delete_all_nnunet_folder=True, script="transferLearning")
+        print("Too many input folders, everything was cleaned, launch the training again!")
+        sys.exit()
+
+    else:
+        print(f"Found {input_folder_name} at: {input_folder_path}")
+        if __name__ == "__main__":
+            #Get the values of the input command
+            timer_pretraining_start = tm.time()
+            parser = argparse.ArgumentParser()
+            parser.add_argument("-l", "--label", dest="label", type=int)
+            parser.add_argument("-i", "--image_type", dest="image_type", type=str, default= "CT")
+            parser.add_argument("-t", "--time", dest="time", type=int, default=60)
+            parser.add_argument("-c", "--configuration_model", dest="configuration_model", type=str, default= "3d_fullres")
+            args = parser.parse_args()
+            label_number = args.label
+            image_type = args.image_type
+            time_input = args.time
+            configuration_model = args.configuration_model
+
+            #Main code to run
+            generalFunctions.start_process_tl(timer_pretraining_start, label_number, image_type, time_input, configuration_model)
+            
+else:
+    print(f"{input_folder_name} not found.")
+    sys.exit()
+```
 </details>
 
-##  
-
-:point_right: **Remove_folder_model( )** :point_left:
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Delete the content of `model` folder 
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-  -  `model_folder_path` (str): path to the `model` folder.
-- ![Returns](https://img.shields.io/badge/-Returns-red) None.
-
-<details>
-  <summary>Click to view the code for the function `Remove_folder_model( )`</summary>
-
-```python
-# Code for the function remove_folder_model
-```
-
-</details>
-
-##  
-
-:point_right: **List_new_data(data_tot_path)** :point_left:
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Sort the data into 'val' and 'train', keep previous data in the original split
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) 
-  - `data_tot_path`(str): Path or directory
-- ![Returns](https://img.shields.io/badge/-Returns-red)
-  -?????????????????
-
-<details>
-  <summary>Click to view the code for the function `List_new_data( )`</summary>
-
-```python
-# Code for the function list_new_data
-```
-
-</details>
-
-##  
-
-:point_right: **New_json( )** :point_left:
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Write a new JSON file with the right split
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
-- ![Returns](https://img.shields.io/badge/-Returns-red) None
-
-<details>
-  <summary>Click to view the code for the function `New_json( )`</summary>
-
-```python
-# Code for the function new_json
-```
-
-</details>
-
-##  
-
-:point_right: **Copy_json_file( )** :point_left:
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Copy the JSON file in the right folder
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
-- ![Returns](https://img.shields.io/badge/-Returns-red)
-  - Copied the JSON file into `splits_final.json`
-
-<details>
-  <summary>Click to view the code for the function `Copy_json_file( )`</summary>
-
-```python
-# Code for the function copy_json_file
-```
-
-</details>
-
-##  
-
-:point_right: **Create_split_json( )** :point_left:
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Creates and sets up necessary components for the `create_split_json`
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
-- ![Returns](https://img.shields.io/badge/-Returns-red) None
-
-<details>
-  <summary>Click to view the code for the function `Create_split_json( )`</summary>
-
-```python
-# Code for the function create_split_json
-```
-
-</details>
- 
-##  
-
-:point_right: **Creation_checkpoint_folder( )** :point_left:
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Copy of the `model` folder into the `dataset_source_name` folder in `nnunet_result_path`
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
-- ![Returns](https://img.shields.io/badge/-Returns-red) None
-
-<details>
-  <summary>Click to view the code for the function `Creation_checkpoint_folder( )`</summary>
-
-```python
-# Code for the function creation_checkpoint_folder
-```
-
-</details>
-
-##  
- 
-
-:point_right: **Launch_docker( )** :point_left:
-
-- ![Purpose](https://img.shields.io/badge/-Purpose-green) Handles the process of launching the Docker image
-- ![Parameters](https://img.shields.io/badge/-Parameters-blue) None
-- ![Returns](https://img.shields.io/badge/-Returns-red) None
-
-<details>
-  <summary>Click to view the code for the function `Launch_docker( )`</summary>
-
-```python
-# Code for the function launch_docker
-```
-
-</details>
 
 ---
 
