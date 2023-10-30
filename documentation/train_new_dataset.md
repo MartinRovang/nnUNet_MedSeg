@@ -28,7 +28,7 @@ To begin, simply [execute](training.md#command-execution) the `exe_train.py` scr
 
 A word of caution: Timing is pivotal. If the script runs out of the designated time before completing the preprocessing, it stops abruptly. In such cases, all data is purged. Therefore, users must ensure that they allocate sufficient time for the process to run its course.
 
-Upon the successful completion of training—whether it reaches the predetermined time cap—the results are saved in the `output_nnUNet_train` folder. Within this directory, users will find a file named after the dataset. This file contains only the essential files required to use the model for predictions.
+Upon the successful completion of training—whether it reaches the predetermined time cap—the results are saved in the `output_model` folder. Within this directory, users will find a file named after the dataset. This file contains only the essential files required to use the model for predictions.
 
 It's important to note that the nnUNet folders are locked against modifications to guarantee smooth progression through all steps.
 
